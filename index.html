@@ -36,6 +36,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         /* Hero / Welcome Banner */
@@ -204,13 +205,137 @@
             transform: translateX(5px);
         }
 
-        /* Footer */
+        /* ----- ABOUT US SECTION STYLES ----- */
+        .about-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 4rem auto 2rem auto;
+            background: linear-gradient(135deg, rgba(20, 27, 45, 0.8), rgba(0, 0, 0, 0.6));
+            border: 1px solid var(--primary);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 242, 254, 0.15);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-section::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 8, 68, 0.1) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .profile-container {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+            margin-bottom: 15px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 35px rgba(255, 8, 68, 0.8);
+            border-color: var(--accent1);
+        }
+
+        .about-content {
+            flex: 2;
+            min-width: 300px;
+            z-index: 1;
+        }
+
+        .about-title {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-title span {
+            color: var(--accent1);
+            text-shadow: 0 0 15px rgba(255, 8, 68, 0.4);
+        }
+
+        .about-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .other-websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .site-link {
+            display: inline-block;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-light);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .site-link::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .site-link:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.3);
+            color: var(--primary);
+        }
+        
+        .site-link:hover::before {
+            left: 100%;
+        }
+
+        /* Footer Styles */
         footer {
             background: rgba(0, 0, 0, 0.6);
             border-top: 1px solid var(--glass-border);
             padding: 40px 20px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: auto;
             backdrop-filter: blur(10px);
         }
 
@@ -237,7 +362,6 @@
             -webkit-text-fill-color: transparent;
             animation: shine 5s linear infinite;
             display: inline-block;
-            margin-top: 10px;
         }
 
         @keyframes shine {
@@ -252,6 +376,10 @@
             }
             .grid-layout {
                 grid-template-columns: 1fr;
+            }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -352,11 +480,45 @@
         </div>
     </div>
 
+    <!-- ===== ABOUT US SECTION (NEW) ===== -->
+    <section class="about-section">
+        <div class="profile-container">
+            <!-- Yeh code 1473.jpg ko aapke github repo se directly utha lega -->
+            <img src="1473.jpg" alt="Jatin Sharma" class="profile-img">
+            <div class="founder-sign" style="font-size: 1.2rem; margin-top: 10px;">~ Jatin Sharma</div>
+            <p style="color: var(--text-muted); margin-top: 5px; font-size: 0.95rem; font-weight: 600;">Founder & Creator</p>
+        </div>
+        
+        <div class="about-content">
+            <h2 class="about-title">About <span>Shoorveer Notes</span></h2>
+            <p class="about-desc">
+                Welcome to the ultimate learning ecosystem! Our mission is to simplify complex concepts into master-level mind maps and premium notes. Shoorveer Notes Group is dedicated to helping students crack their exams with confidence and clarity. Explore our other dedicated platforms below.
+            </p>
+            
+            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;">🌐 Our Other Portals</h3>
+            
+            <!-- SPACE FOR 4 WEBSITE LINKS -->
+            <div class="other-websites-grid">
+                <!-- Physics Link Placeholder -->
+                <a href="https://your-physics-link-here.com" class="site-link">🚀 12th Physics Portal</a>
+                
+                <!-- Maths Link Placeholder -->
+                <a href="https://your-maths-link-here.com" class="site-link">📐 12th Maths Portal</a>
+                
+                <!-- English Link Placeholder -->
+                <a href="https://your-english-link-here.com" class="site-link">📝 12th English Portal</a>
+                
+                <!-- Biology Link Placeholder -->
+                <a href="https://your-biology-link-here.com" class="site-link">🧬 12th Biology Portal</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="made-by">
             MADE WITH ❤️ BY <span>SHOORVEER NOTES</span>
         </div>
-        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+        <div class="founder-sign" style="font-size: 1.2rem; margin-top: 10px;">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
     </footer>
 
 </body>
