@@ -3,57 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoorveer Notes | Class 12 Chemistry</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shoorveer Notes - Master Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent1: #ff0844;
+            --accent2: #ffb199;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(20, 27, 45, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.15) 0%, transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(255, 8, 68, 0.15) 0%, transparent 25%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hero / Welcome Banner */
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem 1rem;
+            position: relative;
+        }
+
+        .welcome-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            box-shadow: var(--glow);
+        }
+
+        h1.main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #ffffff, var(--text-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        h1.main-title span {
+            background: linear-gradient(to right, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 8, 68, 0.4);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Main Dashboard Grid */
+        .dashboard-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            flex: 1;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--glass-border), transparent);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Glassmorphism Cards */
+        .chapter-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+        }
+
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 242, 254, 0.1);
+        }
+
+        .chapter-card:hover::before {
+            left: 200%;
+        }
+
+        .chapter-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .chapter-card:hover .chapter-number {
+            color: rgba(0, 242, 254, 0.2);
+        }
+
+        .chapter-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            z-index: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .chapter-card:hover .card-footer {
+            opacity: 1;
+        }
+
+        .card-footer svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: transform 0.3s ease;
+        }
+
+        .chapter-card:hover .card-footer svg {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 1px solid var(--glass-border);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .made-by {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .made-by span {
+            color: var(--primary);
+            font-weight: 800;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .founder-sign {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% center; }
+            100% { background-position: 300% center; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1.main-title {
+                font-size: 2.5rem;
+            }
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">⚔️ Shoorveer Notes</div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <h1>Master Chemistry Like a <span class="highlight">Warrior</span></h1>
-        <p>Animated Mind Maps & Smart Notes for Class 12 Boards</p>
+    <header>
+        <div class="welcome-badge">Class 12th Chemistry</div>
+        <h1 class="main-title">Shoorveer <span>Notes</span></h1>
+        <p class="subtitle">Your ultimate master dashboard for complete chapter-wise Mind Maps, Premium Notes, and Mega Reactions.</p>
     </header>
 
-    <!-- Chapter Selection Section -->
-    <section class="chapters-section">
-        <h2>Select Your Chapter</h2>
-        <div class="grid-container">
-            <a href="solutions.html" class="chapter-card">1. Solutions</a>
-            <a href="electrochemistry.html" class="chapter-card">2. Electrochemistry</a>
-            <a href="kinetics.html" class="chapter-card">3. Chemical Kinetics</a>
-            <a href="d-and-f-block.html" class="chapter-card">4. d & f Block Elements</a>
-            <a href="coordination.html" class="chapter-card">5. Coordination Compounds</a>
-            <a href="haloalkanes.html" class="chapter-card">6. Haloalkanes & Haloarenes</a>
-            <a href="alcohols.html" class="chapter-card">7. Alcohols, Phenols & Ethers</a>
-            <a href="aldehydes.html" class="chapter-card">8. Aldehydes, Ketones & Acids</a>
-            <a href="amines.html" class="chapter-card">9. Amines</a>
-            <a href="biomolecules.html" class="chapter-card">10. Biomolecules</a>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section class="about-section">
-        <div class="about-card">
-            <!-- आपकी फोटो यहाँ दिखेगी -->
-            <img src="1473.jpg" alt="Jatin Sharma" class="profile-pic">
-            <div class="about-info">
-                <h2>About Me</h2>
-                <p>Greetings, Future Warriors! I am <strong>Jatin Sharma</strong>. I started this platform with one simple mission: to make complex subjects like Chemistry simple, engaging, and easy to memorize for every student. Remember, you are a Shoorveer, and success is your ultimate goal!</p>
-                <div class="social-links">
-                    <a href="https://youtube.com/@jatin_sharma_s123" target="_blank" class="btn youtube">▶ YouTube</a>
-                    <a href="https://www.instagram.com/jatin_sharma_s123" target="_blank" class="btn instagram">📸 Instagram</a>
+    <div class="dashboard-container">
+        <div class="section-heading">Master Index</div>
+        
+        <div class="grid-layout">
+            
+            <a href="solutions.html" class="chapter-card">
+                <div class="chapter-number">01</div>
+                <div class="chapter-title">Solutions</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-            </div>
-        </div>
-    </section>
+            </a>
 
-    <!-- Footer -->
+            <a href="electrochemistry.html" class="chapter-card">
+                <div class="chapter-number">02</div>
+                <div class="chapter-title">Electrochemistry</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="kinetics.html" class="chapter-card">
+                <div class="chapter-number">03</div>
+                <div class="chapter-title">Chemical Kinetics</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="d-and-f-block.html" class="chapter-card">
+                <div class="chapter-number">04</div>
+                <div class="chapter-title">d and f Block Elements</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="coordination.html" class="chapter-card">
+                <div class="chapter-number">05</div>
+                <div class="chapter-title">Coordination Compounds</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="haloalkanes.html" class="chapter-card">
+                <div class="chapter-number">06</div>
+                <div class="chapter-title">Haloalkanes & Haloarenes</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="alcohols.html" class="chapter-card">
+                <div class="chapter-number">07</div>
+                <div class="chapter-title">Alcohols, Phenols & Ethers</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="aldehydes.html" class="chapter-card">
+                <div class="chapter-number">08</div>
+                <div class="chapter-title">Aldehydes, Ketones & Carboxylic Acids</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="amines.html" class="chapter-card">
+                <div class="chapter-number">09</div>
+                <div class="chapter-title">Amines</div>
+                <div class="card-footer">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="biomolecules.html" class="chapter-card" style="border-color: rgba(255, 8, 68, 0.5);">
+                <div class="chapter-number">10</div>
+                <div class="chapter-title">Biomolecules</div>
+                <div class="card-footer" style="color: var(--accent2);">
+                    Explore Module <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
     <footer>
-        <p>© 2026 Shoorveer Notes by Jatin Sharma. All Rights Reserved.Contact us :email.</p>
+        <div class="made-by">
+            MADE WITH ❤️ BY <span>SHOORVEER NOTES</span>
+        </div>
+        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
     </footer>
+
 </body>
 </html>
