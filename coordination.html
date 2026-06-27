@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Coordination Compounds - Detailed Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        /* Kesari (Saffron/Orange) Dark Theme */
+        body { background-color: #1a0f0a; color: #ffedd5; line-height: 1.6; padding: 1rem; }
+        
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #f97316; font-size: 2rem; }
+        .header p { color: #fdba74; font-size: 1rem; }
+
+        .mindmap-container { max-width: 800px; margin: 0 auto; }
+        
+        /* Saffron Accordion Design */
+        details {
+            background: #2c160b;
+            border: 1px solid #c2410c;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+        }
+        
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f97316;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #fb923c;
+        }
+        details[open] summary::after { content: '-'; color: #f97316; }
+        
+        .content {
+            padding: 0 15px 15px 15px;
+            color: #fed7aa;
+            font-size: 0.95rem;
+            border-top: 1px solid #c2410c;
+            margin-top: 5px;
+            padding-top: 10px;
+        }
+
+        .sub-topic { margin-bottom: 15px; }
+        .sub-topic h4 { color: #fff7ed; margin-bottom: 5px; border-left: 3px solid #f97316; padding-left: 8px;}
+        ul { margin-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        
+        .formula {
+            display: block;
+            background: #1a0f0a;
+            padding: 8px;
+            border-radius: 5px;
+            color: #fcd34d;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 5px 0;
+            border-left: 3px solid #fcd34d;
+        }
+
+        /* Long Notes & PYQ Section Styling */
+        .resources-section {
+            max-width: 800px;
+            margin: 3rem auto 1rem auto;
+            background: rgba(194, 65, 12, 0.15);
+            border: 2px dashed #f97316;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .resources-section h3 { color: #f97316; margin-bottom: 10px; font-size: 1.5rem;}
+        .resources-section p { color: #fdba74; margin-bottom: 20px; font-size: 0.95rem; }
+        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .res-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-notes { background: #fcd34d; color: #1a0f0a; }
+        .btn-notes:hover { background: #fbbf24; }
+        .btn-pyq { background: #dc2626; color: #fff; }
+        .btn-pyq:hover { background: #b91c1c; }
+
+        /* Navigation */
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #7c2d12; border: 1px solid #c2410c; }
+        .btn-next { background: #f97316; color: #1a0f0a; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Chapter 5: Coordination Compounds</h1>
+        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    </div>
+
+    <div class="mindmap-container">
+
+        <details>
+            <summary>Introduction & Werner's Theory</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Double Salts vs Coordination Compounds</h4>
+                    <ul>
+                        <li><strong>Double Salts:</strong> Dissociate completely into simple ions when dissolved in water. Example: Mohr's salt [FeSO₄·(NH₄)₂SO₄·6H₂O], Potash alum.</li>
+                        <li><strong>Coordination Compounds:</strong> Do not dissociate into simple ions completely in water. They retain their identity in solution. Example: K₄[Fe(CN)₆].</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Werner's Theory of Coordination Compounds</h4>
+                    <p>Metals possess two types of linkages (valencies):</p>
+                    <ul>
+                        <li><strong>Primary Valency:</strong> Ionizable, satisfied by negative ions. Corresponds to the oxidation state of the central metal. Represented by dotted lines.</li>
+                        <li><strong>Secondary Valency:</strong> Non-ionizable, satisfied by neutral molecules or negative ions (ligands). Corresponds to the coordination number. Represented by solid lines. Spatial arrangement of secondary valencies gives the complex its specific geometry.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Important Terms & Types of Ligands</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Coordination Entity & Central Atom</h4>
+                    <p><strong>Coordination Entity:</strong> Constitutes a central metal atom or ion bonded to a fixed number of ions or molecules. Example: [CoCl₃(NH₃)₃].</p>
+                    <p><strong>Central Atom/Ion:</strong> The atom/ion to which a fixed number of ligands are bound in a definite geometrical arrangement.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Ligands and Their Types</h4>
+                    <p>Ions or molecules bound to the central atom/ion. They act as Lewis bases (electron pair donors).</p>
+                    <ul>
+                        <li><strong>Unidentate:</strong> Bounds through a single donor atom. Example: Cl⁻, H₂O, NH₃.</li>
+                        <li><strong>Didentate:</strong> Bounds through two donor atoms. Example: ethane-1,2-diamine (en), oxalate (C₂O₄²⁻).</li>
+                        <li><strong>Polydentate:</strong> Bounds through several donor atoms. Example: EDTA⁴⁻ (hexadentate).</li>
+                        <li><strong>Chelating Ligand:</strong> A di- or polydentate ligand uses its two or more donor atoms to bind a single metal ion, forming a ring structure. Imparts extra stability (Chelate effect).</li>
+                        <li><strong>Ambidentate Ligand:</strong> Ligand which can ligate through two different atoms. Example: NO₂⁻ (can bind through N or O), SCN⁻ (can bind through S or N).</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>IUPAC Nomenclature Rules</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>General Rules for Naming</h4>
+                    <ul>
+                        <li>The cation is named first in both positively and negatively charged coordination entities.</li>
+                        <li>The ligands are named in alphabetical order before the name of the central metal atom/ion.</li>
+                        <li>Names of anionic ligands end in <strong>-o</strong> (e.g., chloro, cyanido, oxalato), whereas neutral and cationic ligands are the same except <em>aqua</em> (H₂O), <em>ammine</em> (NH₃), <em>carbonyl</em> (CO), and <em>nitrosyl</em> (NO).</li>
+                        <li>Prefixes mono, di, tri, etc., are used to indicate the number of individual ligands. If the ligand name includes a numerical prefix, then terms like bis, tris, tetrakis are used.</li>
+                        <li>Oxidation state of the metal is indicated by Roman numeral in parentheses.</li>
+                        <li>If the complex ion is an anion, the name of the metal ends with the suffix <strong>-ate</strong> (e.g., ferrate, cuprate, argentate).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Examples</h4>
+                    <span class="formula">K₄[Fe(CN)₆] : Potassium hexacyanidoferrate(II)</span>
+                    <span class="formula">[Co(NH₃)₅Cl]Cl₂ : Pentaamminechloridocobalt(III) chloride</span>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Isomerism in Coordination Compounds</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Structural Isomerism</h4>
+                    <ul>
+                        <li><strong>Ionization Isomerism:</strong> Exchange of ions between coordination sphere and ionization sphere. Ex: [Co(NH₃)₅Br]SO₄ and [Co(NH₃)₅SO₄]Br.</li>
+                        <li><strong>Linkage Isomerism:</strong> Arises in complexes containing ambidentate ligands. Ex: [Co(NH₃)₅(NO₂)]²⁺ and [Co(NH₃)₅(ONO)]²⁺.</li>
+                        <li><strong>Coordination Isomerism:</strong> Interchange of ligands between cationic and anionic entities. Ex: [Co(NH₃)₆][Cr(CN)₆] and [Cr(NH₃)₆][Co(CN)₆].</li>
+                        <li><strong>Hydrate (Solvate) Isomerism:</strong> Water molecules act either as a ligand or as water of hydration. Ex: [Cr(H₂O)₆]Cl₃ (violet) and [Cr(H₂O)₅Cl]Cl₂·H₂O (grey-green).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Stereoisomerism</h4>
+                    <ul>
+                        <li><strong>Geometrical Isomerism:</strong> Occurs in heteroleptic complexes. Includes <em>cis</em> (similar ligands adjacent) and <em>trans</em> (similar ligands opposite). Also, <em>fac</em> (facial) and <em>mer</em> (meridional) isomerism in [Ma₃b₃] type octahedral complexes.</li>
+                        <li><strong>Optical Isomerism:</strong> Chiral complexes which are non-superimposable mirror images. They rotate the plane of polarized light (dextro and laevo). Common in octahedral complexes involving didentate ligands like [Co(en)₃]³⁺.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Valence Bond Theory (VBT) & Hybridization</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Main Postulates</h4>
+                    <p>The metal ion uses its empty (n-1)d, ns, np or ns, np, nd orbitals to undergo hybridization, giving a set of equivalent orbitals of definite geometry (tetrahedral, square planar, octahedral).</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Types of Hybridization & Geometries</h4>
+                    <ul>
+                        <li><strong>sp³:</strong> Tetrahedral (C.N. = 4). Example: [NiCl₄]²⁻ (Paramagnetic).</li>
+                        <li><strong>dsp²:</strong> Square Planar (C.N. = 4). Example: [Ni(CN)₄]²⁻ (Diamagnetic).</li>
+                        <li><strong>sp³d²:</strong> Octahedral (Outer orbital complex, high spin). Uses outer nd orbitals. Example: [CoF₆]³⁻.</li>
+                        <li><strong>d²sp³:</strong> Octahedral (Inner orbital complex, low spin). Uses inner (n-1)d orbitals. Example: [Co(NH₃)₆]³⁺.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Magnetic Behavior</h4>
+                    <p>Depends on the presence of unpaired electrons (Paramagnetic) or absence (Diamagnetic). Spin-only magnetic moment μ = &radic;(n(n+2)) BM.</p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Crystal Field Theory (CFT) & Spectrochemical Series</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Basic Concept</h4>
+                    <p>Considers the metal-ligand bond to be purely ionic. Ligands are treated as point charges. When ligands approach the metal ion, the degeneracy of the five d-orbitals is destroyed, splitting them into different energy levels.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Splitting in Octahedral Complexes</h4>
+                    <p>The d-orbitals split into two sets:</p>
+                    <ul>
+                        <li><strong>t₂g set:</strong> Lower energy (dxy, dyz, dxz).</li>
+                        <li><strong>eg set:</strong> Higher energy (dx²-y², dz²).</li>
+                        <li>The energy difference is Crystal Field Splitting Energy (Δ₀).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Spectrochemical Series</h4>
+                    <p>Arrangement of ligands in increasing order of crystal field splitting (Δ₀):</p>
+                    <span class="formula">I⁻ &lt; Br⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; C₂O₄²⁻ &lt; H₂O &lt; EDTA⁴⁻ &lt; NH₃ &lt; en &lt; CN⁻ &lt; CO</span>
+                    <ul>
+                        <li><strong>Strong Field Ligands:</strong> (e.g., CO, CN⁻, en) cause large splitting (Δ₀ > Pairing Energy P). Electrons pair up in t₂g. Form Low Spin complexes.</li>
+                        <li><strong>Weak Field Ligands:</strong> (e.g., Halogens, H₂O) cause small splitting (Δ₀ &lt; P). Electrons jump to eg. Form High Spin complexes.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Colour in Coordination Compounds</h4>
+                    <p>Attributed to <strong>d-d transition</strong> of electrons. An electron from a lower energy d-orbital absorbs light from the visible region and jumps to a higher energy d-orbital. The transmitted light shows the complementary colour.</p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Importance & Applications</summary>
+            <div class="content">
+                <ul>
+                    <li><strong>Metallurgy:</strong> Extraction of silver and gold involves the formation of cyanide complexes [Ag(CN)₂]⁻ and [Au(CN)₂]⁻. Purification of Nickel by Mond process forms [Ni(CO)₄].</li>
+                    <li><strong>Analytical Chemistry:</strong> Estimation of water hardness (Ca²⁺ and Mg²⁺) using EDTA.</li>
+                    <li><strong>Biological Systems:</strong> Chlorophyll is a coordination compound of Magnesium. Haemoglobin is a coordination compound of Iron. Vitamin B12 is a complex of Cobalt.</li>
+                    <li><strong>Medicine:</strong> <em>Cisplatin</em> [Pt(NH₃)₂Cl₂] is used in the treatment of cancer. EDTA is used for the treatment of lead poisoning.</li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="resources-section">
+        <h3>📚 Additional Study Material</h3>
+        <p>Master Coordination Compounds by practicing Previous Year Questions and reading deep-dive long notes.</p>
+        <div class="resource-buttons">
+            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
+            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+        </div>
+    </div>
+
+    <div class="nav-section">
+        <a href="d-and-f-block.html" class="btn btn-home">⬅ Prev: d & f Block</a>
+        <a href="haloalkanes.html" class="btn btn-next">Next: Haloalkanes ➡</a>
+    </div>
+
+</body>
+</html>
+
