@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Electrochemistry - Detailed Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 1rem; }
+        
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #38bdf8; font-size: 2rem; }
+        .header p { color: #94a3b8; font-size: 1rem; }
+
+        .mindmap-container { max-width: 800px; margin: 0 auto; }
+        
+        /* Dark Theme Accordion Design */
+        details {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+        details[open] summary::after { content: '-'; color: #38bdf8; }
+        
+        .content {
+            padding: 0 15px 15px 15px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            border-top: 1px solid #334155;
+            margin-top: 5px;
+            padding-top: 10px;
+        }
+
+        .sub-topic { margin-bottom: 15px; }
+        .sub-topic h4 { color: #f1f5f9; margin-bottom: 5px; border-left: 3px solid #0ea5e9; padding-left: 8px;}
+        ul { margin-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        
+        .formula {
+            display: block;
+            background: #0f172a;
+            padding: 8px;
+            border-radius: 5px;
+            color: #f59e0b;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 5px 0;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #475569; }
+        .btn-next { background: #38bdf8; color: #0f172a; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Chapter 2: Electrochemistry</h1>
+        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    </div>
+
+    <div class="mindmap-container">
+
+        <!-- 1. Electrochemical Cells -->
+        <details>
+            <summary>Electrochemical Cells & Salt Bridge</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Galvanic (Voltaic) Cell</h4>
+                    <ul>
+                        <li>Converts <strong>Chemical Energy</strong> of a spontaneous redox reaction into <strong>Electrical Energy</strong>.</li>
+                        <li><strong>Anode:</strong> Oxidation takes place here. It has a Negative (-) charge.</li>
+                        <li><strong>Cathode:</strong> Reduction takes place here. It has a Positive (+) charge.</li>
+                        <li>Example: Daniell Cell (Zn-Cu cell).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Electrolytic Cell</h4>
+                    <ul>
+                        <li>Converts <strong>Electrical Energy</strong> into <strong>Chemical Energy</strong>.</li>
+                        <li>Used to carry out non-spontaneous redox reactions by passing external current.</li>
+                        <li><strong>Anode:</strong> Positive (+). <strong>Cathode:</strong> Negative (-).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Salt Bridge & Its Functions</h4>
+                    <p>A U-shaped tube containing an inert electrolyte (like KCl, KNO3, or NH4NO3) in agar-agar gel.</p>
+                    <ul>
+                        <li>Completes the inner electrical circuit.</li>
+                        <li>Maintains the electrical neutrality of the two half-cells.</li>
+                        <li>Prevents the mechanical mixing of the two electrolytic solutions.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <!-- 2. Electrode Potential & SHE -->
+        <details>
+            <summary>Electrode Potential & Electrochemical Series</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Standard Electrode Potential (E°)</h4>
+                    <p>The potential difference developed between metal electrode and its ions in solution at 1 M concentration, 1 atm pressure, and 298 K temperature.</p>
+                    <span class="formula">E°(cell) = E°(cathode) - E°(anode)</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Standard Hydrogen Electrode (SHE)</h4>
+                    <ul>
+                        <li>Used as a reference electrode. Its standard electrode potential is arbitrarily taken as <strong>Zero Volts (0.00 V)</strong>.</li>
+                        <li>Consists of a platinum wire coated with platinum black, dipped in 1M H+ solution, with pure H2 gas bubbled at 1 atm.</li>
+                        <li>Representation: Pt(s) | H2(g, 1 atm) | H+(aq, 1 M)</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Electrochemical Series & Applications</h4>
+                    <p>Arrangement of elements in increasing order of their standard reduction potentials.</p>
+                    <ul>
+                        <li><strong>Strongest Oxidizing Agent:</strong> Fluorine (F2) - highest positive E° value.</li>
+                        <li><strong>Strongest Reducing Agent:</strong> Lithium (Li) - highest negative E° value.</li>
+                        <li>Metals with negative E° value can displace Hydrogen gas from dilute acids.</li>
+                        <li>Helps in predicting the feasibility of a redox reaction (Reaction is feasible if E°(cell) is positive).</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <!-- 3. Nernst Equation -->
+        <details>
+            <summary>Nernst Equation & Thermodynamics</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Nernst Equation</h4>
+                    <p>Relates electrode potential with the concentration of ions and temperature.</p>
+                    <p>For a general reaction: aA + bB → cC + dD</p>
+                    <span class="formula">E(cell) = E°(cell) - (2.303 RT / nF) log ([C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>)</span>
+                    <p>At 298 K (25°C), the equation simplifies to:</p>
+                    <span class="formula">E(cell) = E°(cell) - (0.0591 / n) log Q</span>
+                    <p>(where n = number of electrons transferred, Q = reaction quotient)</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Equilibrium Constant (Kc)</h4>
+                    <p>At equilibrium, the cell potential becomes zero (E(cell) = 0).</p>
+                    <span class="formula">E°(cell) = (0.0591 / n) log Kc</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Gibbs Free Energy (ΔG)</h4>
+                    <p>Electrical work done in one second is equal to electrical potential multiplied by total charge passed.</p>
+                    <span class="formula">ΔG = - n F E(cell)</span>
+                    <span class="formula">ΔG° = - n F E°(cell) = - 2.303 RT log Kc</span>
+                    <p>(F = Faraday's constant = 96487 C ≈ 96500 C)</p>
+                </div>
+            </div>
+        </details>
+
+        <!-- 4. Conductance & Kohlrausch's Law -->
+        <details>
+            <summary>Conductance & Kohlrausch's Law</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Resistance & Conductance</h4>
+                    <ul>
+                        <li><strong>Resistance (R):</strong> R = ρ(l/A). Unit: Ohm (Ω)</li>
+                        <li><strong>Conductance (G):</strong> Reciprocal of resistance. G = 1/R = κ(A/l). Unit: Siemens (S) or Ohm⁻¹.</li>
+                        <li><strong>Specific Conductivity (κ):</strong> κ = 1/ρ = G × (l/A). Unit: S cm⁻¹.</li>
+                        <li><strong>Cell Constant (G*):</strong> Ratio of distance between electrodes and area of cross-section. G* = l/A.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Molar Conductivity (Λm)</h4>
+                    <p>Conducting power of all the ions produced by dissolving one mole of an electrolyte.</p>
+                    <span class="formula">Λm = (κ × 1000) / Molarity</span>
+                    <p>Unit: S cm² mol⁻¹</p>
+                    <p><strong>Effect of Dilution:</strong> Both κ and Λm change with concentration. Specific conductivity (κ) decreases with dilution, while Molar conductivity (Λm) increases with dilution.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Kohlrausch's Law of Independent Migration of Ions</h4>
+                    <p>Limiting molar conductivity of an electrolyte can be represented as the sum of the individual contributions of the anion and cation of the electrolyte.</p>
+                    <span class="formula">Λ°m = ν+λ°+ + ν-λ°-</span>
+                    <p><strong>Applications:</strong></p>
+                    <ul>
+                        <li>Calculation of Λ°m for weak electrolytes.</li>
+                        <li>Calculation of degree of dissociation (α) = Λm / Λ°m.</li>
+                        <li>Calculation of dissociation constant (K) = (Cα²) / (1 - α).</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <!-- 5. Faraday's Laws -->
+        <details>
+            <summary>Faraday's Laws of Electrolysis</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>First Law of Electrolysis</h4>
+                    <p>The mass of any substance deposited or liberated at any electrode is directly proportional to the quantity of electricity passed through the electrolyte.</p>
+                    <span class="formula">W ∝ Q ⇒ W = Z × Q</span>
+                    <span class="formula">W = Z × I × t</span>
+                    <p>Where W = mass deposited, Z = electrochemical equivalent, I = current in Amperes, t = time in seconds.</p>
+                    <span class="formula">Z = Equivalent Weight / 96500</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Second Law of Electrolysis</h4>
+                    <p>When the same quantity of electricity is passed through solutions of different electrolytes connected in series, the masses of the substances deposited are directly proportional to their equivalent weights.</p>
+                    <span class="formula">W1 / W2 = E1 / E2</span>
+                </div>
+            </div>
+        </details>
+
+        <!-- 6. Batteries & Corrosion -->
+        <details>
+            <summary>Batteries, Fuel Cells & Corrosion</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Primary Batteries (Non-Rechargeable)</h4>
+                    <ul>
+                        <li><strong>Dry Cell (Leclanche Cell):</strong> Anode is Zinc, Cathode is Graphite rod surrounded by MnO2 and Carbon. Electrolyte is paste of NH4Cl and ZnCl2. Voltage: 1.5 V.</li>
+                        <li><strong>Mercury Cell:</strong> Used in hearing aids, watches. Anode is Zn-Hg amalgam. Voltage remains constant at 1.35 V throughout its life.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Secondary Batteries (Rechargeable)</h4>
+                    <ul>
+                        <li><strong>Lead Storage Battery:</strong> Used in automobiles and inverters. <br>
+                        Anode: Spongy Lead (Pb). Cathode: Lead dioxide (PbO2). Electrolyte: 38% H2SO4. <br>
+                        <em>Discharging Reaction:</em> Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O</li>
+                        <li><strong>Nickel-Cadmium Cell:</strong> Longer life than lead storage battery but expensive. <br>
+                        <em>Reaction:</em> Cd(s) + 2Ni(OH)3(s) → CdO(s) + 2Ni(OH)2(s) + H2O(l)</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Fuel Cells</h4>
+                    <p>Galvanic cells designed to convert the energy of combustion of fuels like hydrogen, methane, methanol directly into electrical energy. Highly efficient and pollution-free.</p>
+                    <ul>
+                        <li><strong>H2-O2 Fuel Cell Reaction:</strong> 2H2(g) + O2(g) → 2H2O(l)</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Corrosion</h4>
+                    <p>Slow coating of surfaces of metallic objects with oxides or other salts. In rusting of iron, a miniature electrochemical cell is formed.</p>
+                    <ul>
+                        <li><strong>Anode (Oxidation):</strong> 2Fe(s) → 2Fe²⁺ + 4e⁻</li>
+                        <li><strong>Cathode (Reduction):</strong> O2(g) + 4H⁺(aq) + 4e⁻ → 2H2O(l)</li>
+                        <li><strong>Prevention:</strong> Barrier protection (painting, greasing), Galvanization (coating with Zinc), and Sacrificial protection.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-section">
+        <a href="solutions.html" class="btn btn-home">⬅ Prev: Solutions</a>
+        <a href="kinetics.html" class="btn btn-next">Next: Kinetics ➡</a>
+    </div>
+
+</body>
+</html>
+
