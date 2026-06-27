@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Chemical Kinetics - Detailed Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 1rem; }
+        
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #38bdf8; font-size: 2rem; }
+        .header p { color: #94a3b8; font-size: 1rem; }
+
+        .mindmap-container { max-width: 800px; margin: 0 auto; }
+        
+        /* Dark Theme Accordion Design */
+        details {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #38bdf8;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+        details[open] summary::after { content: '-'; color: #38bdf8; }
+        
+        .content {
+            padding: 0 15px 15px 15px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            border-top: 1px solid #334155;
+            margin-top: 5px;
+            padding-top: 10px;
+        }
+
+        /* Left border styling exactly like Solutions */
+        .sub-topic { margin-bottom: 15px; }
+        .sub-topic h4 { color: #f1f5f9; margin-bottom: 5px; border-left: 3px solid #0ea5e9; padding-left: 8px;}
+        ul { margin-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        
+        .formula {
+            display: block;
+            background: #0f172a;
+            padding: 8px;
+            border-radius: 5px;
+            color: #f59e0b;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 5px 0;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #475569; }
+        .btn-next { background: #38bdf8; color: #0f172a; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Chapter 3: Chemical Kinetics</h1>
+        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    </div>
+
+    <div class="mindmap-container">
+
+        <details>
+            <summary>Rate of Reaction</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Average Rate (r_av)</h4>
+                    <p>Change in concentration of reactants or products over a specific time interval.</p>
+                    <span class="formula">r_av = - Δ[R]/Δt = + Δ[P]/Δt</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Instantaneous Rate (r_inst)</h4>
+                    <p>Rate of reaction at a particular instant of time (when Δt → 0).</p>
+                    <span class="formula">r_inst = - d[R]/dt = + d[P]/dt</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>General Reaction Expression</h4>
+                    <p>For reaction: aA + bB → cC + dD</p>
+                    <span class="formula">Rate = - (1/a)d[A]/dt = - (1/b)d[B]/dt = + (1/c)d[C]/dt = + (1/d)d[D]/dt</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Factors Affecting Rate</h4>
+                    <ul>
+                        <li><strong>Concentration:</strong> Rate usually increases with an increase in reactant concentration.</li>
+                        <li><strong>Temperature:</strong> Rate increases with temperature (rule of thumb: rate doubles for every 10°C rise).</li>
+                        <li><strong>Catalyst:</strong> Increases rate by providing an alternate path with lower activation energy.</li>
+                        <li><strong>Surface Area:</strong> Greater surface area of solid reactants increases the rate.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Rate Law & Rate Constant (k)</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Rate Law</h4>
+                    <p>Mathematical expression correlating rate of reaction with the molar concentration of reactants.</p>
+                    <span class="formula">Rate = k[A]<sup>x</sup>[B]<sup>y</sup></span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Rate Constant (k)</h4>
+                    <p>Also known as specific reaction rate. It is the rate of reaction when the concentration of all reactants is unity (1 mol/L).</p>
+                    <ul>
+                        <li>Independent of initial concentration.</li>
+                        <li>Depends heavily on Temperature.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Units of Rate Constant (k)</h4>
+                    <p>General formula for unit: <strong>(mol L<sup>-1</sup>)<sup>1-n</sup> s<sup>-1</sup></strong> (where n is the order)</p>
+                    <ul>
+                        <li><strong>Zero Order:</strong> mol L<sup>-1</sup> s<sup>-1</sup></li>
+                        <li><strong>First Order:</strong> s<sup>-1</sup></li>
+                        <li><strong>Second Order:</strong> mol<sup>-1</sup> L s<sup>-1</sup></li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Molecularity vs Order of Reaction</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Molecularity</h4>
+                    <ul>
+                        <li>Number of reacting species (atoms, ions, molecules) taking part in an elementary step that must collide simultaneously.</li>
+                        <li>It is a <strong>Theoretical</strong> concept.</li>
+                        <li>Cannot be zero, negative, or fractional. Always a whole number (1, 2, or 3).</li>
+                        <li>Has no meaning for complex (multi-step) reactions.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Order of Reaction</h4>
+                    <ul>
+                        <li>Sum of the powers of concentration terms in the experimentally determined rate law. (n = x + y).</li>
+                        <li>It is an <strong>Experimental</strong> value.</li>
+                        <li>Can be zero, fractional, or negative.</li>
+                        <li>Assigned for both elementary and complex reactions (determined by the slowest step).</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Integrated Rate Equations & Half-Life</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Zero Order Reactions</h4>
+                    <p>Rate is independent of the concentration of reactants. (e.g., Decomposition of NH3 on Pt surface).</p>
+                    <span class="formula">k = ([R]₀ - [R]) / t</span>
+                    <p><strong>Half-Life (t½):</strong> Time taken for concentration to reduce to half.</p>
+                    <span class="formula">t½ = [R]₀ / 2k</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>First Order Reactions</h4>
+                    <p>Rate depends on the first power of reactant concentration. (e.g., Natural radioactive decay).</p>
+                    <span class="formula">k = (2.303 / t) log([R]₀ / [R])</span>
+                    <p><strong>Half-Life (t½):</strong> Independent of initial concentration.</p>
+                    <span class="formula">t½ = 0.693 / k</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Pseudo First Order Reaction</h4>
+                    <p>Reactions which are actually of higher order but behave as first order due to one reactant being present in large excess.</p>
+                    <ul>
+                        <li><strong>Example 1:</strong> Acid hydrolysis of ethyl acetate (Water is in excess).</li>
+                        <li><strong>Example 2:</strong> Inversion of cane sugar.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Theories of Reaction & Arrhenius Equation</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Collision Theory</h4>
+                    <ul>
+                        <li>Reactant molecules are assumed to be hard spheres. Reaction occurs only when they collide.</li>
+                        <li><strong>Effective Collisions:</strong> Must possess sufficient energy (Threshold energy) and proper orientation.</li>
+                        <li><strong>Formula:</strong> Rate = P × Z_ab × e<sup>-Ea/RT</sup></li>
+                        <li>(P = Steric/Probability factor, Z_ab = Collision frequency)</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Activation Energy (Ea)</h4>
+                    <p>The extra energy required by reactant molecules to reach the threshold energy.</p>
+                    <span class="formula">Threshold Energy = Ea + Average kinetic energy of reactants</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Arrhenius Equation</h4>
+                    <p>Gives the exact dependence of rate constant on temperature.</p>
+                    <span class="formula">k = A × e<sup>-Ea/RT</sup></span>
+                    <p>Logarithmic form:</p>
+                    <span class="formula">log k = log A - Ea / (2.303 RT)</span>
+                    <p>Comparing at two different temperatures (T1 and T2):</p>
+                    <span class="formula">log(k₂/k₁) = (Ea / 2.303 R) [ (T₂ - T₁) / (T₁T₂) ]</span>
+                </div>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="nav-section">
+        <a href="electrochemistry.html" class="btn btn-home">⬅ Prev Chapter</a>
+        <a href="d-and-f-block.html" class="btn btn-next">Next: d & f Block ➡</a>
+    </div>
+
+</body>
+</html>
+
