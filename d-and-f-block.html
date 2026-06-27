@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: d & f Block Elements - Detailed Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        /* New Green Theme */
+        body { background-color: #022c22; color: #ecfdf5; line-height: 1.6; padding: 1rem; }
+        
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #34d399; font-size: 2rem; }
+        .header p { color: #a7f3d0; font-size: 1rem; }
+
+        .mindmap-container { max-width: 800px; margin: 0 auto; }
+        
+        /* Dark Green Accordion Design */
+        details {
+            background: #064e3b;
+            border: 1px solid #047857;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34d399;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #6ee7b7;
+        }
+        details[open] summary::after { content: '-'; color: #34d399; }
+        
+        .content {
+            padding: 0 15px 15px 15px;
+            color: #d1fae5;
+            font-size: 0.95rem;
+            border-top: 1px solid #047857;
+            margin-top: 5px;
+            padding-top: 10px;
+        }
+
+        .sub-topic { margin-bottom: 15px; }
+        .sub-topic h4 { color: #f8fafc; margin-bottom: 5px; border-left: 3px solid #10b981; padding-left: 8px;}
+        ul { margin-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        
+        .formula {
+            display: block;
+            background: #022c22;
+            padding: 8px;
+            border-radius: 5px;
+            color: #fbbf24;
+            font-family: monospace;
+            font-size: 1rem;
+            margin: 5px 0;
+            border-left: 3px solid #fbbf24;
+        }
+
+        /* Long Notes & PYQ Section Styling */
+        .resources-section {
+            max-width: 800px;
+            margin: 3rem auto 1rem auto;
+            background: rgba(4, 120, 87, 0.3);
+            border: 2px dashed #34d399;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .resources-section h3 { color: #34d399; margin-bottom: 10px; }
+        .resources-section p { color: #a7f3d0; margin-bottom: 20px; font-size: 0.9rem; }
+        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .res-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-notes { background: #fbbf24; color: #022c22; }
+        .btn-notes:hover { background: #f59e0b; }
+        .btn-pyq { background: #ef4444; color: #fff; }
+        .btn-pyq:hover { background: #dc2626; }
+
+        /* Navigation */
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #065f46; border: 1px solid #10b981; }
+        .btn-next { background: #10b981; color: #022c22; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Chapter 4: d & f Block Elements</h1>
+        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    </div>
+
+    <div class="mindmap-container">
+
+        <details>
+            <summary>Introduction & Electronic Configuration</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>What are Transition Elements?</h4>
+                    <p>Elements having incompletely filled d-orbitals in their ground state or in any of their common oxidation states. Zinc, Cadmium, and Mercury (Zn, Cd, Hg) have fully filled d-orbitals (d¹⁰), hence they are not considered typical transition elements.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>General Electronic Configuration</h4>
+                    <span class="formula">(n-1)d<sup>1-10</sup> ns<sup>1-2</sup></span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Important Exceptions</h4>
+                    <ul>
+                        <li><strong>Chromium (Cr, Z=24):</strong> [Ar] 3d⁵ 4s¹ (Half-filled stability)</li>
+                        <li><strong>Copper (Cu, Z=29):</strong> [Ar] 3d¹⁰ 4s¹ (Fully-filled stability)</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Physical Properties & Trends</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Enthalpy of Atomization</h4>
+                    <p>Transition metals have high enthalpies of atomization because of strong metallic bonding due to the involvement of a large number of unpaired electrons in the (n-1)d orbitals.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Atomic and Ionic Radii</h4>
+                    <ul>
+                        <li>Radii decrease with increase in atomic number in a given series.</li>
+                        <li><strong>Lanthanoid Contraction:</strong> The almost identical radii of Zr (160 pm) and Hf (159 pm) is due to the poor shielding effect of 4f electrons, which increases effective nuclear charge.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Ionization Enthalpies</h4>
+                    <p>Generally increases from left to right along a series. However, the increase is not as steep as in the case of s and p block elements.</p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Oxidation States & Magnetic Properties</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Variable Oxidation States</h4>
+                    <p>Transition elements show variable oxidation states due to the participation of both ns and (n-1)d electrons (because their energy levels are very close).</p>
+                    <ul>
+                        <li><strong>Scandium (Sc):</strong> Shows only +3 oxidation state.</li>
+                        <li><strong>Manganese (Mn):</strong> Shows maximum number of oxidation states (+2 to +7) in the 3d series.</li>
+                        <li><strong>Osmium (Os) & Ruthenium (Ru):</strong> Show the highest oxidation state of +8.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Magnetic Properties</h4>
+                    <p>Due to the presence of unpaired electrons, most transition metal ions are Paramagnetic.</p>
+                    <p><strong>Spin-Only Magnetic Moment (μ):</strong></p>
+                    <span class="formula">μ = &radic;(n(n+2)) B.M.</span>
+                    <p>Where 'n' is the number of unpaired electrons and B.M. is Bohr Magneton.</p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Colour, Catalysis & Alloy Formation</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Formation of Coloured Ions</h4>
+                    <p>Most of the transition metal compounds are coloured in solid form or in solution. This is due to <strong>d-d transition</strong>. When visible light falls, an electron absorbs energy and jumps from a lower energy d-orbital to a higher energy d-orbital. Ions with d⁰ or d¹⁰ configuration (like Zn²⁺, Ti⁴⁺) are colourless.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Catalytic Properties</h4>
+                    <p>They act as excellent catalysts because:</p>
+                    <ul>
+                        <li>They can show multiple oxidation states.</li>
+                        <li>They provide a large surface area for adsorption of reactant gases.</li>
+                        <li>Example: V₂O₅ in Contact Process, Fe in Haber's Process.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Interstitial Compounds & Alloys</h4>
+                    <ul>
+                        <li><strong>Interstitial Compounds:</strong> Formed when small atoms like H, C, or N are trapped inside the crystal lattices of metals. They are very hard and have high melting points.</li>
+                        <li><strong>Alloys:</strong> Formed easily because transition metals have similar atomic radii (difference is less than 15%), allowing them to replace each other in the crystal lattice.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Important Compounds: K2Cr2O7 & KMnO4</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Potassium Dichromate (K₂Cr₂O₇)</h4>
+                    <p>Acts as a strong oxidizing agent in acidic medium.</p>
+                    <span class="formula">Cr₂O₇²⁻ + 14H⁺ + 6e⁻ &rarr; 2Cr³⁺ + 7H₂O</span>
+                    <ul>
+                        <li>Oxidizes Iodide (I⁻) to Iodine (I₂).</li>
+                        <li>Oxidizes Fe²⁺ to Fe³⁺.</li>
+                        <li>Chromate (yellow) and Dichromate (orange) are interconvertible depending on pH.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Potassium Permanganate (KMnO₄)</h4>
+                    <p>Intense purple colour. Acts as a very strong oxidizing agent in acidic, neutral, and alkaline mediums.</p>
+                    <p><strong>In Acidic Medium:</strong></p>
+                    <span class="formula">MnO₄⁻ + 8H⁺ + 5e⁻ &rarr; Mn²⁺ + 4H₂O</span>
+                    <ul>
+                        <li>Oxidizes Oxalate (C₂O₄²⁻) to CO₂.</li>
+                        <li>Oxidizes Fe²⁺ to Fe³⁺.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>The f-Block: Lanthanoids & Actinoids</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Lanthanoids (4f series)</h4>
+                    <ul>
+                        <li>General configuration: [Xe] 4f¹⁻¹⁴ 5d⁰⁻¹ 6s²</li>
+                        <li>Most common oxidation state is <strong>+3</strong> (Though Ce shows +4 and Eu shows +2).</li>
+                        <li><strong>Lanthanoid Contraction:</strong> Steady decrease in atomic/ionic radii from La to Lu due to poor shielding of 4f electrons.</li>
+                        <li>Used in making <em>Mischmetal</em> (an alloy used in bullets and lighter flints).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Actinoids (5f series)</h4>
+                    <ul>
+                        <li>General configuration: [Rn] 5f¹⁻¹⁴ 6d⁰⁻¹ 7s²</li>
+                        <li>All are radioactive. Elements after Uranium are called Transuranic elements.</li>
+                        <li>Show a large number of oxidation states because 5f, 6d, and 7s levels are of comparable energies.</li>
+                        <li>Actinoid contraction is greater from element to element than lanthanoid contraction due to even poorer shielding by 5f electrons.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+    </div>
+
+    <div class="resources-section">
+        <h3>📚 Additional Study Material</h3>
+        <p>Master this chapter by practicing Previous Year Questions and reading deep-dive long notes.</p>
+        <div class="resource-buttons">
+            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
+            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+        </div>
+    </div>
+
+    <div class="nav-section">
+        <a href="kinetics.html" class="btn btn-home">⬅ Prev: Kinetics</a>
+        <a href="coordination.html" class="btn btn-next">Next: Coordination ➡</a>
+    </div>
+
+</body>
+</html>
