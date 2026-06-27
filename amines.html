@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Amines - Shoorveer Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        /* Lovely Red Premium Theme */
+        body { background-color: #2a0808; color: #fecaca; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
+        
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #ef4444; font-size: 2.2rem; text-shadow: 0 0 12px rgba(239, 68, 68, 0.5); }
+        .header p { color: #fca5a5; font-size: 1rem; }
+
+        /* Dynamic Motivation Section */
+        .motivation-container {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #ef4444;
+            box-shadow: 0 5px 20px rgba(239, 68, 68, 0.3);
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #hindiQuote { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 8px; transition: opacity 0.5s; }
+        #englishQuote { font-size: 0.95rem; font-style: italic; color: #fecaca; transition: opacity 0.5s; }
+
+        .mindmap-container { max-width: 800px; margin: 0 auto; }
+        
+        /* Lovely Red Accordion Design */
+        details {
+            background: #450a0a;
+            border: 1px solid #b91c1c;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        
+        summary {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ef4444;
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #f87171;
+        }
+        details[open] summary::after { content: '-'; color: #ef4444; }
+        
+        .content {
+            padding: 0 15px 15px 15px;
+            color: #fee2e2;
+            font-size: 0.95rem;
+            border-top: 1px solid #b91c1c;
+            margin-top: 5px;
+            padding-top: 10px;
+        }
+
+        .sub-topic { margin-bottom: 15px; }
+        .sub-topic h4 { color: #ffffff; margin-bottom: 5px; border-left: 3px solid #ef4444; padding-left: 8px;}
+        ul { margin-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; }
+        
+        .formula {
+            display: block;
+            background: #2a0808;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fca5a5; 
+            font-family: monospace;
+            font-size: 1.05rem;
+            margin: 5px 0;
+            border-left: 3px solid #f87171;
+            overflow-x: auto;
+        }
+
+        /* Long Notes & PYQ Section */
+        .resources-section {
+            max-width: 800px;
+            margin: 3rem auto 1rem auto;
+            background: rgba(185, 28, 28, 0.15);
+            border: 2px dashed #ef4444;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .resources-section h3 { color: #ef4444; margin-bottom: 10px; font-size: 1.5rem;}
+        .resources-section p { color: #fca5a5; margin-bottom: 20px; }
+        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .res-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-notes { background: #ef4444; color: #ffffff; }
+        .btn-notes:hover { background: #dc2626; }
+        .btn-pyq { background: #7f1d1d; color: #ffffff; border: 1px solid #ef4444;}
+        .btn-pyq:hover { background: #991b1b; }
+
+        /* Trusted By Infinite Marquee with Professional SVG Logos */
+        .trusted-section {
+            margin: 4rem 0;
+            text-align: center;
+            overflow: hidden;
+            background: #3f0909;
+            padding: 2rem 0;
+            border-top: 1px solid #b91c1c;
+            border-bottom: 1px solid #b91c1c;
+        }
+        .trusted-section h3 {
+            color: #f87171;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .marquee-container {
+            display: flex;
+            width: 250%; 
+            animation: scroll 22s linear infinite;
+        }
+        .marquee-container:hover { animation-play-state: paused; }
+        .brand-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            justify-content: center;
+            padding: 0 30px;
+            white-space: nowrap;
+            color: #fee2e2;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .svg-logo { width: 35px; height: 35px; fill: #ef4444; }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* English Motivation Paragraph */
+        .long-motivation {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: #450a0a;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #ef4444;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .long-motivation p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #fecaca;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Glowing Founder Name */
+        .founder-name {
+            display: block;
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ef4444, 0 0 10px #ef4444, 0 0 20px #ef4444; }
+            to { text-shadow: 0 0 10px #f87171, 0 0 20px #f87171, 0 0 30px #f87171, 0 0 40px #f87171; }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #2a0808;
+            color: #fca5a5;
+            font-size: 0.95rem;
+            border-top: 1px solid #7f1d1d;
+        }
+        footer p { margin-bottom: 5px; }
+        footer a { color: #ef4444; text-decoration: none; font-weight: bold; }
+
+        /* Navigation */
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
+        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #7f1d1d; border: 1px solid #b91c1c; }
+        .btn-next { background: #ef4444; color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Motivation Section (Changes every 5 sec) -->
+    <div class="motivation-container">
+        <div id="hindiQuote">शुरुआत करने के लिए महान होना ज़रूरी नहीं, पर महान होने के लिए शुरुआत करनी पड़ती है।</div>
+        <div id="englishQuote">"You don't have to be great to start, but you have to start to be great."</div>
+    </div>
+
+    <div class="header">
+        <h1>Chapter 9: Amines</h1>
+        <p>Complete Detailed Mind Map & Extended Reactions (Click on topics to expand)</p>
+    </div>
+
+    <div class="mindmap-container">
+
+        <!-- 1. Structure & Classification -->
+        <details>
+            <summary>Structure, Classification & Nomenclature</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Structure of Amines</h4>
+                    <p>Nitrogen atom in amines is <strong>sp³ hybridized</strong>. The geometry is <strong>pyramidal</strong> due to the presence of one unshared electron pair (lone pair). The C-N-C or C-N-H bond angle is slightly less than 109.5° (e.g., 108° in trimethylamine) due to lone pair-bond pair repulsion.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Classification</h4>
+                    <ul>
+                        <li><strong>Primary (1°) Amine:</strong> Replace one H of NH₃ with an alkyl/aryl group (R-NH₂).</li>
+                        <li><strong>Secondary (2°) Amine:</strong> Replace two H atoms (R₂NH).</li>
+                        <li><strong>Tertiary (3°) Amine:</strong> Replace all three H atoms (R₃N).</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Nomenclature Rules</h4>
+                    <p>Aliphatic amines are named by adding suffix 'amine' to the parent alkane (Alkanamine). For 2° and 3° amines, the largest group is chosen as the parent chain, and other groups are indicated with prefix 'N-alkyl'.</p>
+                    <span class="formula">CH₃-NH-CH₂CH₃ : N-Methylethanamine</span>
+                    <span class="formula">(CH₃)₃N : N,N-Dimethylmethanamine</span>
+                </div>
+            </div>
+        </details>
+
+        <!-- 2. Preparation of Amines -->
+        <details>
+            <summary>Preparation Methods (Important Name Reactions)</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Reduction of Nitro, Nitriles & Amides</h4>
+                    <ul>
+                        <li><strong>Nitro compounds:</strong> Reduced by H₂/Pd or Sn/HCl or Fe/HCl (Fe/HCl is preferred because FeCl₂ formed gets hydrolyzed to release HCl during the reaction).<br><span class="formula">R-NO₂ + 6[H] (Sn/HCl) &rarr; R-NH₂ + 2H₂O</span></li>
+                        <li><strong>Nitriles:</strong> Reduced using LiAlH₄ or H₂/Ni or Na(Hg)/C₂H₅OH (Mendius Reduction).<br><span class="formula">R-C&equiv;N + 4[H] &rarr; R-CH₂-NH₂</span> (Steps up the carbon chain).</li>
+                        <li><strong>Amides:</strong> Reduced by LiAlH₄ to yield amines with same number of carbon atoms.<br><span class="formula">R-CO-NH₂ + LiAlH₄ &rarr; R-CH₂-NH₂</span></li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Gabriel Phthalimide Synthesis (For 1° Aliphatic Amines Only)</h4>
+                    <p>Phthalimide reacts with ethanolic KOH to form potassium salt. Heating this salt with <strong>alkyl halide</strong> followed by alkaline hydrolysis produces Primary Aliphatic Amines.</p>
+                    <p><em>Note:</em> Aromatic primary amines (Aniline) <strong>cannot</strong> be prepared by this method because aryl halides do not undergo nucleophilic substitution with the anion formed by phthalimide.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Hoffmann Bromamide Degradation (Step-Down Reaction)</h4>
+                    <p>Primary amides react with bromine (Br₂) in aqueous or ethanolic solution of NaOH to form primary amines. The amine formed contains <strong>one carbon less</strong> than the starting amide.</p>
+                    <span class="formula">R-CO-NH₂ + Br₂ + 4NaOH &rarr; R-NH₂ + Na₂CO₃ + 2NaBr + 2H₂O</span>
+                </div>
+            </div>
+        </details>
+
+        <!-- 3. Basic Character of Amines -->
+        <details>
+            <summary>Basic Character & pKb Trends (Crucial for Boards/JEE)</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Basic Nature</h4>
+                    <p>Amines act as Lewis bases due to the lone pair of electrons on the nitrogen atom. They react with acids to form salts. Higher the basicity, lower is the pKb value.</p>
+                    <span class="formula">R-NH₂ + HX &rarr; R-NH₃⁺ X⁻ (Amine Salt)</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Aliphatic Amines vs Ammonia</h4>
+                    <p>Aliphatic amines are stronger bases than NH₃ due to the +I (electron donating) effect of alkyl groups, which increases electron density on the nitrogen atom.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Basicity Order in Gas Phase</h4>
+                    <p>In gas phase, only +I effect works. Order: <strong>3° > 2° > 1° > NH₃</strong>.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Basicity Order in Aqueous Phase (Most Asked)</h4>
+                    <p>In aqueous phase, basicity depends on three factors: +I effect, Solvation effect (hydrogen bonding with water), and Steric hindrance. The order is anomalous:</p>
+                    <ul>
+                        <li><strong>For Methyl Group (-CH₃):</strong> 2° > 1° > 3° > NH₃<br><span class="formula">(CH₃)₂NH > CH₃NH₂ > (CH₃)₃N > NH₃</span></li>
+                        <li><strong>For Ethyl Group (-C₂H₅):</strong> 2° > 3° > 1° > NH₃<br><span class="formula">(C₂H₅)₂NH > (C₂H₅)₃N > C₂H₅NH₂ > NH₃</span></li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Aromatic Amines (Aniline) vs Ammonia</h4>
+                    <p>Aniline is a <strong>weaker base</strong> than ammonia. The lone pair of electrons on nitrogen is involved in resonance with the benzene ring, making it less available for protonation.</p>
+                </div>
+            </div>
+        </details>
+
+        <!-- 4. Chemical Reactions of Amines -->
+        <details>
+            <summary>Chemical Reactions & Distinction Tests</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Carbylamine Reaction (Isocyanide Test)</h4>
+                    <p>Aliphatic and aromatic <strong>Primary (1°) Amines</strong> on heating with chloroform and ethanolic potassium hydroxide form foul-smelling isocyanides (carbylamines). Secondary and tertiary amines do NOT show this reaction.</p>
+                    <span class="formula">R-NH₂ + CHCl₃ + 3KOH (Heat) &rarr; R-NC + 3KCl + 3H₂O</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>Reaction with Nitrous Acid (HNO₂)</h4>
+                    <ul>
+                        <li><strong>1° Aliphatic Amines:</strong> Form aliphatic diazonium salts which are unstable and instantly decompose to yield alcohols and nitrogen gas (effervescence).</li>
+                        <li><strong>1° Aromatic Amines (Aniline):</strong> React with HNO₂ (NaNO₂ + HCl) at low temperature (0-5°C) to form stable Arenediazonium salts.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Hinsberg's Test (Distinction of 1°, 2°, 3° Amines)</h4>
+                    <p>Reagent: <strong>Benzenesulfonyl chloride (C₆H₅SO₂Cl)</strong>.</p>
+                    <ul>
+                        <li><strong>1° Amine:</strong> Forms N-alkylbenzenesulfonamide. The H atom attached to nitrogen is highly acidic. It is <strong>soluble in alkali</strong>.</li>
+                        <li><strong>2° Amine:</strong> Forms N,N-dialkylbenzenesulfonamide. Does not have an acidic H atom attached to N. It is <strong>insoluble in alkali</strong>.</li>
+                        <li><strong>3° Amine:</strong> Does not react with Hinsberg's reagent at all.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Electrophilic Substitution of Aniline</h4>
+                    <ul>
+                        <li><strong>Bromination:</strong> Aniline reacts with Bromine water at room temp to give a white precipitate of 2,4,6-tribromoaniline. (To get mono-substituted product, NH₂ group is first protected by acetylation with acetic anhydride).</li>
+                        <li><strong>Nitration:</strong> Direct nitration gives a significant amount of meta-nitroaniline (47%) along with para and ortho, because in acidic medium aniline gets protonated to anilinium ion which is meta-directing.</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <!-- 5. Diazonium Salts -->
+        <details>
+            <summary>Diazonium Salts & Their Reactions</summary>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Structure & Stability</h4>
+                    <p>General formula: <strong>ArN₂⁺X⁻</strong>. Arene diazonium salts are stable for a short time at low temperatures (0-5°C) due to resonance stabilization.</p>
+                </div>
+                <div class="sub-topic">
+                    <h4>Replacement Reactions</h4>
+                    <ul>
+                        <li><strong>Sandmeyer Reaction:</strong> Replacement of diazo group by Cl, Br, or CN using Cu(I) salts (Cu₂Cl₂, Cu₂Br₂, CuCN).</li>
+                        <li><strong>Gattermann Reaction:</strong> Replacement of diazo group by Cl or Br using Copper powder in presence of corresponding halogen acid (Cu/HCl or Cu/HBr).</li>
+                        <li><strong>Balz-Schiemann Reaction (Fluorination):</strong> Diazonium salt is treated with fluoroboric acid (HBF₄) to form a precipitate, which on heating decomposes to yield fluorobenzene.</li>
+                        <li><strong>Replacement by H (Reduction):</strong> Treated with mild reducing agents like hypophosphorous acid (H₃PO₂) or ethanol to give Benzene.</li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Coupling Reactions (Azo Dye Test)</h4>
+                    <p>Diazonium salts react with highly reactive aromatic compounds (like phenol, aniline) to form highly colored azo compounds (-N=N- bond).</p>
+                    <ul>
+                        <li>With <strong>Phenol</strong> (in weakly basic medium pH 9-10) &rarr; p-Hydroxyazobenzene (<strong>Orange Dye</strong>).</li>
+                        <li>With <strong>Aniline</strong> (in weakly acidic medium pH 4-5) &rarr; p-Aminoazobenzene (<strong>Yellow Dye</strong>).</li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+    </div>
+
+    <!-- Long Notes & PYQ Space -->
+    <div class="resources-section">
+        <h3>📂 Advance Study Materials</h3>
+        <p>Master Amines conversions, basicity orders, and Hinsberg's Test by practicing PYQs and reading our Premium Long Notes.</p>
+        <div class="resource-buttons">
+            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
+            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+        </div>
+    </div>
+
+    <!-- Professional Trusted By Marquee -->
+    <div class="trusted-section">
+        <h3>TRUSTED BY SHOORVEER NOTES GROUP</h3>
+        <div class="marquee-container">
+            <!-- Set 1 -->
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M8.5,12A3.5,3.5 0 0,0 12,15.5A3.5,3.5 0 0,0 15.5,12A3.5,3.5 0 0,0 12,8.5A3.5,3.5 0 0,0 8.5,12Z"/></svg>
+                12TH PHYSICS SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M11,17H9V15H7V13H9V11H11V13H13V15H11V17M17,17H15V15H17V17M17,13H15V11H17V13Z"/></svg>
+                12TH MATHS SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M16 2.01l-10 10.02v3.97l10-10.02V2.01zm3 3l-10 10.02v3.97l10-10.02v-3.97zm-14.88 12.87l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12z"/></svg>
+                12TH CHEMISTRY SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                12TH BIOLOGY SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M18,22H6A2,2 0 0,1 4,20V4C4,2.89 4.9,2 6,2H14L20,8V20A2,2 0 0,1 18,22M13,3.5V9H18.5L13,3.5M7,13H17V11H7V13M7,17H14V15H7V17Z"/></svg>
+                12TH ENGLISH SHOORVEER NOTES
+            </div>
+            
+            <!-- Set 2 (Exact Duplicate for Seamless Loop) -->
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M8.5,12A3.5,3.5 0 0,0 12,15.5A3.5,3.5 0 0,0 15.5,12A3.5,3.5 0 0,0 12,8.5A3.5,3.5 0 0,0 8.5,12Z"/></svg>
+                12TH PHYSICS SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M11,17H9V15H7V13H9V11H11V13H13V15H11V17M17,17H15V15H17V17M17,13H15V11H17V13Z"/></svg>
+                12TH MATHS SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M16 2.01l-10 10.02v3.97l10-10.02V2.01zm3 3l-10 10.02v3.97l10-10.02v-3.97zm-14.88 12.87l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12z"/></svg>
+                12TH CHEMISTRY SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/></svg>
+                12TH BIOLOGY SHOORVEER NOTES
+            </div>
+            <div class="brand-item">
+                <svg class="svg-logo" viewBox="0 0 24 24"><path d="M18,22H6A2,2 0 0,1 4,20V4C4,2.89 4.9,2 6,2H14L20,8V20A2,2 0 0,1 18,22M13,3.5V9H18.5L13,3.5M7,13H17V11H7V13M7,17H14V15H7V17Z"/></svg>
+                12TH ENGLISH SHOORVEER NOTES
+            </div>
+        </div>
+    </div>
+
+    <!-- Long Motivational Block -->
+    <div class="long-motivation">
+        <p>
+            Listen to me carefully, warrior. The journey of education is never a straight line; it is filled with sleepless nights, frustrating formulas, and moments where giving up feels like the easiest option. But you are not built for the easy path. You are a 'Shoorveer'—a brave soul destined to conquer mountains of challenges. Every single equation you balance, every concept you grasp, and every failure you overcome is silently shaping you into an unstoppable force. The world belongs to those who do not flinch in the face of adversity. Dream so big that your fears look insignificant, work so hard that your idols become your rivals, and remember that the fire inside you burns brighter than the fire around you. Keep grinding, keep pushing, because your signature will soon become an autograph!
+        </p>
+        <span class="founder-name">~ Jatin Sharma <br><span style="font-size:0.8rem; font-weight:normal; letter-spacing:1px; color:#fca5a5;">(Founder of Shoorveer Notes Group)</span></span>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-section">
+        <a href="aldehydes.html" class="btn btn-home">⬅ Prev: Aldehydes</a>
+        <a href="biomolecules.html" class="btn btn-next">Next: Biomolecules ➡</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Made with 🔥 by Shoorveer Notes</strong></p>
+        <p>Have questions? Email us at: <a href="mailto:contact@shoorveernotes.com">contact@shoorveernotes.com</a></p>
+    </footer>
+
+    <!-- JavaScript for 50 Dynamic Motivations (Changes Every 5 Seconds) -->
+    <script>
+        const hindiQuotes = [
+            "वक्त से लड़कर जो नसीब बदल दे, इंसान वही जो अपनी तकदीर बदल दे।",
+            "संघर्ष में आदमी अकेला होता है, सफलता में दुनिया उसके साथ होती है।",
+            "जितना बड़ा संघर्ष होगा, जीत उतनी ही शानदार होगी।",
+            "राह संघर्ष की जो चलता है, वही संसार को बदलता है।",
+            "हौसले के तरकश में कोशिश का वो तीर ज़िंदा रखो।",
+            "ज़िंदगी में कभी उदास ना होना, कभी किसी बात पर निराश ना होना।",
+            "मंज़िल उन्हें नहीं मिलती जिनके ख्वाब बड़े होते हैं, मंज़िल उन्हें मिलती है जो ज़िद पर अड़े होते हैं।",
+            "अगर सूरज की तरह जलना है, तो रोज़ उगना पड़ेगा।",
+            "सफलता एक दिन में नहीं मिलती, लेकिन एक दिन ज़रूर मिलती है।",
+            "बुलंद हो हौसला तो मुट्ठी में हर मुकाम है।",
+            "मेहनत इतनी खामोशी से करो कि कामयाबी शोर मचा दे।",
+            "जो मंजिलों को पाने की चाहत रखते हैं, वो समंदरों पर भी पत्थरों के पुल बना देते हैं।",
+            "हारना सबसे बुरी विफलता नहीं है, कोशिश ना करना ही सबसे बड़ी विफलता है।",
+            "पानी को बर्फ बदलने में वक्त लगता है, ढले हुए सूरज को निकलने में वक्त लगता है।",
+            "अगर आप कुछ ऐसा चाहते हैं जो आपके पास कभी नहीं था, तो आपको कुछ ऐसा करना होगा जो आपने कभी नहीं किया।",
+            "गिरकर उठना, उठकर चलना, यही तो है जीवन की कला।",
+            "कोई भी लक्ष्य मनुष्य के साहस से बड़ा नहीं, हारा वही जो लड़ा नहीं।",
+            "जो तूफानों में पलते हैं, वही दुनिया बदलते हैं।",
+            "जहाँ तक दिखाई दे वहाँ तक जाने की कोशिश करें।",
+            "सोच को अपनी ले जाओ उस शिखर तक, कि उसके आगे सितारे भी झुक जाएं।",
+            "हर कोशिश में शायद सफलता नहीं मिल सकती लेकिन हर सफलता का कारण कोशिश ही होती है।",
+            "जीतने का मज़ा तभी आता है, जब सभी आपके हारने का इंतज़ार कर रहे हों।",
+            "कामयाब लोग अपने फैसले से दुनिया बदल देते हैं।",
+            "मुश्किल नहीं है कुछ दुनिया में, तू जरा हिम्मत तो कर।",
+            "अपने सपनो को जिन्दा रखिए।",
+            "जो पानी से नहाएगा वो सिर्फ लिबास बदलेगा, जो पसीने से नहाएगा वो इतिहास बदलेगा।",
+            "बिना संघर्ष के कोई महान नहीं बनता।",
+            "उठो, जागो और तब तक मत रुको जब तक लक्ष्य की प्राप्ति ना हो जाये।",
+            "अगर मेहनत आदत बन जाए, तो कामयाबी मुकद्दर बन जाती है।",
+            "कल को आसान बनाने के लिए आज आपको कड़ी मेहनत करनी ही पड़ेगी।",
+            "रास्ते कभी खत्म नहीं होते, बस लोग हिम्मत हार जाते हैं।",
+            "उड़ने में बुराई नहीं है, आप भी उड़ें, लेकिन उतना ही जहाँ से ज़मीन साफ़ दिखाई दे।",
+            "अपने खिलाफ बातों को ख़ामोशी से सुन लो, यकीन मानो वक़्त बेहतरीन जवाब देगा।",
+            "इंसान सफल तब होता है, जब वह दुनिया को नहीं, खुद को बदलना शुरू कर देता है।",
+            "जब थक जाओ तो आराम कर लो, लेकिन कभी हार मत मानो।",
+            "सपने सच करने के लिए सपनो से बाहर निकलना पड़ता है।",
+            "समय के पास इतना समय नहीं कि वो आपको दोबारा समय दे सके।",
+            "वक्त आपका है, चाहो तो सोना बना लो और चाहो तो सोने में गुज़ार दो।",
+            "भीड़ हमेशा उस रास्ते पर चलती है जो रास्ता आसान लगता है, पर इसका मतलब यह नहीं की वो सही है।",
+            "महानता कभी ना गिरने में नहीं है, बल्कि हर बार गिरकर उठ जाने में है।",
+            "सफलता की कोई संजीवनी नहीं है, यह तो सिर्फ मेहनत का फल होता है।",
+            "शुरुआत करने का तरीका है कि बात करना छोड़ दें और करना शुरू करें।",
+            "कलम तभी चलती है, जब दिमाग़ में आग लगी हो।",
+            "आपका समय सीमित है, इसलिए इसे किसी और की ज़िंदगी जीकर व्यर्थ मत करो।",
+            "अगर आप समय की कद्र करना सीख गए, तो सफलता आपकी होगी।",
+            "जिन्हें अपने काम से प्यार होता है, उनके लिए हर दिन रविवार होता है।",
+            "सफलता का मुख्य आधार सकारात्मक सोच और निरंतर प्रयास है।",
+            "कभी भी अपनी कमजोरियों को दुनिया के सामने मत लाओ।",
+            "आपकी सोच ही आपकी सबसे बड़ी ताकत है।",
+            "इरादे जिनके पक्के होते हैं, मंज़िलें उनके कदम चूमती हैं।"
+        ];
+
+        const englishQuotes = [
+            '"Don\'t stop when you are tired. Stop when you are done."',
+            '"The secret of getting ahead is getting started."',
+            '"Hard work beats talent when talent doesn\'t work hard."',
+            '"Your limitation—it\'s only your imagination."',
+            '"Push yourself, because no one else is going to do it for you."',
+            '"Great things never come from comfort zones."',
+            '"Dream it. Wish it. Do it."',
+            '"Success doesn’t just find you. You have to go out and get it."',
+            '"The harder you work for something, the greater you’ll feel when you achieve it."',
+            '"Dream bigger. Do bigger."',
+            '"Don’t stop until you’re proud."',
+            '"Wake up with determination. Go to bed with satisfaction."',
+            '"Do something today that your future self will thank you for."',
+            '"Little things make big days."',
+            '"It’s going to be hard, but hard does not mean impossible."',
+            '"Don’t wait for opportunity. Create it."',
+            '"Sometimes we’re tested not to show our weaknesses, but to discover our strengths."',
+            '"The key to success is to focus on goals, not obstacles."',
+            '"Dream it. Believe it. Build it."',
+            '"Motivation is what gets you started. Habit is what keeps you going."',
+            '"We may encounter many defeats but we must not be defeated."',
+            '"Whether you think you can or think you can’t, you’re right."',
+            '"Security is mostly a superstition. Life is either a daring adventure or nothing."',
+            '"The man who has confidence in himself gains the confidence of others."',
+            '"The only limit to our realization of tomorrow will be our doubts of today."',
+            '"Creativity is intelligence having fun."',
+            '"What you lack in talent can be made up with desire, hustle and giving 110% all the time."',
+            '"Do what you can with all you have, wherever you are."',
+            '"Develop an ‘Attitude of Gratitude’."',
+            '"You are never too old to set another goal or to dream a new dream."',
+            '"To see what is right and not do it is a lack of courage."',
+            '"Reading is to the mind, as exercise is to the body."',
+            '"Fake it until you make it! Act as if you had all the confidence you require."',
+            '"The future belongs to the competent. Get good, get better, be the best!"',
+            '"For every reason it’s not possible, there are hundreds of people who have faced the same circumstances and succeeded."',
+            '"Things work out best for those who make the best of how things work out."',
+            '"A room without books is like a body without a soul."',
+            '"I think goals should never be easy, they should force you to work, even if they are uncomfortable at the time."',
+            '"One of the lessons that I grew up with was to always stay true to yourself."',
+            '"Today’s accomplishments were yesterday’s impossibilities."',
+            '"The only way to do great work is to love what you do."',
+            '"If you can dream it, you can do it."',
+            '"Don’t sit down and wait for the opportunities to come. Get up and make them."',
+            '"A winner is a dreamer who never gives up."',
+            '"The expert in anything was once a beginner."',
+            '"It always seems impossible until it is done."',
+            '"You don’t have to be great to start, but you have to start to be great."',
+            '"Success is not final, failure is not fatal: it is the courage to continue that counts."',
+            '"Believe you can and you’re halfway there."',
+            '"The only place where success comes before work is in the dictionary."'
+        ];
+
+        let currentIndex = 0;
+        const hindiElement = document.getElementById("hindiQuote");
+        const englishElement = document.getElementById("englishQuote");
+
+        setInterval(() => {
+            // Fade out
+            hindiElement.style.opacity = 0;
+            englishElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                // Change text
+                currentIndex = (currentIndex + 1) % hindiQuotes.length;
+                hindiElement.innerText = hindiQuotes[currentIndex];
+                englishElement.innerText = englishQuotes[currentIndex];
+                
+                // Fade in
+                hindiElement.style.opacity = 1;
+                englishElement.style.opacity = 1;
+            }, 500); 
+            
+        }, 5000); // 5 Seconds interval
+    </script>
+</body>
+</html>
