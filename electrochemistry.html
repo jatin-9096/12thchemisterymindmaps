@@ -1,300 +1,468 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 2: Electrochemistry - Detailed Notes</title>
+    <title>Chapter 2: Electrochemistry - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 1rem; }
         
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #38bdf8; font-size: 2rem; }
-        .header p { color: #94a3b8; font-size: 1rem; }
+        /* Deep Blue & Sky Blue Premium Theme */
+        body { background-color: #020617; color: #f1f5f9; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
+        
+        .header { text-align: center; margin: 2rem 0; }
+        .header h1 { color: #38bdf8; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(56, 189, 248, 0.5); text-transform: uppercase; }
+        .header p { color: #bae6fd; font-size: 1.1rem; margin-top: 5px; }
+
+        /* Dynamic Motivation Section */
+        .shayari-container {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.2), rgba(3, 105, 161, 0.4));
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .shayari-hindi { font-size: 1.3rem; color: #38bdf8; margin-bottom: 10px; font-weight: 700; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #7dd3fc; font-style: italic; }
+
+        /* English Motivation Block */
+        .motivation-block {
+            width: 100%; max-width: 800px; margin: 0 auto 40px auto; padding: 2rem;
+            background: rgba(15, 23, 42, 0.8); border-left: 5px solid #0ea5e9;
+            border-radius: 0 15px 15px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .motivation-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: #e2e8f0; text-align: justify; }
 
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
-        /* Dark Theme Accordion Design */
-        details {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        /* FULLY EXPANDED CARDS DESIGN (No Click Required) */
+        .card {
+            background: #0f172a;
+            border: 1px solid #0284c7;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            padding: 20px;
+            transition: transform 0.3s ease;
         }
+        .card:hover { border-color: #38bdf8; box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2); transform: translateY(-3px); }
         
-        summary {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .card-header {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #38bdf8;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #0284c7;
+            padding-bottom: 10px;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #94a3b8;
-        }
-        details[open] summary::after { content: '-'; color: #38bdf8; }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            border-top: 1px solid #334155;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
+        .content { color: #cbd5e1; font-size: 1rem; }
 
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #f1f5f9; margin-bottom: 5px; border-left: 3px solid #0ea5e9; padding-left: 8px;}
-        ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: #f8fafc; margin-bottom: 8px; border-left: 4px solid #38bdf8; padding-left: 10px; font-size: 1.15rem; background: rgba(56, 189, 248, 0.1); padding: 5px 10px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: #7dd3fc; }
+        ul li span { color: #cbd5e1; }
+        li { margin-bottom: 8px; }
         
         .formula {
             display: block;
-            background: #0f172a;
-            padding: 8px;
-            border-radius: 5px;
-            color: #f59e0b;
+            background: rgba(0,0,0,0.5);
+            padding: 12px;
+            border-radius: 8px;
+            color: #fde047; /* Yellow for formula highlight */
             font-family: monospace;
-            font-size: 1rem;
-            margin: 5px 0;
-            border-left: 3px solid #f59e0b;
+            font-size: 1.05rem;
+            margin: 10px 0;
+            border-left: 4px solid #fde047;
+            overflow-x: auto;
         }
 
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-home { background: #475569; }
-        .btn-next { background: #38bdf8; color: #0f172a; }
+        /* Long Notes & PYQ Section */
+        .resources-section {
+            max-width: 800px; margin: 4rem auto 2rem auto;
+            background: rgba(2, 132, 199, 0.15); border: 2px dashed #38bdf8;
+            border-radius: 12px; padding: 2.5rem; text-align: center;
+        }
+        .resources-section h3 { color: #38bdf8; margin-bottom: 10px; font-size: 1.6rem;}
+        .resources-section p { color: #bae6fd; margin-bottom: 20px; font-size: 1rem; }
+        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .res-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; }
+        .btn-notes { background: #38bdf8; color: #020617; }
+        .btn-pyq { background: #ef4444; color: #fff; }
+
+        /* TRUSTED BY SECTION - PURE CSS SCROLL */
+        .trusted-section {
+            margin: 50px 0; padding: 30px 0;
+            background: rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(56, 189, 248, 0.3);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+            overflow: hidden; width: 100%;
+        }
+        .trusted-title { text-align: center; color: #7dd3fc; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 12px 25px;
+            background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 10px;
+            border: 1px solid transparent;
+        }
+        .trusted-item svg { width: 28px; height: 28px; fill: #38bdf8; }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Navigation */
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+        .btn { padding: 12px 20px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #1e293b; border: 1px solid #0284c7; }
+        .btn-next { background: #38bdf8; color: #020617; }
+
+        /* Footer */
+        footer { background: #020617; padding: 40px 20px; text-align: center; border-top: 2px solid #0ea5e9; }
+        .made-by { font-size: 1.2rem; color: #bae6fd; margin-bottom: 10px; }
+        .made-by span { color: #38bdf8; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #38bdf8);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <header class="header">
         <h1>Chapter 2: Electrochemistry</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+        <p class="subtitle">Complete Master Class & Notes</p>
+    </header>
+
+    <div class="shayari-container" id="shayari-box">
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
+    </div>
+
+    <div class="motivation-block">
+        <div class="motivation-text">
+            "Your journey to crack the exams is paved with continuous effort, relentless focus, and a burning desire to succeed. The concepts you master today will build the foundation for your brilliant tomorrow. Keep pushing!"
+        </div>
+        <div class="founder-sign" style="font-size: 1.1rem; text-align: right; display: block;">~ Jatin Sharma</div>
     </div>
 
     <div class="mindmap-container">
 
-        <!-- 1. Electrochemical Cells -->
-        <details>
-            <summary>Electrochemical Cells & Salt Bridge</summary>
+        <div class="card">
+            <div class="card-header">1. Electrochemical Cells & Salt Bridge</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Galvanic (Voltaic) Cell</h4>
                     <ul>
-                        <li>Converts <strong>Chemical Energy</strong> of a spontaneous redox reaction into <strong>Electrical Energy</strong>.</li>
-                        <li><strong>Anode:</strong> Oxidation takes place here. It has a Negative (-) charge.</li>
-                        <li><strong>Cathode:</strong> Reduction takes place here. It has a Positive (+) charge.</li>
-                        <li>Example: Daniell Cell (Zn-Cu cell).</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Electrolytic Cell</h4>
-                    <ul>
-                        <li>Converts <strong>Electrical Energy</strong> into <strong>Chemical Energy</strong>.</li>
-                        <li>Used to carry out non-spontaneous redox reactions by passing external current.</li>
-                        <li><strong>Anode:</strong> Positive (+). <strong>Cathode:</strong> Negative (-).</li>
+                        <li><span>Converts <strong>Chemical Energy</strong> of a spontaneous redox reaction into <strong>Electrical Energy</strong>.</span></li>
+                        <li><span><strong>Anode (Left):</strong> Oxidation takes place here. It has a Negative (-) charge.</span></li>
+                        <li><span><strong>Cathode (Right):</strong> Reduction takes place here. It has a Positive (+) charge.</span></li>
+                        <li><span><strong>Representation:</strong> Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Salt Bridge & Its Functions</h4>
-                    <p>A U-shaped tube containing an inert electrolyte (like KCl, KNO3, or NH4NO3) in agar-agar gel.</p>
+                    <p>A U-shaped tube containing an inert electrolyte (like KCl, KNO₃, or NH₄NO₃) in agar-agar gel.</p>
                     <ul>
-                        <li>Completes the inner electrical circuit.</li>
-                        <li>Maintains the electrical neutrality of the two half-cells.</li>
-                        <li>Prevents the mechanical mixing of the two electrolytic solutions.</li>
+                        <li><span>Completes the inner electrical circuit.</span></li>
+                        <li><span>Maintains the electrical neutrality of the two half-cells.</span></li>
+                        <li><span>Prevents liquid-liquid junction potential.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 2. Electrode Potential & SHE -->
-        <details>
-            <summary>Electrode Potential & Electrochemical Series</summary>
+        <div class="card">
+            <div class="card-header">2. Standard Electrode Potential & SHE</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Standard Electrode Potential (E°)</h4>
+                    <h4>Electrode Potential (E°)</h4>
                     <p>The potential difference developed between metal electrode and its ions in solution at 1 M concentration, 1 atm pressure, and 298 K temperature.</p>
                     <span class="formula">E°(cell) = E°(cathode) - E°(anode)</span>
                 </div>
                 <div class="sub-topic">
                     <h4>Standard Hydrogen Electrode (SHE)</h4>
                     <ul>
-                        <li>Used as a reference electrode. Its standard electrode potential is arbitrarily taken as <strong>Zero Volts (0.00 V)</strong>.</li>
-                        <li>Consists of a platinum wire coated with platinum black, dipped in 1M H+ solution, with pure H2 gas bubbled at 1 atm.</li>
-                        <li>Representation: Pt(s) | H2(g, 1 atm) | H+(aq, 1 M)</li>
+                        <li><span>Used as a reference electrode. Its standard electrode potential is arbitrarily taken as <strong>Zero Volts (0.00 V)</strong>.</span></li>
+                        <li><span>Consists of a platinum wire coated with platinum black, dipped in 1M H⁺ solution, with pure H₂ gas bubbled at 1 atm.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Electrochemical Series & Applications</h4>
+                    <h4>Electrochemical Series</h4>
                     <p>Arrangement of elements in increasing order of their standard reduction potentials.</p>
                     <ul>
-                        <li><strong>Strongest Oxidizing Agent:</strong> Fluorine (F2) - highest positive E° value.</li>
-                        <li><strong>Strongest Reducing Agent:</strong> Lithium (Li) - highest negative E° value.</li>
-                        <li>Metals with negative E° value can displace Hydrogen gas from dilute acids.</li>
-                        <li>Helps in predicting the feasibility of a redox reaction (Reaction is feasible if E°(cell) is positive).</li>
+                        <li><span><strong>Strongest Oxidizing Agent:</strong> Fluorine (F₂) - highest positive E° value (+2.87 V).</span></li>
+                        <li><span><strong>Strongest Reducing Agent:</strong> Lithium (Li) - highest negative E° value (-3.05 V).</span></li>
+                        <li><span>Metals with negative E° value can displace Hydrogen gas from dilute acids.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 3. Nernst Equation -->
-        <details>
-            <summary>Nernst Equation & Thermodynamics</summary>
+        <div class="card">
+            <div class="card-header">3. Nernst Equation & Thermodynamics</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Nernst Equation</h4>
-                    <p>Relates electrode potential with the concentration of ions and temperature.</p>
-                    <p>For a general reaction: aA + bB → cC + dD</p>
+                    <p>Relates electrode potential with the concentration of ions and temperature. For a general reaction: aA + bB → cC + dD</p>
                     <span class="formula">E(cell) = E°(cell) - (2.303 RT / nF) log ([C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>)</span>
                     <p>At 298 K (25°C), the equation simplifies to:</p>
                     <span class="formula">E(cell) = E°(cell) - (0.0591 / n) log Q</span>
-                    <p>(where n = number of electrons transferred, Q = reaction quotient)</p>
+                    <ul>
+                        <li><span><strong>Concentration Cell:</strong> Both electrodes are of the same material but different concentrations. Here, <strong>E°(cell) = 0</strong>.</span></li>
+                    </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Equilibrium Constant (Kc)</h4>
+                    <h4>Equilibrium Constant (Kc) & Gibbs Energy</h4>
                     <p>At equilibrium, the cell potential becomes zero (E(cell) = 0).</p>
                     <span class="formula">E°(cell) = (0.0591 / n) log Kc</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Gibbs Free Energy (ΔG)</h4>
-                    <p>Electrical work done in one second is equal to electrical potential multiplied by total charge passed.</p>
-                    <span class="formula">ΔG = - n F E(cell)</span>
                     <span class="formula">ΔG° = - n F E°(cell) = - 2.303 RT log Kc</span>
-                    <p>(F = Faraday's constant = 96487 C ≈ 96500 C)</p>
+                    <p><em>Note: If ΔG° is negative, E°(cell) is positive, and the reaction is spontaneous. (F = 96500 C)</em></p>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 4. Conductance & Kohlrausch's Law -->
-        <details>
-            <summary>Conductance & Kohlrausch's Law</summary>
+        <div class="card">
+            <div class="card-header">4. Conductance & Kohlrausch's Law</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Resistance & Conductance</h4>
+                    <h4>Resistance, Conductance & Cell Constant</h4>
                     <ul>
-                        <li><strong>Resistance (R):</strong> R = ρ(l/A). Unit: Ohm (Ω)</li>
-                        <li><strong>Conductance (G):</strong> Reciprocal of resistance. G = 1/R = κ(A/l). Unit: Siemens (S) or Ohm⁻¹.</li>
-                        <li><strong>Specific Conductivity (κ):</strong> κ = 1/ρ = G × (l/A). Unit: S cm⁻¹.</li>
-                        <li><strong>Cell Constant (G*):</strong> Ratio of distance between electrodes and area of cross-section. G* = l/A.</li>
+                        <li><span><strong>Conductance (G):</strong> Reciprocal of resistance. G = 1/R = κ(A/l). Unit: Siemens (S).</span></li>
+                        <li><span><strong>Specific Conductivity (κ):</strong> κ = 1/ρ = G × (l/A). Unit: S cm⁻¹. <strong>Decreases with dilution.</strong></span></li>
+                        <li><span><strong>Cell Constant (G*):</strong> Ratio of distance between electrodes to area. G* = l/A.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Molar Conductivity (Λm)</h4>
-                    <p>Conducting power of all the ions produced by dissolving one mole of an electrolyte.</p>
-                    <span class="formula">Λm = (κ × 1000) / Molarity</span>
-                    <p>Unit: S cm² mol⁻¹</p>
-                    <p><strong>Effect of Dilution:</strong> Both κ and Λm change with concentration. Specific conductivity (κ) decreases with dilution, while Molar conductivity (Λm) increases with dilution.</p>
+                    <p>Conducting power of all the ions produced by dissolving one mole of an electrolyte. <strong>Increases with dilution.</strong></p>
+                    <span class="formula">Λm = (κ × 1000) / Molarity (Unit: S cm² mol⁻¹)</span>
                 </div>
                 <div class="sub-topic">
-                    <h4>Kohlrausch's Law of Independent Migration of Ions</h4>
-                    <p>Limiting molar conductivity of an electrolyte can be represented as the sum of the individual contributions of the anion and cation of the electrolyte.</p>
-                    <span class="formula">Λ°m = ν+λ°+ + ν-λ°-</span>
-                    <p><strong>Applications:</strong></p>
+                    <h4>Kohlrausch's Law</h4>
+                    <p>Limiting molar conductivity of an electrolyte can be represented as the sum of the individual contributions of the anion and cation.</p>
+                    <span class="formula">Λ°m = ν₊λ°₊ + ν₋λ°₋</span>
                     <ul>
-                        <li>Calculation of Λ°m for weak electrolytes.</li>
-                        <li>Calculation of degree of dissociation (α) = Λm / Λ°m.</li>
-                        <li>Calculation of dissociation constant (K) = (Cα²) / (1 - α).</li>
+                        <li><span><strong>Applications:</strong> Calculate Λ°m for weak electrolytes (like CH₃COOH).</span></li>
+                        <li><span>Degree of dissociation: <strong>α = Λm / Λ°m</strong></span></li>
+                        <li><span>Dissociation constant: <strong>Ka = (Cα²) / (1 - α)</strong></span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 5. Faraday's Laws -->
-        <details>
-            <summary>Faraday's Laws of Electrolysis</summary>
+        <div class="card">
+            <div class="card-header">5. Faraday's Laws of Electrolysis</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>First Law of Electrolysis</h4>
-                    <p>The mass of any substance deposited or liberated at any electrode is directly proportional to the quantity of electricity passed through the electrolyte.</p>
-                    <span class="formula">W ∝ Q ⇒ W = Z × Q</span>
+                    <h4>First Law</h4>
+                    <p>The mass of any substance deposited at any electrode is directly proportional to the quantity of electricity passed.</p>
                     <span class="formula">W = Z × I × t</span>
-                    <p>Where W = mass deposited, Z = electrochemical equivalent, I = current in Amperes, t = time in seconds.</p>
-                    <span class="formula">Z = Equivalent Weight / 96500</span>
+                    <p>Where W = mass, Z = electrochemical equivalent (Equivalent Weight / 96500), I = current (A), t = time (s).</p>
                 </div>
                 <div class="sub-topic">
-                    <h4>Second Law of Electrolysis</h4>
-                    <p>When the same quantity of electricity is passed through solutions of different electrolytes connected in series, the masses of the substances deposited are directly proportional to their equivalent weights.</p>
-                    <span class="formula">W1 / W2 = E1 / E2</span>
+                    <h4>Second Law</h4>
+                    <p>When the same quantity of electricity is passed through different electrolytes connected in series, the masses deposited are proportional to their equivalent weights.</p>
+                    <span class="formula">W₁ / W₂ = E₁ / E₂</span>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 6. Batteries & Corrosion -->
-        <details>
-            <summary>Batteries, Fuel Cells & Corrosion</summary>
+        <div class="card">
+            <div class="card-header">6. Batteries & Corrosion (Deep Dive)</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Primary Batteries (Non-Rechargeable)</h4>
                     <ul>
-                        <li><strong>Dry Cell (Leclanche Cell):</strong> Anode is Zinc, Cathode is Graphite rod surrounded by MnO2 and Carbon. Electrolyte is paste of NH4Cl and ZnCl2. Voltage: 1.5 V.</li>
-                        <li><strong>Mercury Cell:</strong> Used in hearing aids, watches. Anode is Zn-Hg amalgam. Voltage remains constant at 1.35 V throughout its life.</li>
+                        <li><span><strong>Dry Cell:</strong> Anode is Zinc container, Cathode is Graphite rod. Electrolyte is paste of NH₄Cl + ZnCl₂. Voltage: 1.5 V.</span></li>
+                        <li><span><strong>Mercury Cell:</strong> Used in hearing aids. Voltage remains constant at 1.35 V because overall reaction does not involve any ion in solution whose concentration can change.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Secondary Batteries (Rechargeable)</h4>
-                    <ul>
-                        <li><strong>Lead Storage Battery:</strong> Used in automobiles and inverters. <br>
-                        Anode: Spongy Lead (Pb). Cathode: Lead dioxide (PbO2). Electrolyte: 38% H2SO4. <br>
-                        <em>Discharging Reaction:</em> Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O</li>
-                        <li><strong>Nickel-Cadmium Cell:</strong> Longer life than lead storage battery but expensive. <br>
-                        <em>Reaction:</em> Cd(s) + 2Ni(OH)3(s) → CdO(s) + 2Ni(OH)2(s) + H2O(l)</li>
-                    </ul>
+                    <p><strong>Lead Storage Battery:</strong> Used in cars. Anode = Spongy Lead. Cathode = PbO₂. Electrolyte = 38% H₂SO₄.</p>
+                    <span class="formula">Discharging: Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O</span>
+                    <span class="formula">Charging: 2PbSO₄ + 2H₂O → Pb + PbO₂ + 2H₂SO₄</span>
                 </div>
                 <div class="sub-topic">
                     <h4>Fuel Cells</h4>
-                    <p>Galvanic cells designed to convert the energy of combustion of fuels like hydrogen, methane, methanol directly into electrical energy. Highly efficient and pollution-free.</p>
-                    <ul>
-                        <li><strong>H2-O2 Fuel Cell Reaction:</strong> 2H2(g) + O2(g) → 2H2O(l)</li>
-                    </ul>
+                    <p>Convert combustion energy of fuels (H₂, CH₄) directly to electricity. Pollution-free. Efficiency is ~70%.</p>
+                    <span class="formula">Overall: 2H₂(g) + O₂(g) → 2H₂O(l)</span>
                 </div>
                 <div class="sub-topic">
-                    <h4>Corrosion</h4>
-                    <p>Slow coating of surfaces of metallic objects with oxides or other salts. In rusting of iron, a miniature electrochemical cell is formed.</p>
+                    <h4>Corrosion (Rusting of Iron)</h4>
+                    <p>A miniature electrochemical cell forms on the iron surface.</p>
                     <ul>
-                        <li><strong>Anode (Oxidation):</strong> 2Fe(s) → 2Fe²⁺ + 4e⁻</li>
-                        <li><strong>Cathode (Reduction):</strong> O2(g) + 4H⁺(aq) + 4e⁻ → 2H2O(l)</li>
-                        <li><strong>Prevention:</strong> Barrier protection (painting, greasing), Galvanization (coating with Zinc), and Sacrificial protection.</li>
+                        <li><span><strong>Anode:</strong> 2Fe(s) → 2Fe²⁺ + 4e⁻</span></li>
+                        <li><span><strong>Cathode:</strong> O₂(g) + 4H⁺(aq) + 4e⁻ → 2H₂O(l)</span></li>
+                        <li><span>Fe²⁺ is further oxidized by atmosphere to Fe³⁺ forming Rust: <strong>Fe₂O₃·xH₂O</strong>.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
     </div>
 
-    <!-- Navigation -->
+    <div class="resources-section">
+        <h3>📚 Additional Study Material</h3>
+        <p>Master Electrochemistry by practicing Numerical PYQs on Nernst Equation and Kohlrausch Law.</p>
+        <div class="resource-buttons">
+            <button class="res-btn btn-notes">📖 Read Long Notes</button>
+            <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
+        </div>
+    </div>
+
+    <div class="trusted-section">
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+                
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="nav-section">
         <a href="solutions.html" class="btn btn-home">⬅ Prev: Solutions</a>
         <a href="kinetics.html" class="btn btn-next">Next: Kinetics ➡</a>
     </div>
+
     <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+        <div class="made-by">MADE WITH ❤️ BY <span>SHOORVEER NOTES</span></div>
+        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(56, 189, 248, 0.2);">
+            <a href="privacy-policy.html" style="color: #bae6fd; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">Privacy Policy</a>
+            <span style="color: #0284c7;">|</span>
+            <a href="about.html" style="color: #bae6fd; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">About Us</a>
         </div>
     </footer>
 
+    <script>
+        const quotes = [
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+            {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"},
+            {"en": "Dream big and dare to fail.", "hi": "बड़े सपने देखें और असफल होने का साहस करें।"},
+            {"en": "It always seems impossible until it's done.", "hi": "जब तक यह हो नहीं जाता, तब तक यह हमेशा असंभव लगता है।"},
+            {"en": "Don't watch the clock; do what it does. Keep going.", "hi": "घड़ी को मत देखो; वही करो जो यह करती है। चलते रहो।"},
+            {"en": "The harder you work for something, the greater you'll feel when you achieve it.", "hi": "आप किसी चीज़ के लिए जितनी कड़ी मेहनत करेंगे, उसे हासिल करने पर आपको उतनी ही अधिक खुशी होगी।"},
+            {"en": "Success doesn’t just find you. You have to go out and get it.", "hi": "सफलता सिर्फ आपको नहीं मिलती। आपको बाहर जाकर इसे हासिल करना होगा।"},
+            {"en": "The key to success is to focus on goals, not obstacles.", "hi": "सफलता की कुंजी बाधाओं पर नहीं, लक्ष्यों पर ध्यान केंद्रित करना है।"},
+            {"en": "Great things never come from comfort zones.", "hi": "महान चीजें कभी भी आराम क्षेत्र से नहीं आती हैं।"},
+            {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "दृढ़ संकल्प के साथ उठें। संतुष्टि के साथ सोने जाएं।"},
+            {"en": "Do something today that your future self will thank you for.", "hi": "आज कुछ ऐसा करें जिसके लिए आपका भविष्य का स्वरूप आपको धन्यवाद दे।"},
+            {"en": "It’s going to be hard, but hard does not mean impossible.", "hi": "यह कठिन होने वाला है, लेकिन कठिन का मतलब असंभव नहीं है।"},
+            {"en": "Don’t wait for opportunity. Create it.", "hi": "अवसर की प्रतीक्षा न करें। इसे बनाएं।"},
+            {"en": "Push yourself, because no one else is going to do it for you.", "hi": "खुद को आगे बढ़ाएं, क्योंकि कोई और आपके लिए यह नहीं करने वाला है।"},
+            {"en": "Success is walking from failure to failure with no loss of enthusiasm.", "hi": "सफलता बिना उत्साह खोए एक विफलता से दूसरी विफलता तक चलना है।"},
+            {"en": "You don't have to be great to start, but you have to start to be great.", "hi": "शुरू करने के लिए आपको महान होने की आवश्यकता नहीं है, लेकिन महान होने के लिए आपको शुरुआत करनी होगी।"},
+            {"en": "There is no substitute for hard work.", "hi": "कड़ी मेहनत का कोई विकल्प नहीं है।"},
+            {"en": "Doubt kills more dreams than failure ever will.", "hi": "संदेह विफलता से कहीं अधिक सपनों को मार देता है।"},
+            {"en": "Action is the foundational key to all success.", "hi": "कार्य सभी सफलताओं की मूलभूत कुंजी है।"},
+            {"en": "Failure is the opportunity to begin again more intelligently.", "hi": "विफलता अधिक बुद्धिमानी से फिर से शुरू करने का अवसर है।"},
+            {"en": "Don't let yesterday take up too much of today.", "hi": "बीते हुए कल को आज का बहुत अधिक समय न लेने दें।"},
+            {"en": "You learn more from failure than from success.", "hi": "आप सफलता की तुलना में विफलता से अधिक सीखते हैं।"},
+            {"en": "If you are working on something that you really care about, you don't have to be pushed.", "hi": "यदि आप किसी ऐसी चीज़ पर काम कर रहे हैं जिसकी आपको वास्तव में परवाह है, तो आपको धकेलने की ज़रूरत नहीं है।"},
+            {"en": "Experience is a hard teacher because she gives the test first, the lesson afterwards.", "hi": "अनुभव एक कठोर शिक्षक है क्योंकि वह पहले परीक्षा लेता है, बाद में पाठ पढ़ाता है।"},
+            {"en": "To know how much there is to know is the beginning of learning to live.", "hi": "यह जानना कि जानने के लिए कितना कुछ है, जीना सीखने की शुरुआत है।"},
+            {"en": "Goal setting is the secret to a compelling future.", "hi": "लक्ष्य निर्धारण एक सम्मोहक भविष्य का रहस्य है।"},
+            {"en": "Either you run the day or the day runs you.", "hi": "या तो आप दिन चलाते हैं या दिन आपको चलाता है।"},
+            {"en": "I find that the harder I work, the more luck I seem to have.", "hi": "मुझे लगता है कि मैं जितनी अधिक मेहनत करता हूं, मुझे उतना ही भाग्य मिलता है।"},
+            {"en": "Start where you are. Use what you have. Do what you can.", "hi": "आप जहां हैं वहीं से शुरू करें। आपके पास जो है उसका उपयोग करें। जो आप कर सकते हैं वह करें।"},
+            {"en": "Fall seven times and stand up eight.", "hi": "सात बार गिरें और आठवीं बार खड़े हो जाएं।"},
+            {"en": "Everything you’ve ever wanted is on the other side of fear.", "hi": "हर वो चीज़ जो आपने कभी चाही है, वो डर के दूसरी तरफ है।"},
+            {"en": "Success is getting what you want. Happiness is wanting what you get.", "hi": "सफलता वही पाना है जो आप चाहते हैं। खुशी वही चाहना है जो आपको मिलता है।"},
+            {"en": "Quality is not an act, it is a habit.", "hi": "गुणवत्ता एक कार्य नहीं है, यह एक आदत है।"},
+            {"en": "We are what we repeatedly do.", "hi": "हम वही हैं जो हम बार-बार करते हैं।"},
+            {"en": "Make each day your masterpiece.", "hi": "हर दिन को अपनी उत्कृष्ट कृति बनाएं।"},
+            {"en": "The best revenge is massive success.", "hi": "सबसे अच्छा बदला बड़ी सफलता है।"},
+            {"en": "You miss 100% of the shots you don't take.", "hi": "आप 100% उन मौकों को चूक जाते हैं जिन्हें आप नहीं लेते हैं।"},
+            {"en": "The successful warrior is the average man, with laser-like focus.", "hi": "सफल योद्धा औसत दर्जे का आदमी होता है, जिसमें लेज़र जैसा फोकस होता है।"},
+            {"en": "Nothing will work unless you do.", "hi": "जब तक आप काम नहीं करेंगे तब तक कुछ भी काम नहीं करेगा।"},
+            {"en": "Work hard in silence, let your success be your noise.", "hi": "खामोशी से कड़ी मेहनत करो, अपनी सफलता को शोर मचाने दो।"},
+            {"en": "A river cuts through rock, not because of its power, but because of its persistence.", "hi": "एक नदी अपनी शक्ति के कारण नहीं, बल्कि अपनी दृढ़ता के कारण चट्टान को काटती है।"},
+            {"en": "Discipline is the bridge between goals and accomplishment.", "hi": "अनुशासन लक्ष्यों और उपलब्धि के बीच का पुल है।"},
+            {"en": "Motivation is what gets you started. Habit is what keeps you going.", "hi": "प्रेरणा वह है जो आपको शुरू करती है। आदत वह है जो आपको चलते रहने देती है।"},
+            {"en": "The expert in anything was once a beginner.", "hi": "किसी भी चीज का विशेषज्ञ कभी शुरुआती था।"},
+            {"en": "What comes easy won't last long, and what lasts long won't come easy.", "hi": "जो आसानी से मिल जाता है वह लंबे समय तक नहीं रहता, और जो लंबे समय तक रहता है वह आसानी से नहीं मिलता।"},
+            {"en": "Education is the most powerful weapon which you can use to change the world.", "hi": "शिक्षा सबसे शक्तिशाली हथियार है जिसका उपयोग आप दुनिया को बदलने के लिए कर सकते हैं।"},
+            {"en": "Your attitude, not your aptitude, will determine your altitude.", "hi": "आपकी योग्यता नहीं, बल्कि आपका दृष्टिकोण आपकी ऊंचाई निर्धारित करेगा।"}
+        ];
+        
+        let quoteIndex = 1; 
+        const hindiEl = document.getElementById('shayari-hi');
+        const engEl = document.getElementById('shayari-en');
+        const box = document.getElementById('shayari-box');
+
+        if (hindiEl && engEl && box) {
+            setInterval(function() {
+                box.style.opacity = 0;
+                setTimeout(function() {
+                    hindiEl.textContent = quotes[quoteIndex].hi;
+                    engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                    box.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                }, 500);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
-
