@@ -3,253 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 6: Haloalkanes & Haloarenes - Detailed Notes</title>
+    <title>Chapter 6: Haloalkanes & Haloarenes - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
         /* Dark Premium Baby Pink Theme */
-        body { background-color: #2e101e; color: #fdf2f8; line-height: 1.6; padding: 1rem; }
+        body { background-color: #2e101e; color: #fdf2f8; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
         
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #f9a8d4; font-size: 2rem; } /* Baby Pink */
-        .header p { color: #fbcfe8; font-size: 1rem; }
+        .header { text-align: center; margin: 2rem 0; }
+        .header h1 { color: #f9a8d4; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(249, 168, 212, 0.5); text-transform: uppercase; }
+        .header p { color: #fbcfe8; font-size: 1.1rem; margin-top: 5px; }
+
+        /* Dynamic Motivation Section */
+        .shayari-container {
+            background: linear-gradient(135deg, rgba(131, 24, 67, 0.4), rgba(80, 17, 43, 0.6));
+            border: 1px solid rgba(249, 168, 212, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .shayari-hindi { font-size: 1.3rem; color: #f9a8d4; margin-bottom: 10px; font-weight: 700; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #fecdd3; font-style: italic; }
 
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
-        /* Baby Pink Accordion Design */
-        details {
+        /* FULLY EXPANDED CARDS DESIGN (No Click Required) */
+        .card {
             background: #4a1932;
             border: 1px solid #831843;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            padding: 20px;
+            transition: transform 0.3s ease;
         }
+        .card:hover { border-color: #f9a8d4; box-shadow: 0 8px 25px rgba(249, 168, 212, 0.2); transform: translateY(-3px); }
         
-        summary {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .card-header {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #f9a8d4;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #831843;
+            padding-bottom: 10px;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #f472b6;
-        }
-        details[open] summary::after { content: '-'; color: #f9a8d4; }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #fce7f3;
-            font-size: 0.95rem;
-            border-top: 1px solid #831843;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
+        .content { color: #fce7f3; font-size: 1rem; }
 
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #fff; margin-bottom: 5px; border-left: 3px solid #f9a8d4; padding-left: 8px;}
-        ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: #fff; margin-bottom: 8px; border-left: 4px solid #f9a8d4; padding-left: 10px; font-size: 1.15rem; background: rgba(249, 168, 212, 0.1); padding: 5px 10px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: #f472b6; }
+        ul li span { color: #fce7f3; }
+        li { margin-bottom: 8px; }
         
         .formula {
             display: block;
-            background: #2e101e;
-            padding: 8px;
-            border-radius: 5px;
+            background: rgba(0,0,0,0.4);
+            padding: 12px;
+            border-radius: 8px;
             color: #fecdd3; /* Light Rose */
             font-family: monospace;
-            font-size: 1rem;
-            margin: 5px 0;
-            border-left: 3px solid #fecdd3;
+            font-size: 1.05rem;
+            margin: 10px 0;
+            border-left: 4px solid #fecdd3;
+            overflow-x: auto;
         }
 
-        /* Long Notes & PYQ Section Styling */
+        /* Long Notes & PYQ Section */
         .resources-section {
             max-width: 800px;
-            margin: 3rem auto 1rem auto;
-            background: rgba(131, 24, 67, 0.3);
+            margin: 4rem auto 2rem auto;
+            background: rgba(131, 24, 67, 0.2);
             border: 2px dashed #f9a8d4;
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
         }
-        .resources-section h3 { color: #f9a8d4; margin-bottom: 10px; font-size: 1.5rem;}
-        .resources-section p { color: #fbcfe8; margin-bottom: 20px; font-size: 0.95rem; }
+        .resources-section h3 { color: #f9a8d4; margin-bottom: 10px; font-size: 1.6rem;}
+        .resources-section p { color: #fbcfe8; margin-bottom: 20px; font-size: 1rem; }
         .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .res-btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
+        .res-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; cursor: pointer;}
         .btn-notes { background: #fbcfe8; color: #2e101e; }
-        .btn-notes:hover { background: #f9a8d4; }
+        .btn-notes:hover { background: #f9a8d4; transform: translateY(-2px); }
         .btn-pyq { background: #be185d; color: #fff; }
-        .btn-pyq:hover { background: #9f1239; }
+        .btn-pyq:hover { background: #9f1239; transform: translateY(-2px); }
+
+        /* TRUSTED BY SECTION - PURE CSS SCROLL */
+        .trusted-section {
+            margin: 50px 0; padding: 30px 0;
+            background: rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(249, 168, 212, 0.3);
+            border-bottom: 1px solid rgba(249, 168, 212, 0.3);
+            overflow: hidden; width: 100%;
+        }
+        .trusted-title { text-align: center; color: #f472b6; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 12px 25px;
+            background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 10px;
+            border: 1px solid transparent;
+        }
+        .trusted-item svg { width: 28px; height: 28px; fill: #f9a8d4; }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* Navigation */
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+        .btn { padding: 12px 20px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s;}
         .btn-home { background: #50112b; border: 1px solid #831843; }
+        .btn-home:hover { background: #831843; }
         .btn-next { background: #f9a8d4; color: #2e101e; }
+        .btn-next:hover { background: #f472b6; color: #fff; }
+
+        /* Baby Pink Footer */
+        footer { background: #1a0810; padding: 40px 20px; text-align: center; border-top: 2px solid #831843; }
+        .made-by { font-size: 1.2rem; color: #fbcfe8; margin-bottom: 10px; }
+        .made-by span { color: #f9a8d4; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #f9a8d4, #fecdd3, #f472b6, #be185d, #f9a8d4);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Chapter 6: Haloalkanes & Haloarenes</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    <header class="header">
+        <h1>Chapter 6: Haloalkanes</h1>
+        <p class="subtitle">Complete Master Class & Notes</p>
+    </header>
+
+    <div class="shayari-container" id="shayari-box">
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
     </div>
 
     <div class="mindmap-container">
 
-        <details>
-            <summary>Classification & Nomenclature</summary>
+        <div class="card">
+            <div class="card-header">1. Classification & Nature of C-X Bond</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Classification Based on Hybridization</h4>
                     <ul>
-                        <li><strong>Alkyl Halides (R-X):</strong> Halogen bonded to sp³ hybridized carbon. (1°, 2°, or 3°).</li>
-                        <li><strong>Allylic Halides:</strong> Halogen bonded to sp³ carbon next to a C=C double bond. Example: CH₂=CH-CH₂X.</li>
-                        <li><strong>Benzylic Halides:</strong> Halogen bonded to sp³ carbon attached to an aromatic ring. Example: C₆H₅CH₂X.</li>
-                        <li><strong>Vinylic Halides:</strong> Halogen bonded directly to sp² hybridized carbon of a C=C double bond. Example: CH₂=CH-X.</li>
-                        <li><strong>Aryl Halides (Haloarenes):</strong> Halogen bonded directly to sp² carbon of an aromatic ring. Example: C₆H₅X.</li>
+                        <li><span><strong>Alkyl Halides (R-X):</strong> Halogen bonded to sp³ hybridized carbon. (1°, 2°, or 3°).</span></li>
+                        <li><span><strong>Allylic Halides:</strong> Halogen bonded to sp³ carbon next to a C=C double bond. Example: CH₂=CH-CH₂X.</span></li>
+                        <li><span><strong>Benzylic Halides:</strong> Halogen bonded to sp³ carbon attached to an aromatic ring. Example: C₆H₅CH₂X.</span></li>
+                        <li><span><strong>Vinylic Halides:</strong> Halogen bonded directly to sp² hybridized carbon of a C=C double bond. Example: CH₂=CH-X.</span></li>
+                        <li><span><strong>Geminal & Vicinal Dihalides:</strong> Geminal (both halogens on same carbon), Vicinal (halogens on adjacent carbons).</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Nature of C-X Bond</h4>
-                    <p>Since halogens are more electronegative than carbon, the C-X bond is highly polarized. Carbon acquires a partial positive charge (C<sup>&delta;+</sup>) and halogen acquires a partial negative charge (X<sup>&delta;-</sup>). Bond length increases from C-F to C-I, while bond enthalpy decreases.</p>
+                    <h4>Nature of C-X Bond & Dipole Moment</h4>
+                    <p>C-X bond is highly polarized (C<sup>&delta;+</sup> - X<sup>&delta;-</sup>). Bond length increases from C-F to C-I. Bond enthalpy decreases from C-F to C-I.</p>
+                    <span class="formula">Dipole Moment Exception: CH₃Cl > CH₃F > CH₃Br > CH₃I</span>
+                    <p><em>Reason: Though F is more electronegative, the C-Cl bond distance is larger, making the product of charge and distance (dipole moment) highest for CH₃Cl.</em></p>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Preparation of Haloalkanes (Name Reactions)</summary>
+        <div class="card">
+            <div class="card-header">2. Preparation Methods (Name Reactions)</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>From Alcohols (Best Methods)</h4>
                     <ul>
-                        <li><strong>Using SOCl₂ (Darzen's Process):</strong> Preferred method because the byproducts (SO₂ and HCl) are escapable gases, leaving pure alkyl halide. <br><span class="formula">R-OH + SOCl₂ &rarr; R-Cl + SO₂&uarr; + HCl&uarr;</span></li>
-                        <li><strong>Using Phosphorus Halides:</strong> <br><span class="formula">3R-OH + PCl₃ &rarr; 3R-Cl + H₃PO₃</span></li>
-                        <li><strong>Using Lucas Reagent (HCl + anhy. ZnCl₂):</strong> Used for primary and secondary alcohols (Groves' Process).</li>
+                        <li><span><strong>Darzen's Process (Best):</strong> R-OH + SOCl₂ &rarr; R-Cl + SO₂&uarr; + HCl&uarr;. (Preferred because byproducts are escapable gases).</span></li>
+                        <li><span><strong>Lucas Reagent:</strong> HCl + anhy. ZnCl₂ (Groves' Process). 3° alcohols react instantly.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>From Hydrocarbons</h4>
                     <ul>
-                        <li><strong>Free Radical Halogenation:</strong> Cl₂/UV light yields a complex mixture of isomeric haloalkanes.</li>
-                        <li><strong>Electrophilic Addition (Markovnikov's Rule):</strong> Addition of HX to unsymmetrical alkenes. The negative part of the addendum goes to the carbon with fewer hydrogen atoms.</li>
-                        <li><strong>Peroxide Effect (Anti-Markovnikov / Kharasch Effect):</strong> Addition of HBr (ONLY HBr) in the presence of peroxide. Negative part (Br) goes to the carbon with MORE hydrogen atoms.</li>
+                        <li><span><strong>Markovnikov's Rule:</strong> Addition of HX to unsymmetrical alkenes. Negative part (X⁻) goes to carbon with fewer hydrogens.</span></li>
+                        <li><span><strong>Kharasch Effect (Peroxide Effect):</strong> Anti-Markovnikov addition of HBr (ONLY HBr) in presence of peroxide. Br goes to carbon with MORE hydrogens.</span></li>
+                        <li><span><strong>Allylic Bromination (NBS):</strong> N-Bromosuccinimide selectively brominates the allylic position without affecting the C=C double bond.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Halogen Exchange Methods (Crucial)</h4>
+                    <h4>Halogen Exchange & Silver Salts</h4>
                     <ul>
-                        <li><strong>Finkelstein Reaction (For Alkyl Iodides):</strong> <br><span class="formula">R-X + NaI (in dry acetone) &rarr; R-I + NaX (X = Cl, Br)</span> <br>NaX precipitates in dry acetone, driving the reaction forward (Le Chatelier's Principle).</li>
-                        <li><strong>Swarts Reaction (For Alkyl Fluorides):</strong> Heating R-Cl/R-Br with metallic fluorides like AgF, Hg₂F₂, CoF₃ or SbF₃. <br><span class="formula">R-Br + AgF &rarr; R-F + AgBr</span></li>
+                        <li><span><strong>Finkelstein Reaction (Alkyl Iodides):</strong> R-X + NaI (in dry acetone) &rarr; R-I + NaX.</span></li>
+                        <li><span><strong>Swarts Reaction (Alkyl Fluorides):</strong> Heating R-Br with metallic fluorides (AgF, Hg₂F₂, CoF₃).</span></li>
+                        <li><span><strong>Borodine-Hunsdiecker Reaction:</strong> Silver salt of carboxylic acid heated with Br₂ in CCl₄ gives alkyl bromide (Step-down reaction).<br>
+                        <span class="formula">R-COOAg + Br₂ &rarr; R-Br + CO₂ + AgBr</span></span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Preparation of Haloarenes</summary>
+        <div class="card">
+            <div class="card-header">3. Physical Properties & Optical Activity</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Electrophilic Substitution</h4>
-                    <p>Chlorination or Bromination of benzene/toluene in the presence of Lewis acid catalysts like Iron(III) chloride (FeCl₃) or AlCl₃ in dark.</p>
-                    <span class="formula">C₆H₆ + Cl₂ (FeCl₃, dark) &rarr; C₆H₅Cl + HCl</span>
+                    <h4>Boiling Points & Solubility</h4>
+                    <ul>
+                        <li><span><strong>Boiling Point Trend:</strong> For same alkyl group, BP increases with size of halogen (R-I > R-Br > R-Cl > R-F).</span></li>
+                        <li><span><strong>Isomeric Halides:</strong> Boiling point decreases with branching. (Branching makes the molecule more spherical, decreasing surface area and van der Waals forces).</span></li>
+                        <li><span><strong>Solubility:</strong> Insoluble in water (cannot form H-bonds) but soluble in organic solvents.</span></li>
+                    </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>From Diazonium Salts (Sandmeyer Reaction)</h4>
-                    <p>Primary aromatic amine (Aniline) treated with NaNO₂ + HCl at 273-278 K forms Benzene Diazonium Chloride. Treating this with Cu₂X₂ yields aryl halides.</p>
-                    <span class="formula">Ar-N₂⁺Cl⁻ + Cu₂Cl₂ / HCl &rarr; Ar-Cl + N₂</span>
-                    <p><em>Note: For Iodoarene, simply warm the diazonium salt with KI solution (No Copper catalyst required).</em></p>
+                    <h4>Stereochemistry (Optical Activity)</h4>
+                    <ul>
+                        <li><span><strong>Chiral Carbon:</strong> A carbon attached to four different groups. It lacks a plane of symmetry.</span></li>
+                        <li><span><strong>Enantiomers:</strong> Non-superimposable mirror images. They rotate Plane Polarized Light equally but in opposite directions (dextro '+' and laevo '-').</span></li>
+                        <li><span><strong>Racemic Mixture:</strong> Equimolar mixture of two enantiomers. Optically inactive due to external compensation.</span></li>
+                        <li><span><strong>Retention & Inversion:</strong> Retention preserves spatial arrangement. Inversion flips it (like an umbrella in wind).</span></li>
+                    </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Chemical Reactions: SN1 & SN2 Mechanisms</summary>
+        <div class="card">
+            <div class="card-header">4. Nucleophilic Substitution (SN1 vs SN2)</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>SN2 Mechanism (Bimolecular Nucleophilic Substitution)</h4>
+                    <h4>SN2 Mechanism (Bimolecular)</h4>
                     <ul>
-                        <li><strong>Kinetics:</strong> Follows 2nd order kinetics. Rate = k[R-X][Nu⁻].</li>
-                        <li><strong>Mechanism:</strong> Single-step process. Nucleophile attacks from the back, forming a transition state where C is partially bonded to both Nucleophile and Halogen.</li>
-                        <li><strong>Stereochemistry:</strong> Leads to complete <strong>Inversion of Configuration (Walden Inversion)</strong>, like an umbrella turning inside out.</li>
-                        <li><strong>Reactivity Order:</strong> Primary (1°) > Secondary (2°) > Tertiary (3°). Steric hindrance plays the main role.</li>
+                        <li><span><strong>Kinetics & Steps:</strong> Follows 2nd order kinetics. Single-step process without intermediate.</span></li>
+                        <li><span><strong>Stereochemistry:</strong> Nucleophile attacks from the back, leading to 100% <strong>Inversion of Configuration</strong> (Walden Inversion).</span></li>
+                        <li><span><strong>Reactivity Order:</strong> Primary (1°) > Secondary (2°) > Tertiary (3°). <em>Driven by Steric Hindrance.</em></span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>SN1 Mechanism (Unimolecular Nucleophilic Substitution)</h4>
+                    <h4>SN1 Mechanism (Unimolecular)</h4>
                     <ul>
-                        <li><strong>Kinetics:</strong> Follows 1st order kinetics. Rate = k[R-X].</li>
-                        <li><strong>Mechanism:</strong> Two-step process. Step 1 (Slow/Rate-determining): Cleavage of C-X bond to form a <strong>Carbocation</strong>. Step 2 (Fast): Attack of Nucleophile.</li>
-                        <li><strong>Stereochemistry:</strong> Leads to <strong>Racemization</strong> (mixture of retention and inversion) because the carbocation is planar, allowing attack from both sides.</li>
-                        <li><strong>Reactivity Order:</strong> Tertiary (3°) > Secondary (2°) > Primary (1°). Stability of Carbocation plays the main role (Hyperconjugation). Allylic and benzylic halides are highly reactive towards SN1.</li>
+                        <li><span><strong>Kinetics & Steps:</strong> Follows 1st order kinetics. Two-step process forming a <strong>Carbocation Intermediate</strong>.</span></li>
+                        <li><span><strong>Stereochemistry:</strong> Carbocation is planar, nucleophile can attack from either side. Leads to <strong>Racemization</strong>.</span></li>
+                        <li><span><strong>Reactivity Order:</strong> Tertiary (3°) > Secondary (2°) > Primary (1°). <em>Driven by Stability of Carbocation.</em></span></li>
+                        <li><span><em>Note:</em> Allylic and Benzylic halides show high SN1 reactivity due to resonance-stabilized carbocations.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Elimination Reactions (Beta-Elimination)</h4>
-                    <p>When heated with alcoholic KOH, haloalkanes lose HX to form alkenes (Dehydrohalogenation).</p>
-                    <p><strong>Zaitsev (Saytzeff) Rule:</strong> In case of unsymmetrical alkyl halides, the preferred alkene is the one which is more highly substituted (has more alkyl groups attached to the double-bonded carbons).</p>
+                    <h4>Substitution vs Elimination</h4>
+                    <ul>
+                        <li><span><strong>Aqueous KOH (aq. KOH):</strong> Acts as a Nucleophile &rarr; Causes Substitution &rarr; Forms <strong>Alcohol</strong>.</span></li>
+                        <li><span><strong>Alcoholic KOH (alc. KOH):</strong> Acts as a strong Base &rarr; Causes Elimination (Dehydrohalogenation) &rarr; Forms <strong>Alkene</strong>.</span></li>
+                        <li><span><strong>Zaitsev (Saytzeff) Rule:</strong> In elimination, the more highly substituted alkene (more alkyl groups around double bond) is the major product.</span></li>
+                    </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Haloarenes Reactions & Polyhalogen Compounds</summary>
+        <div class="card">
+            <div class="card-header">5. Haloarenes & Reactions with Metals</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Why are Haloarenes less reactive towards Nucleophilic Substitution?</h4>
                     <ul>
-                        <li><strong>Resonance Effect:</strong> C-Cl bond acquires partial double bond character.</li>
-                        <li><strong>Hybridization:</strong> C atom is sp² hybridized (more electronegative), holding electron pair tighter.</li>
-                        <li>Instability of phenyl cation.</li>
-                        <li><em>Dow's Process:</em> Chlorobenzene can be converted to Phenol only at extreme conditions (623 K, 300 atm) using NaOH. Presence of NO₂ group at ortho/para positions increases reactivity.</li>
+                        <li><span><strong>Resonance Effect:</strong> Lone pairs on halogen resonate with the benzene ring, giving the C-X bond a <strong>partial double bond character</strong> (hard to break).</span></li>
+                        <li><span><strong>Hybridization:</strong> Carbon in haloarenes is sp² hybridized (more electronegative), holding electron pair tighter than sp³ carbon in haloalkanes.</span></li>
+                        <li><span><strong>Instability of Phenyl Cation:</strong> Phenyl cation formed is highly unstable, ruling out SN1 mechanism.</span></li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Electrophilic Substitution Reactions</h4>
+                    <p>Halogens on benzene are <strong>Ortho/Para directing</strong> (due to +R effect) but overall <strong>Deactivating</strong> (due to strong -I inductive effect withdrawing electrons from the ring).</p>
+                    <ul>
+                        <li><span>Undergo Nitration (HNO₃/H₂SO₄), Sulfonation (H₂SO₄), and Friedel-Crafts Alkylation/Acylation (AlCl₃) at ortho and para positions.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Reaction with Metals</h4>
                     <ul>
-                        <li><strong>Wurtz Reaction:</strong> 2R-X + 2Na (dry ether) &rarr; R-R (Alkane)</li>
-                        <li><strong>Fittig Reaction:</strong> 2Ar-X + 2Na (dry ether) &rarr; Ar-Ar (Diaryls/Biphenyl)</li>
-                        <li><strong>Wurtz-Fittig Reaction:</strong> Ar-X + R-X + 2Na (dry ether) &rarr; Ar-R (Alkylarene)</li>
-                        <li><strong>Grignard Reagent:</strong> R-X + Mg (dry ether) &rarr; R-Mg-X. (Highly reactive, must be prepared in anhydrous conditions to avoid reacting with moisture to form alkanes).</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Polyhalogen Compounds & Environmental Impact</h4>
-                    <ul>
-                        <li><strong>Chloroform (CHCl₃):</strong> Oxidizes slowly in air to highly poisonous gas Phosgene (COCl₂). Stored in dark bottles completely filled.</li>
-                        <li><strong>Freons (CFCs):</strong> Excellent refrigerants but deplete the ozone layer via free radical chain reactions in the stratosphere.</li>
-                        <li><strong>DDT:</strong> Highly effective insecticide but non-biodegradable. Causes biomagnification and toxicity in the food chain.</li>
+                        <li><span><strong>Wurtz Reaction:</strong> 2R-X + 2Na (dry ether) &rarr; Alkane (R-R)</span></li>
+                        <li><span><strong>Fittig Reaction:</strong> 2Ar-X + 2Na (dry ether) &rarr; Biphenyl (Ar-Ar)</span></li>
+                        <li><span><strong>Wurtz-Fittig Reaction:</strong> Ar-X + R-X + 2Na (dry ether) &rarr; Alkylarene (Ar-R)</span></li>
+                        <li><span><strong>Grignard Reagent:</strong> R-X + Mg (dry ether) &rarr; R-Mg-X. (Prepared in anhydrous conditions because water instantly converts it into an alkane).</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
+
+        <div class="card">
+            <div class="card-header">6. Polyhalogen Compounds</div>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Important Compounds & Impact</h4>
+                    <ul>
+                        <li><span><strong>Chloroform (CHCl₃):</strong> Slowly oxidized by air in presence of light to an extremely poisonous gas, <strong>Phosgene (COCl₂)</strong>. Stored in dark bottles with 1% ethanol (ethanol converts phosgene to harmless diethyl carbonate).</span></li>
+                        <li><span><strong>Iodoform (CHI₃):</strong> Used as an antiseptic. Its antiseptic action is due to the liberation of free iodine (I₂), not the compound itself.</span></li>
+                        <li><span><strong>Freons (CFCs):</strong> Excellent refrigerants but cause depletion of the ozone layer via free radical chain reactions in the stratosphere.</span></li>
+                        <li><span><strong>DDT:</strong> Highly effective insecticide but banned because it is non-biodegradable, causes biomagnification, and is toxic to wildlife.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <div class="resources-section">
         <h3>🎀 Advance Study Materials</h3>
-        <p>Master SN1/SN2 mechanisms and Name Reactions by practicing Previous Year Questions and reading in-depth Long Notes.</p>
+        <p>Master SN1/SN2 mechanisms, Stereochemistry, and Name Reactions by practicing PYQs and reading in-depth Long Notes.</p>
         <div class="resource-buttons">
-            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+            <button class="res-btn btn-notes">📖 Read Long Notes</button>
+            <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
+        </div>
+    </div>
+
+    <div class="trusted-section">
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+                
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -257,24 +373,87 @@
         <a href="coordination.html" class="btn btn-home">⬅ Prev: Coordination</a>
         <a href="alcohols.html" class="btn btn-next">Next: Alcohols ➡</a>
     </div>
+
     <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+        <div class="made-by">MADE WITH ❤️ BY <span>SHOORVEER NOTES</span></div>
+        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(249, 168, 212, 0.2);">
+            <a href="privacy-policy.html" style="color: #fbcfe8; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">Privacy Policy</a>
+            <span style="color: #831843;">|</span>
+            <a href="about.html" style="color: #fbcfe8; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">About Us</a>
         </div>
     </footer>
 
+    <script>
+        const quotes = [
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+            {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"},
+            {"en": "Dream big and dare to fail.", "hi": "बड़े सपने देखें और असफल होने का साहस करें।"},
+            {"en": "It always seems impossible until it's done.", "hi": "जब तक यह हो नहीं जाता, तब तक यह हमेशा असंभव लगता है।"},
+            {"en": "Don't watch the clock; do what it does. Keep going.", "hi": "घड़ी को मत देखो; वही करो जो यह करती है। चलते रहो।"},
+            {"en": "The harder you work for something, the greater you'll feel when you achieve it.", "hi": "आप किसी चीज़ के लिए जितनी कड़ी मेहनत करेंगे, उसे हासिल करने पर आपको उतनी ही अधिक खुशी होगी।"},
+            {"en": "Success doesn’t just find you. You have to go out and get it.", "hi": "सफलता सिर्फ आपको नहीं मिलती। आपको बाहर जाकर इसे हासिल करना होगा।"},
+            {"en": "The key to success is to focus on goals, not obstacles.", "hi": "सफलता की कुंजी बाधाओं पर नहीं, लक्ष्यों पर ध्यान केंद्रित करना है।"},
+            {"en": "Great things never come from comfort zones.", "hi": "महान चीजें कभी भी आराम क्षेत्र से नहीं आती हैं।"},
+            {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "दृढ़ संकल्प के साथ उठें। संतुष्टि के साथ सोने जाएं।"},
+            {"en": "Do something today that your future self will thank you for.", "hi": "आज कुछ ऐसा करें जिसके लिए आपका भविष्य का स्वरूप आपको धन्यवाद दे।"},
+            {"en": "It’s going to be hard, but hard does not mean impossible.", "hi": "यह कठिन होने वाला है, लेकिन कठिन का मतलब असंभव नहीं है।"},
+            {"en": "Don’t wait for opportunity. Create it.", "hi": "अवसर की प्रतीक्षा न करें। इसे बनाएं।"},
+            {"en": "Push yourself, because no one else is going to do it for you.", "hi": "खुद को आगे बढ़ाएं, क्योंकि कोई और आपके लिए यह नहीं करने वाला है।"},
+            {"en": "Success is walking from failure to failure with no loss of enthusiasm.", "hi": "सफलता बिना उत्साह खोए एक विफलता से दूसरी विफलता तक चलना है।"},
+            {"en": "You don't have to be great to start, but you have to start to be great.", "hi": "शुरू करने के लिए आपको महान होने की आवश्यकता नहीं है, लेकिन महान होने के लिए आपको शुरुआत करनी होगी।"},
+            {"en": "There is no substitute for hard work.", "hi": "कड़ी मेहनत का कोई विकल्प नहीं है।"},
+            {"en": "Doubt kills more dreams than failure ever will.", "hi": "संदेह विफलता से कहीं अधिक सपनों को मार देता है।"},
+            {"en": "Action is the foundational key to all success.", "hi": "कार्य सभी सफलताओं की मूलभूत कुंजी है।"},
+            {"en": "Failure is the opportunity to begin again more intelligently.", "hi": "विफलता अधिक बुद्धिमानी से फिर से शुरू करने का अवसर है।"},
+            {"en": "Don't let yesterday take up too much of today.", "hi": "बीते हुए कल को आज का बहुत अधिक समय न लेने दें।"},
+            {"en": "You learn more from failure than from success.", "hi": "आप सफलता की तुलना में विफलता से अधिक सीखते हैं।"},
+            {"en": "If you are working on something that you really care about, you don't have to be pushed.", "hi": "यदि आप किसी ऐसी चीज़ पर काम कर रहे हैं जिसकी आपको वास्तव में परवाह है, तो आपको धकेलने की ज़रूरत नहीं है।"},
+            {"en": "Experience is a hard teacher because she gives the test first, the lesson afterwards.", "hi": "अनुभव एक कठोर शिक्षक है क्योंकि वह पहले परीक्षा लेता है, बाद में पाठ पढ़ाता है।"},
+            {"en": "To know how much there is to know is the beginning of learning to live.", "hi": "यह जानना कि जानने के लिए कितना कुछ है, जीना सीखने की शुरुआत है।"},
+            {"en": "Goal setting is the secret to a compelling future.", "hi": "लक्ष्य निर्धारण एक सम्मोहक भविष्य का रहस्य है।"},
+            {"en": "Either you run the day or the day runs you.", "hi": "या तो आप दिन चलाते हैं या दिन आपको चलाता है।"},
+            {"en": "I find that the harder I work, the more luck I seem to have.", "hi": "मुझे लगता है कि मैं जितनी अधिक मेहनत करता हूं, मुझे उतना ही भाग्य मिलता है।"},
+            {"en": "Start where you are. Use what you have. Do what you can.", "hi": "आप जहां हैं वहीं से शुरू करें। आपके पास जो है उसका उपयोग करें। जो आप कर सकते हैं वह करें।"},
+            {"en": "Fall seven times and stand up eight.", "hi": "सात बार गिरें और आठवीं बार खड़े हो जाएं।"},
+            {"en": "Everything you’ve ever wanted is on the other side of fear.", "hi": "हर वो चीज़ जो आपने कभी चाही है, वो डर के दूसरी तरफ है।"},
+            {"en": "Success is getting what you want. Happiness is wanting what you get.", "hi": "सफलता वही पाना है जो आप चाहते हैं। खुशी वही चाहना है जो आपको मिलता है।"},
+            {"en": "Quality is not an act, it is a habit.", "hi": "गुणवत्ता एक कार्य नहीं है, यह एक आदत है।"},
+            {"en": "We are what we repeatedly do.", "hi": "हम वही हैं जो हम बार-बार करते हैं।"},
+            {"en": "Make each day your masterpiece.", "hi": "हर दिन को अपनी उत्कृष्ट कृति बनाएं।"},
+            {"en": "The best revenge is massive success.", "hi": "सबसे अच्छा बदला बड़ी सफलता है।"},
+            {"en": "You miss 100% of the shots you don't take.", "hi": "आप 100% उन मौकों को चूक जाते हैं जिन्हें आप नहीं लेते हैं।"},
+            {"en": "The successful warrior is the average man, with laser-like focus.", "hi": "सफल योद्धा औसत दर्जे का आदमी होता है, जिसमें लेज़र जैसा फोकस होता है।"},
+            {"en": "Nothing will work unless you do.", "hi": "जब तक आप काम नहीं करेंगे तब तक कुछ भी काम नहीं करेगा।"},
+            {"en": "Work hard in silence, let your success be your noise.", "hi": "खामोशी से कड़ी मेहनत करो, अपनी सफलता को शोर मचाने दो।"},
+            {"en": "A river cuts through rock, not because of its power, but because of its persistence.", "hi": "एक नदी अपनी शक्ति के कारण नहीं, बल्कि अपनी दृढ़ता के कारण चट्टान को काटती है।"},
+            {"en": "Discipline is the bridge between goals and accomplishment.", "hi": "अनुशासन लक्ष्यों और उपलब्धि के बीच का पुल है।"},
+            {"en": "Motivation is what gets you started. Habit is what keeps you going.", "hi": "प्रेरणा वह है जो आपको शुरू करती है। आदत वह है जो आपको चलते रहने देती है।"},
+            {"en": "The expert in anything was once a beginner.", "hi": "किसी भी चीज का विशेषज्ञ कभी शुरुआती था।"},
+            {"en": "What comes easy won't last long, and what lasts long won't come easy.", "hi": "जो आसानी से मिल जाता है वह लंबे समय तक नहीं रहता, और जो लंबे समय तक रहता है वह आसानी से नहीं मिलता।"},
+            {"en": "Education is the most powerful weapon which you can use to change the world.", "hi": "शिक्षा सबसे शक्तिशाली हथियार है जिसका उपयोग आप दुनिया को बदलने के लिए कर सकते हैं।"},
+            {"en": "Your attitude, not your aptitude, will determine your altitude.", "hi": "आपकी योग्यता नहीं, बल्कि आपका दृष्टिकोण आपकी ऊंचाई निर्धारित करेगा।"}
+        ];
+        
+        let quoteIndex = 1; 
+        const hindiEl = document.getElementById('shayari-hi');
+        const engEl = document.getElementById('shayari-en');
+        const box = document.getElementById('shayari-box');
+
+        if (hindiEl && engEl && box) {
+            setInterval(function() {
+                box.style.opacity = 0;
+                setTimeout(function() {
+                    hindiEl.textContent = quotes[quoteIndex].hi;
+                    engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                    box.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                }, 500);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
-
