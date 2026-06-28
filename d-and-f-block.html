@@ -1,259 +1,289 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 4: d & f Block Elements - Detailed Notes</title>
+    <title>Chapter 4: d & f Block Elements - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
-        /* New Green Theme */
-        body { background-color: #022c22; color: #ecfdf5; line-height: 1.6; padding: 1rem; }
+        /* Premium Emerald Green Theme */
+        body { background-color: #022c22; color: #ecfdf5; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
         
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #34d399; font-size: 2rem; }
-        .header p { color: #a7f3d0; font-size: 1rem; }
+        .header { text-align: center; margin: 2rem 0; }
+        .header h1 { color: #34d399; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(52, 211, 153, 0.5); text-transform: uppercase; }
+        .header p { color: #a7f3d0; font-size: 1.1rem; margin-top: 5px; }
+
+        /* Dynamic Motivation Section */
+        .shayari-container {
+            background: linear-gradient(135deg, rgba(4, 120, 87, 0.3), rgba(6, 78, 59, 0.5));
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .shayari-hindi { font-size: 1.3rem; color: #34d399; margin-bottom: 10px; font-weight: 700; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #6ee7b7; font-style: italic; }
 
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
-        /* Dark Green Accordion Design */
-        details {
+        /* FULLY EXPANDED CARDS DESIGN */
+        .card {
             background: #064e3b;
             border: 1px solid #047857;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            padding: 20px;
+            transition: transform 0.3s ease;
         }
+        .card:hover { border-color: #34d399; box-shadow: 0 8px 25px rgba(52, 211, 153, 0.2); transform: translateY(-3px); }
         
-        summary {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .card-header {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #34d399;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #047857;
+            padding-bottom: 10px;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #6ee7b7;
-        }
-        details[open] summary::after { content: '-'; color: #34d399; }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #d1fae5;
-            font-size: 0.95rem;
-            border-top: 1px solid #047857;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
+        .content { color: #d1fae5; font-size: 1rem; }
 
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #f8fafc; margin-bottom: 5px; border-left: 3px solid #10b981; padding-left: 8px;}
-        ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: #f8fafc; margin-bottom: 8px; border-left: 4px solid #34d399; padding-left: 10px; font-size: 1.15rem; background: rgba(52, 211, 153, 0.1); padding: 5px 10px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: #6ee7b7; }
+        ul li span { color: #d1fae5; }
+        li { margin-bottom: 8px; }
         
         .formula {
             display: block;
-            background: #022c22;
-            padding: 8px;
-            border-radius: 5px;
+            background: rgba(0,0,0,0.5);
+            padding: 12px;
+            border-radius: 8px;
             color: #fbbf24;
             font-family: monospace;
-            font-size: 1rem;
-            margin: 5px 0;
-            border-left: 3px solid #fbbf24;
+            font-size: 1.05rem;
+            margin: 10px 0;
+            border-left: 4px solid #fbbf24;
+            overflow-x: auto;
         }
 
-        /* Long Notes & PYQ Section Styling */
+        /* Long Notes & PYQ Section */
         .resources-section {
             max-width: 800px;
-            margin: 3rem auto 1rem auto;
-            background: rgba(4, 120, 87, 0.3);
+            margin: 4rem auto 2rem auto;
+            background: rgba(4, 120, 87, 0.2);
             border: 2px dashed #34d399;
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
         }
-        .resources-section h3 { color: #34d399; margin-bottom: 10px; }
-        .resources-section p { color: #a7f3d0; margin-bottom: 20px; font-size: 0.9rem; }
+        .resources-section h3 { color: #34d399; margin-bottom: 10px; font-size: 1.6rem;}
+        .resources-section p { color: #a7f3d0; margin-bottom: 20px; font-size: 1rem; }
         .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .res-btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
+        .res-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; }
         .btn-notes { background: #fbbf24; color: #022c22; }
-        .btn-notes:hover { background: #f59e0b; }
         .btn-pyq { background: #ef4444; color: #fff; }
-        .btn-pyq:hover { background: #dc2626; }
+
+        /* TRUSTED BY SECTION - PURE CSS SCROLL */
+        .trusted-section {
+            margin: 50px 0; padding: 30px 0;
+            background: rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(52, 211, 153, 0.3);
+            border-bottom: 1px solid rgba(52, 211, 153, 0.3);
+            overflow: hidden; width: 100%;
+        }
+        .trusted-title { text-align: center; color: #6ee7b7; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 12px 25px;
+            background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 10px;
+            border: 1px solid transparent;
+        }
+        .trusted-item svg { width: 28px; height: 28px; fill: #34d399; }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* Navigation */
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-home { background: #065f46; border: 1px solid #10b981; }
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+        .btn { padding: 12px 20px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-home { background: #064e3b; border: 1px solid #047857; }
         .btn-next { background: #10b981; color: #022c22; }
+
+        /* Emerald Footer */
+        footer { background: #021c15; padding: 40px 20px; text-align: center; border-top: 2px solid #059669; }
+        .made-by { font-size: 1.2rem; color: #a7f3d0; margin-bottom: 10px; }
+        .made-by span { color: #34d399; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #059669, #10b981);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Chapter 4: d & f Block Elements</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    <header class="header">
+        <h1>Chapter 4: d & f Block</h1>
+        <p class="subtitle">Complete Master Class & Notes</p>
+    </header>
+
+    <div class="shayari-container" id="shayari-box">
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
     </div>
 
     <div class="mindmap-container">
 
-        <details>
-            <summary>Introduction & Electronic Configuration</summary>
+        <div class="card">
+            <div class="card-header">1. Introduction & Configuration</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>What are Transition Elements?</h4>
-                    <p>Elements having incompletely filled d-orbitals in their ground state or in any of their common oxidation states. Zinc, Cadmium, and Mercury (Zn, Cd, Hg) have fully filled d-orbitals (d¹⁰), hence they are not considered typical transition elements.</p>
+                    <p>Elements having incompletely filled d-orbitals in their ground state or in any of their common oxidation states.</p>
+                    <ul>
+                        <li><span><strong>Exceptions:</strong> Zinc (Zn), Cadmium (Cd), and Mercury (Hg) have fully filled d-orbitals (d¹⁰) in ground and oxidation states, hence they are <strong>not</strong> considered typical transition elements.</span></li>
+                    </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>General Electronic Configuration</h4>
                     <span class="formula">(n-1)d<sup>1-10</sup> ns<sup>1-2</sup></span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Important Exceptions</h4>
                     <ul>
-                        <li><strong>Chromium (Cr, Z=24):</strong> [Ar] 3d⁵ 4s¹ (Half-filled stability)</li>
-                        <li><strong>Copper (Cu, Z=29):</strong> [Ar] 3d¹⁰ 4s¹ (Fully-filled stability)</li>
+                        <li><span><strong>Chromium (Cr, Z=24):</strong> [Ar] 3d⁵ 4s¹ (Half-filled stability)</span></li>
+                        <li><span><strong>Copper (Cu, Z=29):</strong> [Ar] 3d¹⁰ 4s¹ (Fully-filled stability)</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Physical Properties & Trends</summary>
+        <div class="card">
+            <div class="card-header">2. Physical Properties & Trends</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Enthalpy of Atomization</h4>
-                    <p>Transition metals have high enthalpies of atomization because of strong metallic bonding due to the involvement of a large number of unpaired electrons in the (n-1)d orbitals.</p>
+                    <p>Transition metals have high enthalpies of atomization. Why? Because of strong metallic bonding due to the involvement of a large number of unpaired electrons in the (n-1)d orbitals.</p>
                 </div>
                 <div class="sub-topic">
                     <h4>Atomic and Ionic Radii</h4>
                     <ul>
-                        <li>Radii decrease with increase in atomic number in a given series.</li>
-                        <li><strong>Lanthanoid Contraction:</strong> The almost identical radii of Zr (160 pm) and Hf (159 pm) is due to the poor shielding effect of 4f electrons, which increases effective nuclear charge.</li>
+                        <li><span>Radii generally decrease from left to right along a period due to increasing effective nuclear charge.</span></li>
+                        <li><span><strong>Lanthanoid Contraction:</strong> The almost identical atomic radii of Zr (160 pm) and Hf (159 pm) in the 4d and 5d series respectively. It occurs due to the poor shielding effect of 4f electrons, which heavily increases the effective nuclear charge pulling the valence shell inwards.</span></li>
                     </ul>
                 </div>
-                <div class="sub-topic">
-                    <h4>Ionization Enthalpies</h4>
-                    <p>Generally increases from left to right along a series. However, the increase is not as steep as in the case of s and p block elements.</p>
-                </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Oxidation States & Magnetic Properties</summary>
+        <div class="card">
+            <div class="card-header">3. Chemical & Magnetic Properties</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Variable Oxidation States</h4>
-                    <p>Transition elements show variable oxidation states due to the participation of both ns and (n-1)d electrons (because their energy levels are very close).</p>
+                    <p>They show variable oxidation states because the energy difference between (n-1)d and ns orbitals is very small, allowing electrons from both to participate in bonding.</p>
                     <ul>
-                        <li><strong>Scandium (Sc):</strong> Shows only +3 oxidation state.</li>
-                        <li><strong>Manganese (Mn):</strong> Shows maximum number of oxidation states (+2 to +7) in the 3d series.</li>
-                        <li><strong>Osmium (Os) & Ruthenium (Ru):</strong> Show the highest oxidation state of +8.</li>
+                        <li><span><strong>Scandium (Sc):</strong> Shows only +3 oxidation state.</span></li>
+                        <li><span><strong>Manganese (Mn):</strong> Shows maximum number of oxidation states (+2 to +7).</span></li>
+                        <li><span><strong>Osmium (Os):</strong> Shows the highest oxidation state of +8.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Magnetic Properties</h4>
-                    <p>Due to the presence of unpaired electrons, most transition metal ions are Paramagnetic.</p>
-                    <p><strong>Spin-Only Magnetic Moment (μ):</strong></p>
-                    <span class="formula">μ = &radic;(n(n+2)) B.M.</span>
-                    <p>Where 'n' is the number of unpaired electrons and B.M. is Bohr Magneton.</p>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>Colour, Catalysis & Alloy Formation</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Formation of Coloured Ions</h4>
-                    <p>Most of the transition metal compounds are coloured in solid form or in solution. This is due to <strong>d-d transition</strong>. When visible light falls, an electron absorbs energy and jumps from a lower energy d-orbital to a higher energy d-orbital. Ions with d⁰ or d¹⁰ configuration (like Zn²⁺, Ti⁴⁺) are colourless.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Catalytic Properties</h4>
-                    <p>They act as excellent catalysts because:</p>
+                    <h4>Magnetic Properties & Colour</h4>
                     <ul>
-                        <li>They can show multiple oxidation states.</li>
-                        <li>They provide a large surface area for adsorption of reactant gases.</li>
-                        <li>Example: V₂O₅ in Contact Process, Fe in Haber's Process.</li>
+                        <li><span><strong>Paramagnetism:</strong> Due to the presence of unpaired electrons.</span></li>
+                        <li><span><strong>Spin-Only Magnetic Moment Formula:</strong> <br><span class="formula">μ = &radic;(n(n+2)) B.M.</span> (Where 'n' = number of unpaired electrons).</span></li>
+                        <li><span><strong>Colour:</strong> Due to <strong>d-d transition</strong>. Electrons absorb specific visible light and jump to higher d-orbitals. (Ions with d⁰ or d¹⁰ like Zn²⁺, Ti⁴⁺ are colourless).</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Interstitial Compounds & Alloys</h4>
+                    <h4>Catalysis & Alloys</h4>
                     <ul>
-                        <li><strong>Interstitial Compounds:</strong> Formed when small atoms like H, C, or N are trapped inside the crystal lattices of metals. They are very hard and have high melting points.</li>
-                        <li><strong>Alloys:</strong> Formed easily because transition metals have similar atomic radii (difference is less than 15%), allowing them to replace each other in the crystal lattice.</li>
+                        <li><span><strong>Catalysts:</strong> They act as good catalysts because they can adopt multiple oxidation states and provide large surface area (e.g., V₂O₅ in Contact Process).</span></li>
+                        <li><span><strong>Interstitial Compounds:</strong> Small non-metals (H, C, N) trapped in crystal lattices. They are extremely hard with very high melting points.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Important Compounds: K2Cr2O7 & KMnO4</summary>
+        <div class="card">
+            <div class="card-header">4. Potassium Dichromate (K₂Cr₂O₇)</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Potassium Dichromate (K₂Cr₂O₇)</h4>
-                    <p>Acts as a strong oxidizing agent in acidic medium.</p>
+                    <h4>Preparation & Properties</h4>
+                    <p>Prepared from Chromite ore (FeCr₂O₄). It acts as a powerful <strong>oxidizing agent</strong> in acidic medium.</p>
                     <span class="formula">Cr₂O₇²⁻ + 14H⁺ + 6e⁻ &rarr; 2Cr³⁺ + 7H₂O</span>
                     <ul>
-                        <li>Oxidizes Iodide (I⁻) to Iodine (I₂).</li>
-                        <li>Oxidizes Fe²⁺ to Fe³⁺.</li>
-                        <li>Chromate (yellow) and Dichromate (orange) are interconvertible depending on pH.</li>
+                        <li><span>Oxidizes Iodide (I⁻) to Iodine (I₂).</span></li>
+                        <li><span>Oxidizes Ferrous (Fe²⁺) to Ferric (Fe³⁺).</span></li>
+                        <li><span>Oxidizes H₂S to elemental Sulphur (S).</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Potassium Permanganate (KMnO₄)</h4>
-                    <p>Intense purple colour. Acts as a very strong oxidizing agent in acidic, neutral, and alkaline mediums.</p>
-                    <p><strong>In Acidic Medium:</strong></p>
-                    <span class="formula">MnO₄⁻ + 8H⁺ + 5e⁻ &rarr; Mn²⁺ + 4H₂O</span>
+                    <h4>Chromate-Dichromate Equilibrium</h4>
+                    <p>They are interconvertible depending on the pH of the solution.</p>
                     <ul>
-                        <li>Oxidizes Oxalate (C₂O₄²⁻) to CO₂.</li>
-                        <li>Oxidizes Fe²⁺ to Fe³⁺.</li>
+                        <li><span>In Acidic medium (pH &lt; 7): Yellow Chromate (CrO₄²⁻) turns into Orange Dichromate (Cr₂O₇²⁻).</span></li>
+                        <li><span>In Basic medium (pH &gt; 7): Orange turns back to Yellow.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>The f-Block: Lanthanoids & Actinoids</summary>
+        <div class="card">
+            <div class="card-header">5. Potassium Permanganate (KMnO₄)</div>
+            <div class="content">
+                <div class="sub-topic">
+                    <h4>Preparation & Oxidizing Action</h4>
+                    <p>Prepared from Pyrolusite ore (MnO₂). Dark purple crystals. It acts as an oxidizing agent in acidic, neutral, and alkaline mediums.</p>
+                    <p><strong>In Acidic Medium (Strongest action):</strong></p>
+                    <span class="formula">MnO₄⁻ + 8H⁺ + 5e⁻ &rarr; Mn²⁺ + 4H₂O</span>
+                    <ul>
+                        <li><span>Oxidizes Oxalate (C₂O₄²⁻) to CO₂.</span></li>
+                        <li><span>Oxidizes Fe²⁺ to Fe³⁺.</span></li>
+                        <li><span>Oxidizes Nitrite (NO₂⁻) to Nitrate (NO₃⁻).</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">6. The f-Block: Lanthanoids & Actinoids</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Lanthanoids (4f series)</h4>
                     <ul>
-                        <li>General configuration: [Xe] 4f¹⁻¹⁴ 5d⁰⁻¹ 6s²</li>
-                        <li>Most common oxidation state is <strong>+3</strong> (Though Ce shows +4 and Eu shows +2).</li>
-                        <li><strong>Lanthanoid Contraction:</strong> Steady decrease in atomic/ionic radii from La to Lu due to poor shielding of 4f electrons.</li>
-                        <li>Used in making <em>Mischmetal</em> (an alloy used in bullets and lighter flints).</li>
+                        <li><span>Most common oxidation state is <strong>+3</strong>.</span></li>
+                        <li><span><strong>Cerium (Ce):</strong> Shows +4 state (acts as good analytical oxidizing agent).</span></li>
+                        <li><span><strong>Mischmetal:</strong> An alloy of lanthanoid metals (~95%) with Iron (~5%) and traces of S, C, Ca, Al. Used in bullets and lighter flints.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Actinoids (5f series)</h4>
                     <ul>
-                        <li>General configuration: [Rn] 5f¹⁻¹⁴ 6d⁰⁻¹ 7s²</li>
-                        <li>All are radioactive. Elements after Uranium are called Transuranic elements.</li>
-                        <li>Show a large number of oxidation states because 5f, 6d, and 7s levels are of comparable energies.</li>
-                        <li>Actinoid contraction is greater from element to element than lanthanoid contraction due to even poorer shielding by 5f electrons.</li>
+                        <li><span>All actinoids are radioactive. Elements after Uranium (Z=92) are called Transuranic elements.</span></li>
+                        <li><span>Show a larger number of oxidation states than lanthanoids because 5f, 6d, and 7s levels are of comparable energies.</span></li>
+                        <li><span><strong>Actinoid Contraction:</strong> It is greater from element to element than lanthanoid contraction due to even poorer shielding by 5f electrons compared to 4f electrons.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
     </div>
 
@@ -261,8 +291,57 @@
         <h3>📚 Additional Study Material</h3>
         <p>Master this chapter by practicing Previous Year Questions and reading deep-dive long notes.</p>
         <div class="resource-buttons">
-            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+            <button class="res-btn btn-notes">📖 Read Long Notes</button>
+            <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
+        </div>
+    </div>
+
+    <div class="trusted-section">
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+                
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -270,23 +349,42 @@
         <a href="kinetics.html" class="btn btn-home">⬅ Prev: Kinetics</a>
         <a href="coordination.html" class="btn btn-next">Next: Coordination ➡</a>
     </div>
+
     <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+        <div class="made-by">MADE WITH ❤️ BY <span>SHOORVEER NOTES</span></div>
+        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(52, 211, 153, 0.2);">
+            <a href="privacy-policy.html" style="color: #a7f3d0; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">Privacy Policy</a>
+            <span style="color: #047857;">|</span>
+            <a href="about.html" style="color: #a7f3d0; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">About Us</a>
         </div>
     </footer>
 
+    <script>
+        const quotes = [
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+            {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"}
+        ];
+        
+        let quoteIndex = 1; 
+        const hindiEl = document.getElementById('shayari-hi');
+        const engEl = document.getElementById('shayari-en');
+        const box = document.getElementById('shayari-box');
+
+        if (hindiEl && engEl && box) {
+            setInterval(function() {
+                box.style.opacity = 0;
+                setTimeout(function() {
+                    hindiEl.textContent = quotes[quoteIndex].hi;
+                    engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                    box.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                }, 500);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
