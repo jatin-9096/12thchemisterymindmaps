@@ -3,273 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: Solutions - Detailed Notes</title>
+    <title>Chapter 1: Solutions - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 1rem; }
         
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #38bdf8; font-size: 2rem; }
-        .header p { color: #94a3b8; font-size: 1rem; }
+        /* Ocean Blue Premium Theme */
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
+        
+        .header { text-align: center; margin: 2rem 0; }
+        .header h1 { color: #06b6d4; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(6, 182, 212, 0.5); text-transform: uppercase; }
+        .header p { color: #67e8f9; font-size: 1.1rem; margin-top: 5px; }
 
-        /* Accordion Style for 100% Data */
+        /* Dynamic Motivation Section */
+        .shayari-container {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(14, 165, 233, 0.2));
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .shayari-hindi { font-size: 1.3rem; color: #22d3ee; margin-bottom: 10px; font-weight: 700; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #bae6fd; font-style: italic; }
+
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
-        details {
+        /* FULLY EXPANDED CARDS DESIGN */
+        .card {
             background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 1px solid #0284c7;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            padding: 25px;
+            transition: transform 0.3s ease;
         }
+        .card:hover { border-color: #22d3ee; box-shadow: 0 8px 25px rgba(6, 182, 212, 0.2); transform: translateY(-3px); }
         
-        summary {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #38bdf8;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
+        .card-header {
             font-size: 1.5rem;
-            color: #94a3b8;
+            font-weight: 700;
+            color: #22d3ee;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #0284c7;
+            padding-bottom: 10px;
         }
-        details[open] summary::after { content: '-'; color: #38bdf8; }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            border-top: 1px solid #334155;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
+        .content { color: #cbd5e1; font-size: 1.05rem; }
 
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #f1f5f9; margin-bottom: 5px; border-left: 3px solid #0ea5e9; padding-left: 8px;}
-        ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 4px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: #f8fafc; margin-bottom: 8px; border-left: 4px solid #06b6d4; padding-left: 10px; font-size: 1.2rem; background: rgba(6, 182, 212, 0.1); padding: 5px 10px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: #0ea5e9; }
+        ul li span { color: #e2e8f0; }
+        li { margin-bottom: 8px; }
         
         .formula {
             display: block;
-            background: #0f172a;
-            padding: 8px;
-            border-radius: 5px;
-            color: #f59e0b;
+            background: rgba(0,0,0,0.5);
+            padding: 12px;
+            border-radius: 8px;
+            color: #fde047;
             font-family: monospace;
-            font-size: 1rem;
-            margin: 5px 0;
-            border-left: 3px solid #f59e0b;
+            font-size: 1.1rem;
+            margin: 10px 0;
+            border-left: 4px solid #fde047;
+            overflow-x: auto;
         }
 
+        /* Long Notes & PYQ Section */
+        .resources-section {
+            max-width: 800px;
+            margin: 4rem auto 2rem auto;
+            background: rgba(6, 182, 212, 0.1);
+            border: 2px dashed #06b6d4;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .resources-section h3 { color: #22d3ee; margin-bottom: 10px; font-size: 1.6rem;}
+        .resources-section p { color: #bae6fd; margin-bottom: 20px; font-size: 1rem; }
+        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .res-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        .btn-notes { background: #fde047; color: #0f172a; }
+        .btn-notes:hover { background: #facc15; transform: translateY(-2px); }
+        .btn-pyq { background: #ef4444; color: #fff; }
+        .btn-pyq:hover { background: #dc2626; transform: translateY(-2px); }
+
+        /* TRUSTED BY SECTION - PURE CSS SCROLL */
+        .trusted-section {
+            margin: 50px 0; padding: 30px 0;
+            background: rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(6, 182, 212, 0.3);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+            overflow: hidden; width: 100%;
+        }
+        .trusted-title { text-align: center; color: #67e8f9; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 12px 25px;
+            background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 10px;
+            border: 1px solid transparent; transition: 0.3s;
+        }
+        .trusted-item:hover { background: rgba(6, 182, 212, 0.1); border-color: #06b6d4; transform: scale(1.05); }
+        .trusted-item svg { width: 28px; height: 28px; fill: #06b6d4; }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
         /* Navigation */
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-home { background: #475569; }
-        .btn-next { background: #38bdf8; color: #0f172a; }
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+        .btn { padding: 12px 20px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s;}
+        .btn-home { background: #334155; border: 1px solid #475569; }
+        .btn-home:hover { background: #475569; }
+        .btn-next { background: #06b6d4; color: #0f172a; }
+        .btn-next:hover { background: #0891b2; color: #fff; }
+
+        /* Ocean Footer */
+        footer { background: #020617; padding: 40px 20px; text-align: center; border-top: 2px solid #0284c7; }
+        .made-by { font-size: 1.2rem; color: #bae6fd; margin-bottom: 10px; }
+        .made-by span { color: #22d3ee; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #06b6d4, #fde047, #38bdf8, #06b6d4);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        .copyright { margin-top: 20px; font-size: 0.95rem; color: #64748b; font-weight: 600; }
+        
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <header class="header">
         <h1>Chapter 1: Solutions</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+        <p class="subtitle">Complete Master Class & Notes</p>
+    </header>
+
+    <div class="shayari-container" id="shayari-box">
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
     </div>
 
     <div class="mindmap-container">
 
-        <!-- 1. Types of Solutions -->
-        <details>
-            <summary>Types of Solutions</summary>
+        <div class="card">
+            <div class="card-header">1. Expressing Concentration</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Gaseous Solutions</h4>
+                    <h4>Basic Formulas</h4>
                     <ul>
-                        <li>Gas-Gas: Mixture of O2 and N2</li>
-                        <li>Liquid-Gas: Chloroform with N2</li>
-                        <li>Solid-Gas: Camphor in N2</li>
+                        <li><span><strong>Mass percentage (w/w):</strong> (Mass of component / Total mass of solution) × 100</span></li>
+                        <li><span><strong>Volume percentage (V/V):</strong> (Volume of component / Total volume of solution) × 100</span></li>
+                        <li><span><strong>Parts per million (ppm):</strong> Used for trace quantities. (No. of parts of component / Total parts) × 10⁶</span></li>
+                        <li><span><strong>Mole Fraction (x):</strong> No. of moles of component / Total no. of moles of all components. (Sum of all mole fractions = 1)</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Liquid Solutions</h4>
+                    <h4>Molarity vs Molality</h4>
+                    <span class="formula">Molarity (M) = Moles of solute / Volume of solution (in L)</span>
+                    <span class="formula">Molality (m) = Moles of solute / Mass of solvent (in kg)</span>
                     <ul>
-                        <li>Gas-Liquid: O2 dissolved in water</li>
-                        <li>Liquid-Liquid: Ethanol dissolved in water</li>
-                        <li>Solid-Liquid: Glucose dissolved in water</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Solid Solutions</h4>
-                    <ul>
-                        <li>Gas-Solid: H2 in Pd</li>
-                        <li>Liquid-Solid: Amalgam of Hg with Na</li>
-                        <li>Solid-Solid: Cu dissolved in gold</li>
+                        <li><span><strong>Temperature Dependence:</strong> Molarity depends on temperature because volume changes with temperature. Molality is independent of temperature because mass does not change with temperature.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 2. Expressing Concentration -->
-        <details>
-            <summary>Expressing Concentration of Solutions</summary>
-            <div class="content">
-                <ul>
-                    <li><strong>Mass by volume percentage (w/V):</strong> (Mass of solute / Volume of solution) x 100</li>
-                    <li><strong>Volume percentage (V/V):</strong> (Volume of component / Total volume of solution) x 100</li>
-                    <li><strong>Mass percentage (w/w):</strong> (Mass of component in solution / Total mass of solution) x 100</li>
-                    <li><strong>Parts per million (ppm):</strong> For trace quantities. (No. of parts of component / Total no. of parts of all components) x 10^6</li>
-                    <li><strong>Mole Fraction (x):</strong> No. of moles of component / Total no. of moles of all components</li>
-                </ul>
-                <div class="sub-topic">
-                    <h4>Important Formulas</h4>
-                    <span class="formula">Normality = (No. of gram equivalent of solute x 1000) / Volume of solution (in mL)</span>
-                    <span class="formula">Molality (m) = (No. of moles of solute x 1000) / Mass of solvent (in g)</span>
-                    <span class="formula">Molarity (M) = (No. of moles of solute x 1000) / Volume of solution (in mL)</span>
-                </div>
-            </div>
-        </details>
-
-        <!-- 3. Solubility -->
-        <details>
-            <summary>Solubility</summary>
+        <div class="card">
+            <div class="card-header">2. Solubility & Henry's Law</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Solid in Liquid</h4>
                     <ul>
-                        <li><strong>Effect of Temperature:</strong> Endothermic (Δsol H > 0) solubility increases with increasing T. Exothermic (Δsol H < 0) solubility decreases with increasing T.</li>
-                        <li><strong>Effect of Pressure:</strong> Not significant effect.</li>
+                        <li><span><strong>Effect of Temp:</strong> If dissolution is Endothermic (ΔH > 0), solubility increases with T. If Exothermic (ΔH < 0), solubility decreases with T (Le Chatelier's Principle).</span></li>
+                        <li><span><strong>Effect of Pressure:</strong> No significant effect as solids and liquids are highly incompressible.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Gas in Liquid</h4>
+                    <h4>Gas in Liquid & Henry's Law</h4>
+                    <p>Solubility of gases in liquids decreases with increase in temperature. Solubility increases with increase in pressure.</p>
+                    <p><strong>Henry's Law:</strong> Partial pressure of the gas (p) in vapour phase is proportional to the mole fraction of the gas (x) in the solution.</p>
+                    <span class="formula">p = K<sub>H</sub> · x</span>
                     <ul>
-                        <li><strong>Effect of Temperature:</strong> Solubility increases with decrease in temperature.</li>
-                        <li><strong>Effect of Pressure:</strong> Solubility increases with increase in pressure.</li>
+                        <li><span>Higher the value of K<sub>H</sub> at a given pressure, lower is the solubility of the gas.</span></li>
+                        <li><span><strong>Applications:</strong><br> 
+                        1. To increase solubility of CO₂ in soft drinks, bottles are sealed under high pressure.<br>
+                        2. <strong>Scuba Divers (Bends):</strong> At high pressure underwater, N₂ dissolves in blood. Coming up rapidly releases N₂ bubbles, causing painful 'bends'. Tanks are diluted with Helium to avoid this.<br>
+                        3. <strong>High Altitudes (Anoxia):</strong> Low partial pressure of O₂ leads to low oxygen in blood, causing weakness and inability to think clearly (Anoxia).</span></li>
                     </ul>
-                    <br>
-                    <h4>Henry's Law</h4>
-                    <p>Partial pressure of gas in vapour phase (p) is proportional to the mole fraction of gas (x) in the solution.</p>
-                    <span class="formula">p = KH · x</span>
-                    <p>Higher the value of KH, lower the solubility.</p>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 4. Ideal and Non-Ideal Solutions -->
-        <details>
-            <summary>Ideal and Non-Ideal Solutions</summary>
+        <div class="card">
+            <div class="card-header">3. Raoult's Law & Types of Solutions</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Liquid-Liquid Solutions (Raoult's Law)</h4>
-                    <ul>
-                        <li>Raoult's law: p1 = p1°x1</li>
-                        <li>Dalton's law of partial pressure: P(Total) = p1 + p2 + ... pn</li>
-                        <li>In vapour phase: y1 = p1 / P(Total)</li>
-                    </ul>
+                    <h4>Raoult's Law for Volatile Liquids</h4>
+                    <p>For a solution of volatile liquids, the partial vapour pressure of each component is directly proportional to its mole fraction present in solution.</p>
+                    <span class="formula">p₁ = p₁°x₁ &nbsp; and &nbsp; p₂ = p₂°x₂</span>
+                    <span class="formula">P<sub>Total</sub> = p₁ + p₂ = p₁°x₁ + p₂°x₂</span>
                 </div>
                 <div class="sub-topic">
-                    <h4>Ideal Solutions</h4>
+                    <h4>Ideal vs Non-Ideal Solutions</h4>
                     <ul>
-                        <li>Obey Raoult's law</li>
-                        <li>ΔH(mix) = 0, ΔV(mix) = 0</li>
-                        <li>Interactions A-A and B-B = A-B</li>
-                        <li>Example: n-hexane and n-heptane, Ethyl bromide + Ethyl chloride</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Non-Ideal Solutions</h4>
-                    <ul>
-                        <li>Do not Obey Raoult's law (ΔH(mix) ≠ 0 and ΔV(mix) ≠ 0)</li>
-                        <li><strong>Positive Deviation:</strong> ΔH > 0, ΔV > 0. Interactions A-B < A-A or B-B. Example: Acetone + Ethyl alcohol, Water + Ethyl alcohol.</li>
-                        <li><strong>Negative Deviation:</strong> ΔH < 0, ΔV < 0. Interactions A-B > A-A or B-B. Example: Acetone + Aniline, Acetone + Chloroform.</li>
+                        <li><span><strong>Ideal Solutions:</strong> Obey Raoult's law at all concentrations. ΔH<sub>mix</sub> = 0, ΔV<sub>mix</sub> = 0. A-B interactions are exactly equal to A-A and B-B interactions. (Ex: n-hexane + n-heptane).</span></li>
+                        <li><span><strong>Positive Deviation (Non-Ideal):</strong> Vapour pressure is higher than expected. A-B interactions are <em>weaker</em> than A-A/B-B. ΔH > 0, ΔV > 0. (Ex: Ethanol + Acetone). Forms Minimum Boiling Azeotrope.</span></li>
+                        <li><span><strong>Negative Deviation (Non-Ideal):</strong> Vapour pressure is lower than expected. A-B interactions are <em>stronger</em> than A-A/B-B. ΔH < 0, ΔV < 0. (Ex: Chloroform + Acetone due to H-bonding). Forms Maximum Boiling Azeotrope.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Azeotropes</h4>
-                    <p>The mixtures of liquids which boil at constant temperature like a pure liquid and possess same composition of components in liquid as well as binary vapour phase are called constant boiling mixtures or azeotropic mixtures.</p>
-                    <ul>
-                        <li><strong>Minimum boiling azeotropes:</strong> Formed by liquid pairs which show positive deviations (Ex: Ethanol-Water mixture).</li>
-                        <li><strong>Maximum boiling azeotropes:</strong> Formed by liquid pairs which show negative deviations (Ex: Nitric Acid-Water mixture).</li>
-                    </ul>
+                    <p>Binary mixtures having the same composition in liquid and vapour phase and boil at a constant temperature. They cannot be separated by fractional distillation.</p>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 5. Colligative Properties -->
-        <details>
-            <summary>Colligative Properties</summary>
+        <div class="card">
+            <div class="card-header">4. Colligative Properties</div>
             <div class="content">
-                <p><strong>Definition:</strong> Properties which depend on the number of solute particles and not on their nature.</p>
+                <p>Properties which depend only on the <strong>number of solute particles</strong> irrespective of their nature relative to the total number of particles.</p>
                 <div class="sub-topic">
-                    <h4>Types & Formulas</h4>
+                    <h4>1. Relative Lowering of Vapour Pressure</h4>
+                    <p>When a non-volatile solute is added to a solvent, vapour pressure decreases.</p>
+                    <span class="formula">(P₁° - P₁) / P₁° = x₂ = n₂ / (n₁ + n₂)</span>
+                </div>
+                <div class="sub-topic">
+                    <h4>2. Elevation of Boiling Point (ΔT<sub>b</sub>)</h4>
+                    <span class="formula">ΔT<sub>b</sub> = K<sub>b</sub> × m</span>
                     <ul>
-                        <li><strong>Relative lowering of vapour pressure:</strong> <span class="formula">(P1° - P1) / P1° = x2 = n2 / (n1 + n2)</span></li>
-                        <li><strong>Elevation of boiling point:</strong> <span class="formula">ΔTb = Kb × m = (Kb × 1000 × W2) / (M2 × W1)</span></li>
-                        <li><strong>Depression in freezing point:</strong> <span class="formula">ΔTf = Kf × m = (Kf × 1000 × W2) / (M2 × W1)</span></li>
-                        <li><strong>Osmotic pressure:</strong> <span class="formula">π = CRT</span></li>
+                        <li><span>K<sub>b</sub> = Molal elevation constant (Ebullioscopic constant).</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Osmosis Deep Dive</h4>
+                    <h4>3. Depression in Freezing Point (ΔT<sub>f</sub>)</h4>
+                    <span class="formula">ΔT<sub>f</sub> = K<sub>f</sub> × m</span>
                     <ul>
-                        <li><strong>Osmosis:</strong> Flow of solvent molecules from pure solvent to solution through a semi permeable membrane.</li>
-                        <li><strong>Osmotic pressure:</strong> Excess pressure that must be applied to a solution to prevent osmosis.</li>
-                        <li><strong>Isotonic Solutions:</strong> Solutions with same osmotic pressure.</li>
-                        <li><strong>Hypertonic Solution:</strong> Water flows out of cell, and cell shrinks.</li>
-                        <li><strong>Hypotonic Solutions:</strong> Water flows into the cells and the cell swells.</li>
-                        <li><strong>Reverse Osmosis:</strong> The process of movement of solvent through a semi-permeable membrane from the solution to pure solvent by applying pressure more than osmotic pressure.</li>
+                        <li><span>K<sub>f</sub> = Molal depression constant (Cryoscopic constant). Ex: Ethylene glycol is used as antifreeze in car radiators to depress freezing point of water.</span></li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>4. Osmosis & Osmotic Pressure (π)</h4>
+                    <p>Flow of solvent from pure solvent to solution through a semi-permeable membrane (SPM).</p>
+                    <span class="formula">π = C R T &nbsp;&nbsp; (C = Molarity)</span>
+                    <ul>
+                        <li><span><strong>Reverse Osmosis (RO):</strong> If pressure applied is greater than osmotic pressure, solvent flows from solution to pure solvent. Used in desalination of sea water.</span></li>
+                        <li><span><strong>Isotonic:</strong> Same osmotic pressure. <strong>Hypertonic:</strong> Higher π (Cell shrinks). <strong>Hypotonic:</strong> Lower π (Cell swells).</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <!-- 6. Abnormal Molecular Mass -->
-        <details>
-            <summary>Abnormal Molecular Mass</summary>
+        <div class="card">
+            <div class="card-header">5. Abnormal Molar Mass & van't Hoff Factor</div>
             <div class="content">
-                <p>Molar mass different from expected value.</p>
-                <span class="formula">van't Hoff factor (i) = Normal molar mass / Abnormal molar mass</span>
-                <span class="formula">i = Observed Colligative Property / Calculated Colligative Property</span>
-                <ul>
-                    <li><strong>i = 1:</strong> Solute undergoes neither association nor dissociation.</li>
-                    <li><strong>i < 1:</strong> Solute undergoes association in solution.</li>
-                    <li><strong>i > 1:</strong> Solute undergoes dissociation in solution.</li>
-                </ul>
+                <div class="sub-topic">
+                    <h4>van't Hoff Factor (i)</h4>
+                    <p>Accounts for extent of dissociation or association.</p>
+                    <span class="formula">i = Normal Molar Mass / Abnormal Molar Mass</span>
+                    <span class="formula">i = Observed Colligative Property / Calculated Colligative Property</span>
+                    <ul>
+                        <li><span><strong>i = 1:</strong> No association/dissociation (Ex: Glucose, Urea).</span></li>
+                        <li><span><strong>i > 1:</strong> Dissociation (Ex: NaCl, KCl). Molar mass appears less.</span></li>
+                        <li><span><strong>i < 1:</strong> Association (Ex: Acetic acid in benzene forms dimers). Molar mass appears more.</span></li>
+                    </ul>
+                </div>
+                <div class="sub-topic">
+                    <h4>Degree of Dissociation / Association</h4>
+                    <ul>
+                        <li><span><strong>For Dissociation (α):</strong> α = (i - 1) / (n - 1)</span></li>
+                        <li><span><strong>For Association (α):</strong> α = (i - 1) / ((1/n) - 1)</span></li>
+                        <li><span><em>Modified Formulas:</em> ΔT<sub>b</sub> = i × K<sub>b</sub> × m ; π = iCRT</span></li>
+                    </ul>
+                </div>
             </div>
-        </details>
+        </div>
 
     </div>
 
-    <!-- Navigation -->
+    <div class="resources-section">
+        <h3>📚 Additional Study Material</h3>
+        <p>Master Solutions by practicing Numerical PYQs on Colligative Properties and van't Hoff Factor.</p>
+        <div class="resource-buttons">
+            <button class="res-btn btn-notes">📖 Read Long Notes</button>
+            <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
+        </div>
+    </div>
+
+    <div class="trusted-section">
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+                
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="nav-section">
-        <a href="index.html" class="btn btn-home">⬅ Home</a>
-        <a href="electrochemistry.html" class="btn btn-next">Next Chapter ➡</a>
+        <a href="index.html" class="btn btn-home">⬅ Home Dashboard</a>
+        <a href="electrochemistry.html" class="btn btn-next">Next: Electrochemistry ➡</a>
     </div>
+
     <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
+        <div class="made-by">MADE WITH ❤️ BY <span>SHOORVEER NOTES</span></div>
+        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
         
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+        <div class="copyright">&copy; 2026 Shoorveer Notes Group. All Rights Reserved.</div>
+        
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(6, 182, 212, 0.3);">
+            <a href="privacy-policy.html" style="color: #67e8f9; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">Privacy Policy</a>
+            <span style="color: #0284c7;">|</span>
+            <a href="about.html" style="color: #67e8f9; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">About Us</a>
         </div>
     </footer>
 
+    <script>
+        const quotes = [
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+            {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"},
+            {"en": "Dream big and dare to fail.", "hi": "बड़े सपने देखें और असफल होने का साहस करें।"},
+            {"en": "It always seems impossible until it's done.", "hi": "जब तक यह हो नहीं जाता, तब तक यह हमेशा असंभव लगता है।"},
+            {"en": "Don't watch the clock; do what it does. Keep going.", "hi": "घड़ी को मत देखो; वही करो जो यह करती है। चलते रहो।"},
+            {"en": "The harder you work for something, the greater you'll feel when you achieve it.", "hi": "आप किसी चीज़ के लिए जितनी कड़ी मेहनत करेंगे, उसे हासिल करने पर आपको उतनी ही अधिक खुशी होगी।"},
+            {"en": "Success doesn’t just find you. You have to go out and get it.", "hi": "सफलता सिर्फ आपको नहीं मिलती। आपको बाहर जाकर इसे हासिल करना होगा।"},
+            {"en": "The key to success is to focus on goals, not obstacles.", "hi": "सफलता की कुंजी बाधाओं पर नहीं, लक्ष्यों पर ध्यान केंद्रित करना है।"},
+            {"en": "Great things never come from comfort zones.", "hi": "महान चीजें कभी भी आराम क्षेत्र से नहीं आती हैं।"},
+            {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "दृढ़ संकल्प के साथ उठें। संतुष्टि के साथ सोने जाएं।"},
+            {"en": "Do something today that your future self will thank you for.", "hi": "आज कुछ ऐसा करें जिसके लिए आपका भविष्य का स्वरूप आपको धन्यवाद दे।"},
+            {"en": "It’s going to be hard, but hard does not mean impossible.", "hi": "यह कठिन होने वाला है, लेकिन कठिन का मतलब असंभव नहीं है।"},
+            {"en": "Don’t wait for opportunity. Create it.", "hi": "अवसर की प्रतीक्षा न करें। इसे बनाएं।"},
+            {"en": "Push yourself, because no one else is going to do it for you.", "hi": "खुद को आगे बढ़ाएं, क्योंकि कोई और आपके लिए यह नहीं करने वाला है।"},
+            {"en": "Success is walking from failure to failure with no loss of enthusiasm.", "hi": "सफलता बिना उत्साह खोए एक विफलता से दूसरी विफलता तक चलना है।"},
+            {"en": "You don't have to be great to start, but you have to start to be great.", "hi": "शुरू करने के लिए आपको महान होने की आवश्यकता नहीं है, लेकिन महान होने के लिए आपको शुरुआत करनी होगी।"},
+            {"en": "There is no substitute for hard work.", "hi": "कड़ी मेहनत का कोई विकल्प नहीं है।"},
+            {"en": "Doubt kills more dreams than failure ever will.", "hi": "संदेह विफलता से कहीं अधिक सपनों को मार देता है।"},
+            {"en": "Action is the foundational key to all success.", "hi": "कार्य सभी सफलताओं की मूलभूत कुंजी है।"},
+            {"en": "Failure is the opportunity to begin again more intelligently.", "hi": "विफलता अधिक बुद्धिमानी से फिर से शुरू करने का अवसर है।"},
+            {"en": "Don't let yesterday take up too much of today.", "hi": "बीते हुए कल को आज का बहुत अधिक समय न लेने दें।"},
+            {"en": "You learn more from failure than from success.", "hi": "आप सफलता की तुलना में विफलता से अधिक सीखते हैं।"},
+            {"en": "If you are working on something that you really care about, you don't have to be pushed.", "hi": "यदि आप किसी ऐसी चीज़ पर काम कर रहे हैं जिसकी आपको वास्तव में परवाह है, तो आपको धकेलने की ज़रूरत नहीं है।"},
+            {"en": "Experience is a hard teacher because she gives the test first, the lesson afterwards.", "hi": "अनुभव एक कठोर शिक्षक है क्योंकि वह पहले परीक्षा लेता है, बाद में पाठ पढ़ाता है।"},
+            {"en": "To know how much there is to know is the beginning of learning to live.", "hi": "यह जानना कि जानने के लिए कितना कुछ है, जीना सीखने की शुरुआत है।"},
+            {"en": "Goal setting is the secret to a compelling future.", "hi": "लक्ष्य निर्धारण एक सम्मोहक भविष्य का रहस्य है।"},
+            {"en": "Either you run the day or the day runs you.", "hi": "या तो आप दिन चलाते हैं या दिन आपको चलाता है।"},
+            {"en": "I find that the harder I work, the more luck I seem to have.", "hi": "मुझे लगता है कि मैं जितनी अधिक मेहनत करता हूं, मुझे उतना ही भाग्य मिलता है।"},
+            {"en": "Start where you are. Use what you have. Do what you can.", "hi": "आप जहां हैं वहीं से शुरू करें। आपके पास जो है उसका उपयोग करें। जो आप कर सकते हैं वह करें।"},
+            {"en": "Fall seven times and stand up eight.", "hi": "सात बार गिरें और आठवीं बार खड़े हो जाएं।"},
+            {"en": "Everything you’ve ever wanted is on the other side of fear.", "hi": "हर वो चीज़ जो आपने कभी चाही है, वो डर के दूसरी तरफ है।"},
+            {"en": "Success is getting what you want. Happiness is wanting what you get.", "hi": "सफलता वही पाना है जो आप चाहते हैं। खुशी वही चाहना है जो आपको मिलता है।"},
+            {"en": "Quality is not an act, it is a habit.", "hi": "गुणवत्ता एक कार्य नहीं है, यह एक आदत है।"},
+            {"en": "We are what we repeatedly do.", "hi": "हम वही हैं जो हम बार-बार करते हैं।"},
+            {"en": "Make each day your masterpiece.", "hi": "हर दिन को अपनी उत्कृष्ट कृति बनाएं।"},
+            {"en": "The best revenge is massive success.", "hi": "सबसे अच्छा बदला बड़ी सफलता है।"},
+            {"en": "You miss 100% of the shots you don't take.", "hi": "आप 100% उन मौकों को चूक जाते हैं जिन्हें आप नहीं लेते हैं।"},
+            {"en": "The successful warrior is the average man, with laser-like focus.", "hi": "सफल योद्धा औसत दर्जे का आदमी होता है, जिसमें लेज़र जैसा फोकस होता है।"},
+            {"en": "Nothing will work unless you do.", "hi": "जब तक आप काम नहीं करेंगे तब तक कुछ भी काम नहीं करेगा।"},
+            {"en": "Work hard in silence, let your success be your noise.", "hi": "खामोशी से कड़ी मेहनत करो, अपनी सफलता को शोर मचाने दो।"},
+            {"en": "A river cuts through rock, not because of its power, but because of its persistence.", "hi": "एक नदी अपनी शक्ति के कारण नहीं, बल्कि अपनी दृढ़ता के कारण चट्टान को काटती है।"},
+            {"en": "Discipline is the bridge between goals and accomplishment.", "hi": "अनुशासन लक्ष्यों और उपलब्धि के बीच का पुल है।"},
+            {"en": "Motivation is what gets you started. Habit is what keeps you going.", "hi": "प्रेरणा वह है जो आपको शुरू करती है। आदत वह है जो आपको चलते रहने देती है।"},
+            {"en": "The expert in anything was once a beginner.", "hi": "किसी भी चीज का विशेषज्ञ कभी शुरुआती था।"},
+            {"en": "What comes easy won't last long, and what lasts long won't come easy.", "hi": "जो आसानी से मिल जाता है वह लंबे समय तक नहीं रहता, और जो लंबे समय तक रहता है वह आसानी से नहीं मिलता।"},
+            {"en": "Education is the most powerful weapon which you can use to change the world.", "hi": "शिक्षा सबसे शक्तिशाली हथियार है जिसका उपयोग आप दुनिया को बदलने के लिए कर सकते हैं।"},
+            {"en": "Your attitude, not your aptitude, will determine your altitude.", "hi": "आपकी योग्यता नहीं, बल्कि आपका दृष्टिकोण आपकी ऊंचाई निर्धारित करेगा।"}
+        ];
+        
+        let quoteIndex = 1; 
+        const hindiEl = document.getElementById('shayari-hi');
+        const engEl = document.getElementById('shayari-en');
+        const box = document.getElementById('shayari-box');
+
+        if (hindiEl && engEl && box) {
+            setInterval(function() {
+                box.style.opacity = 0;
+                setTimeout(function() {
+                    hindiEl.textContent = quotes[quoteIndex].hi;
+                    engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                    box.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                }, 500);
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
