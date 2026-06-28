@@ -68,26 +68,31 @@
         
         .formula {
             display: block; background: rgba(0,0,0,0.6); padding: 15px; border-radius: 8px;
-            color: #fde047; /* Yellow highlight for formulas */ font-family: monospace; font-size: 1.15rem; margin: 15px 0; border-left: 4px solid #fde047; overflow-x: auto;
+            color: #fde047; font-family: monospace; font-size: 1.15rem; margin: 15px 0; border-left: 4px solid #fde047; overflow-x: auto;
         }
 
-        /* GRAPH PLACEHOLDERS (New Feature) */
+        /* GRAPH STYLING */
         .graph-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 2px dashed #0ea5e9;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #0ea5e9;
             border-radius: 10px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            margin: 15px 0;
-            color: #7dd3fc;
-            font-weight: 600;
-            min-height: 150px;
+            margin: 20px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .graph-box span { font-size: 0.9rem; color: #94a3b8; font-weight: 400; margin-top: 5px; }
+        .graph-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .graph-box span { font-size: 1rem; color: #7dd3fc; font-weight: 600; margin-top: 5px; display: block; }
+        .graph-box p { font-size: 0.9rem; color: #94a3b8; font-weight: 400; margin-top: 5px; }
 
         /* Resources */
         .resources-section {
@@ -102,7 +107,7 @@
         .btn-pyq { background: #ef4444; color: #fff; }
         .btn-pyq:hover { background: #dc2626; transform: translateY(-2px); }
 
-        /* Trusted Section (PURE CSS SVG Marquee) */
+        /* Trusted Section */
         .trusted-section { padding: 40px 0; background: rgba(0,0,0,0.6); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); overflow: hidden; margin: 50px 0; width: 100%; }
         .trusted-title { text-align: center; color: var(--text-muted); font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
         
@@ -135,7 +140,7 @@
             animation: shine 5s linear infinite; display: inline-block;
         }
         @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
-
+        
         @media (max-width: 768px) { nav { padding: 15px 20px; } .header h1 { font-size: 2rem; } .nav-section { flex-direction: column; gap: 15px; text-align: center; } }
     </style>
 </head>
@@ -215,12 +220,9 @@
                         <span class="formula">t<sub>1/2</sub> = [A]₀ / 2k</span>
                         
                         <div class="graph-box">
-                            📊 Graph 1: Concentration [A] vs Time (t)
-                            <span>Straight line going downwards. Slope = -k, Intercept = [A]₀</span>
-                        </div>
-                        <div class="graph-box">
-                            📊 Graph 2: Rate vs Concentration [A]
-                            <span>Straight horizontal line parallel to X-axis (Rate is constant).</span>
+                            <img src="zero-order-graph.jpg" alt="Zero Order Reaction Graphs">
+                            <span>Zero Order Reaction Graphs</span>
+                            <p>(i) Rate vs Time (Constant Rate), (iv) Concentration vs Time (Slope = -k)</p>
                         </div>
                     </div>
                     
@@ -232,12 +234,9 @@
                         <span class="formula">t<sub>1/2</sub> = 0.693 / k</span>
                         
                         <div class="graph-box">
-                            📊 Graph 3: log [A] vs Time (t)
-                            <span>Straight line going downwards. Slope = -k / 2.303, Intercept = log[A]₀</span>
-                        </div>
-                        <div class="graph-box">
-                            📊 Graph 4: Half-life (t₁/₂) vs Initial Conc. [A]₀
-                            <span>Straight horizontal line parallel to X-axis (t₁/₂ is constant).</span>
+                            <img src="first-order-graph.jpg" alt="First Order Reaction Graphs">
+                            <span>First Order Reaction Graphs</span>
+                            <p>(iii) Conc. vs Time (Exponential Decay), (iv) log[R₀]/[R] vs Time (Linear, Slope = k/2.303)</p>
                         </div>
                     </div>
                     
@@ -264,8 +263,9 @@
                         </ul>
                         
                         <div class="graph-box">
-                            📊 Graph 5: Potential Energy vs Reaction Coordinate
-                            <span>Shows energy barrier (Ea). Reactants climb the hill to form Activated Complex, then drop to form Products. (Exothermic = Products lower than Reactants).</span>
+                            <img src="activation-energy.png" alt="Activation Energy Profile">
+                            <span>Potential Energy vs Reaction Coordinate</span>
+                            <p>Shows energy barrier (Ea). Reactants climb the hill to form Activated Complex, then drop to form Products.</p>
                         </div>
                     </div>
                     <div class="sub-topic">
@@ -278,8 +278,9 @@
                         <span class="formula">log(k₂/k₁) = (E<sub>a</sub> / 2.303 R) [ (T₂ - T₁) / (T₁T₂) ]</span>
                         
                         <div class="graph-box">
-                            📊 Graph 6: log k vs 1/T (Arrhenius Plot)
-                            <span>Straight line going downwards. Slope = -Ea / 2.303R, Intercept = log A</span>
+                            <img src="arrhenius-plot.jpg" alt="Arrhenius Plot">
+                            <span>Arrhenius Equation Plots (ln k vs 1/T)</span>
+                            <p>Correct plot is (i) - A straight line going downwards with Negative Slope = -Ea/R.</p>
                         </div>
                     </div>
                 </div>
@@ -356,12 +357,12 @@
             MADE WITH ❤️ BY <span style="color: var(--primary); font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
         </div>
         <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #38bdf8); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; animation: shine 5s linear infinite;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
+            ~ Jatin Sharma ( Founder of Shoorveer Notes Group ) ©2026 All Rights Reserved
         </div>
         <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">Privacy Policy</a>
+            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">Privacy Policy</a>
             <span style="color: #3f3f46;">|</span>
-            <a href="about.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">About Us</a>
+            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">About Us</a>
         </div>
     </footer>
 
