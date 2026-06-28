@@ -8,12 +8,12 @@
     <style>
         :root {
             --bg-color: #0b0f19;
-            --primary: #d946ef;
-            --secondary: #a855f7;
+            --primary: #d946ef; /* Neon Pink */
+            --secondary: #a855f7; /* Purple */
             --text-light: #f3e8ff;
             --text-muted: #e9d5ff;
-            --glass-bg: rgba(20, 27, 45, 0.6);
-            --glass-border: rgba(217, 70, 239, 0.2);
+            --glass-bg: rgba(20, 27, 45, 0.7);
+            --glass-border: rgba(217, 70, 239, 0.4);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -23,7 +23,7 @@
         /* Navbar */
         nav {
             width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(10px);
             position: sticky; top: 0; z-index: 100;
         }
         .nav-logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; font-family: 'Orbitron', sans-serif;}
@@ -34,71 +34,89 @@
         /* Headers & Shayari */
         .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
         .header { text-align: center; margin-bottom: 2.5rem; }
-        .header h1 { color: var(--primary); font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(217, 70, 239, 0.4); margin-bottom: 10px; }
+        .header h1 { color: var(--primary); font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(217, 70, 239, 0.5); margin-bottom: 10px; text-transform: uppercase;}
         .header p { color: var(--text-muted); font-size: 1.1rem; }
 
         .shayari-box {
-            background: linear-gradient(135deg, rgba(217, 70, 239, 0.1), rgba(168, 85, 247, 0.05));
-            padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 3rem; backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.15), rgba(168, 85, 247, 0.1));
+            padding: 1.8rem; border-radius: 12px; text-align: center; border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 3rem; backdrop-filter: blur(10px); min-height: 130px;
+            display: flex; flex-direction: column; justify-content: center; transition: opacity 0.5s ease;
         }
-        .shayari-box p { font-size: 1.2rem; font-weight: 600; color: #fff; }
-        .shayari-box span { display: block; margin-top: 8px; font-size: 0.95rem; color: var(--primary); font-style: italic; }
+        .shayari-hindi { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #fbcfe8; font-style: italic; }
 
-        /* Accordion Design (Glassmorphism) */
-        details {
+        /* FULLY EXPANDED CARDS (Replaced details/summary) */
+        .card {
             background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px;
-            margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s;
+            margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); backdrop-filter: blur(10px); 
+            padding: 20px; transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        details:hover { border-color: var(--secondary); transform: translateY(-2px); }
-        summary {
-            font-size: 1.2rem; font-weight: 600; color: #fff; padding: 18px; cursor: pointer; list-style: none; position: relative;
-        }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; position: absolute; right: 20px; font-size: 1.5rem; color: var(--primary); }
-        details[open] summary::after { content: '-'; color: var(--secondary); }
+        .card:hover { border-color: var(--secondary); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(217, 70, 239, 0.2);}
         
-        .content { padding: 0 18px 18px 18px; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed var(--glass-border); margin-top: 5px; padding-top: 15px; }
+        .card-header {
+            font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 15px; 
+            border-bottom: 2px dashed rgba(217, 70, 239, 0.4); padding-bottom: 10px;
+        }
+        
+        .content { color: var(--text-muted); font-size: 1rem; }
         .sub-topic { margin-bottom: 20px; }
-        .sub-topic h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; border-left: 3px solid var(--secondary); padding-left: 10px; }
-        ul { margin-left: 20px; margin-bottom: 10px; }
+        .sub-topic h4 { color: #fff; margin-bottom: 10px; font-size: 1.15rem; border-left: 4px solid var(--secondary); padding-left: 10px; background: rgba(168, 85, 247, 0.1); padding-top: 4px; padding-bottom: 4px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: var(--primary); }
+        ul li span { color: var(--text-muted); }
         li { margin-bottom: 8px; }
         
         .formula {
-            display: block; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 8px;
+            display: block; background: rgba(0,0,0,0.6); padding: 12px; border-radius: 8px;
             color: #fbcfe8; font-family: monospace; font-size: 1.1rem; margin: 10px 0; border-left: 4px solid var(--primary); overflow-x: auto;
         }
 
         /* Resources */
         .resources-section {
-            background: rgba(217, 70, 239, 0.05); border: 1px dashed var(--secondary); border-radius: 15px;
-            padding: 2.5rem; text-align: center; margin: 3rem 0;
+            background: rgba(217, 70, 239, 0.08); border: 2px dashed var(--secondary); border-radius: 15px;
+            padding: 2.5rem; text-align: center; margin: 4rem 0 2rem 0;
         }
-        .resources-section h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;}
+        .resources-section h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.6rem;}
         .resource-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .res-btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; border: 1px solid transparent; }
+        .res-btn { padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; border: none; cursor: pointer; }
         .btn-notes { background: var(--primary); color: #fff; }
-        .btn-notes:hover { background: transparent; border-color: var(--primary); color: var(--primary); }
+        .btn-notes:hover { background: #c026d3; transform: translateY(-2px); }
         .btn-pyq { background: var(--secondary); color: #fff; }
-        .btn-pyq:hover { background: transparent; border-color: var(--secondary); color: var(--secondary); }
+        .btn-pyq:hover { background: #9333ea; transform: translateY(-2px); }
 
-        /* Trusted Section (SVG Marquee) */
-        .trusted-section { padding: 40px 0; background: rgba(0,0,0,0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); overflow: hidden; margin: 40px 0; }
-        .trusted-title { text-align: center; color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; letter-spacing: 3px; text-transform: uppercase; }
-        .marquee-container { display: flex; width: 200%; animation: marquee 20s linear infinite; }
-        .marquee-container:hover { animation-play-state: paused; }
-        .trusted-item { display: flex; align-items: center; gap: 12px; padding: 10px 30px; background: rgba(255,255,255,0.03); border-radius: 50px; margin: 0 15px; white-space: nowrap; }
-        .trusted-item svg { width: 24px; height: 24px; fill: var(--primary); }
+        /* Trusted Section (PURE CSS SVG Marquee) */
+        .trusted-section { padding: 40px 0; background: rgba(0,0,0,0.6); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); overflow: hidden; margin: 50px 0; width: 100%; }
+        .trusted-title { text-align: center; color: var(--text-muted); font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item { display: inline-flex; align-items: center; gap: 12px; padding: 12px 30px; background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 15px; border: 1px solid transparent; transition: 0.3s; }
+        .trusted-item:hover { background: rgba(217, 70, 239, 0.1); border-color: var(--primary); transform: scale(1.05); box-shadow: 0 0 15px rgba(217, 70, 239, 0.3); }
+        .trusted-item svg { width: 28px; height: 28px; fill: var(--primary); }
         .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* Bottom Nav */
-        .nav-section { display: flex; justify-content: space-between; margin: 2rem 0; }
+        .nav-section { display: flex; justify-content: space-between; margin: 3rem 0; padding: 0 1rem; }
         .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; color: white; font-weight: 600; transition: 0.3s; }
         .btn-home { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
         .btn-home:hover { background: rgba(255,255,255,0.2); }
-        .btn-next { background: var(--primary); }
-        .btn-next:hover { box-shadow: 0 0 15px var(--primary); }
+        .btn-next { background: var(--primary); color: #fff; }
+        .btn-next:hover { background: #c026d3; box-shadow: 0 0 15px var(--primary); }
+
+        /* Footer */
+        footer { background: #06080d; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary); }
+        .made-by { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 10px; }
+        .made-by span { color: var(--primary); font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #d946ef, #fbcfe8, #a855f7, #d946ef);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
 
         @media (max-width: 768px) { nav { padding: 15px 20px; } .header h1 { font-size: 2rem; } .nav-section { flex-direction: column; gap: 15px; text-align: center; } }
     </style>
@@ -107,158 +125,223 @@
 
     <nav>
         <a href="index.html" class="nav-logo">Shoorveer <span>Notes</span></a>
-        <a href="index.html" class="back-btn">Back to Dashboard</a>
+        <a href="haloalkanes.html" class="back-btn">⬅ Prev Chapter</a>
     </nav>
 
     <div class="container">
-        <div class="shayari-box">
-            <p>"मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!"</p>
-            <span>"Success is the sum of small efforts, repeated day in and day out. Keep fighting, Shoorveer!"</span>
+        
+        <div class="shayari-box" id="shayari-box">
+            <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+            <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
         </div>
 
         <div class="header">
             <h1>Chapter 7: Alcohols, Phenols & Ethers</h1>
-            <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+            <p>Complete Detailed Masterclass & Reaction Bank</p>
         </div>
 
         <div class="mindmap-container">
-            <details>
-                <summary>Preparation of Alcohols (Important Reactions)</summary>
+            
+            <div class="card">
+                <div class="card-header">1. Preparation of Alcohols (Important Reactions)</div>
                 <div class="content">
                     <div class="sub-topic">
                         <h4>From Alkenes</h4>
                         <ul>
-                            <li><strong>Acid Catalyzed Hydration:</strong> Follows Markovnikov's rule. Alkenes react with water in presence of acid to form alcohols.<br><span class="formula">CH₃-CH=CH₂ + H₂O (H⁺) &rarr; CH₃-CH(OH)-CH₃</span></li>
-                            <li><strong>Hydroboration-Oxidation:</strong> Follows <em>Anti-Markovnikov's</em> addition of water. Alkene reacts with diborane (B₂H₆) followed by oxidation with H₂O₂/OH⁻.<br><span class="formula">CH₃-CH=CH₂ &rarr; (B₂H₆, then H₂O₂/OH⁻) &rarr; CH₃-CH₂-CH₂-OH</span> (Primary alcohol formed).</li>
+                            <li><span><strong>Acid Catalyzed Hydration:</strong> Follows Markovnikov's rule. Alkenes react with water in presence of acid (H₂SO₄) to form alcohols.<br><span class="formula">CH₃-CH=CH₂ + H₂O (H⁺) &rarr; CH₃-CH(OH)-CH₃ (Propan-2-ol)</span></span></li>
+                            <li><span><strong>Hydroboration-Oxidation:</strong> Follows <em>Anti-Markovnikov's</em> addition of water. Alkene reacts with diborane (B₂H₆) followed by oxidation with H₂O₂/OH⁻.<br><span class="formula">CH₃-CH=CH₂ &rarr; (B₂H₆, then H₂O₂/OH⁻) &rarr; CH₃-CH₂-CH₂-OH (Propan-1-ol)</span></span></li>
                         </ul>
                     </div>
                     <div class="sub-topic">
                         <h4>From Carbonyl Compounds</h4>
                         <ul>
-                            <li><strong>Reduction:</strong> Aldehydes yield 1° alcohols, Ketones yield 2° alcohols. Reagents used: NaBH₄, LiAlH₄, or H₂/Pd.<br><span class="formula">R-CHO + H₂ (Pd) &rarr; R-CH₂OH</span></li>
-                            <li><strong>Using Grignard Reagent (R-MgX):</strong> Formaldehyde (HCHO) gives 1° alcohol. Other aldehydes give 2° alcohol. Ketones give 3° alcohol.<br><span class="formula">HCHO + RMgX &rarr; R-CH₂-OMgX (H₂O/H⁺) &rarr; R-CH₂OH + Mg(OH)X</span></li>
+                            <li><span><strong>Reduction:</strong> Aldehydes yield 1° alcohols, Ketones yield 2° alcohols. Reagents used: NaBH₄, LiAlH₄, or H₂/Pd.<br><span class="formula">R-CHO + H₂ (Pd) &rarr; R-CH₂OH</span></span></li>
+                            <li><span><strong>Using Grignard Reagent (R-MgX):</strong> <br>
+                                - Formaldehyde (HCHO) gives 1° alcohol.<br>
+                                - Other aldehydes give 2° alcohol.<br>
+                                - Ketones give 3° alcohol.<br>
+                            <span class="formula">HCHO + RMgX &rarr; R-CH₂-OMgX (H₂O/H⁺) &rarr; R-CH₂OH + Mg(OH)X</span></span></li>
                         </ul>
                     </div>
                 </div>
-            </details>
+            </div>
 
-            <details>
-                <summary>Preparation of Phenols</summary>
+            <div class="card">
+                <div class="card-header">2. Preparation of Phenols</div>
                 <div class="content">
                     <div class="sub-topic">
                         <h4>From Haloarenes (Dow's Process)</h4>
-                        <p>Chlorobenzene is fused with NaOH at very high temp (623K) and pressure (300 atm) to form sodium phenoxide, followed by acidification.</p>
+                        <p>Chlorobenzene is fused with NaOH at extremely high temp (623 K) and pressure (300 atm) to form sodium phenoxide, followed by acidification.</p>
                         <span class="formula">C₆H₅Cl + NaOH (623K, 300atm) &rarr; C₆H₅ONa (H⁺) &rarr; C₆H₅OH</span>
                     </div>
                     <div class="sub-topic">
-                        <h4>From Cumene (Commercial Method - VERY IMPORTANT)</h4>
-                        <p>Isopropylbenzene (Cumene) is oxidized in air to Cumene hydroperoxide. It is then treated with dilute acid to form Phenol and Acetone (a valuable byproduct).</p>
+                        <h4>From Cumene (Commercial Method - V.V.I)</h4>
+                        <p>Isopropylbenzene (Cumene) is oxidized in air to Cumene hydroperoxide. It is then treated with dilute acid to form Phenol and Acetone (a highly valuable byproduct).</p>
                         <span class="formula">Cumene + O₂ &rarr; Cumene Hydroperoxide (H⁺/H₂O) &rarr; Phenol + Acetone (CH₃COCH₃)</span>
                     </div>
                     <div class="sub-topic">
-                        <h4>From Benzene Sulphonic Acid & Diazonium Salts</h4>
+                        <h4>Other Important Methods</h4>
                         <ul>
-                            <li>Benzene &rarr; Benzene sulphonic acid (Oleum) &rarr; Sodium phenoxide (NaOH melt) &rarr; Phenol (H⁺).</li>
-                            <li>Aniline &rarr; Benzene Diazonium Chloride (NaNO₂/HCl, 0-5°C) &rarr; Warm with Water &rarr; Phenol + N₂ + HCl.</li>
+                            <li><span><strong>From Oleum:</strong> Benzene &rarr; Benzene sulphonic acid (using Oleum) &rarr; Sodium phenoxide (NaOH melt) &rarr; Phenol (H⁺).</span></li>
+                            <li><span><strong>From Diazonium Salts:</strong> Aniline &rarr; Benzene Diazonium Chloride (NaNO₂/HCl, 0-5°C) &rarr; Warm with Water &rarr; Phenol + N₂ + HCl.</span></li>
                         </ul>
                     </div>
                 </div>
-            </details>
+            </div>
 
-            <details>
-                <summary>Chemical Properties of Alcohols</summary>
+            <div class="card">
+                <div class="card-header">3. Chemical Properties of Alcohols</div>
                 <div class="content">
                     <div class="sub-topic">
                         <h4>Acidity & Esterification</h4>
                         <ul>
-                            <li>Alcohols are weaker acids than water. Acidity order: 1° > 2° > 3° (Due to +I effect of alkyl groups destabilizing the alkoxide ion).</li>
-                            <li><strong>Esterification:</strong> Alcohol + Carboxylic acid (in presence of conc. H₂SO₄) &rarr; Ester + Water.</li>
+                            <li><span>Alcohols are weaker acids than water. Acidity order: 1° > 2° > 3° (Due to +I electron-donating effect of alkyl groups which destabilizes the alkoxide ion).</span></li>
+                            <li><span><strong>Esterification:</strong> Alcohol + Carboxylic acid (in presence of conc. H₂SO₄) &rarr; Ester + Water. (Sweet-smelling compounds).</span></li>
                         </ul>
                     </div>
                     <div class="sub-topic">
-                        <h4>Distinction Test (Lucas Test)</h4>
-                        <p>Reagent: Conc. HCl + Anhydrous ZnCl₂.</p>
+                        <h4>Distinction Tests for 1°, 2°, 3° Alcohols</h4>
                         <ul>
-                            <li><strong>3° Alcohol:</strong> Turbidity appears immediately.</li>
-                            <li><strong>2° Alcohol:</strong> Turbidity appears in 5 minutes.</li>
-                            <li><strong>1° Alcohol:</strong> No turbidity at room temperature.</li>
+                            <li><span><strong>Lucas Test:</strong> Reagent is Conc. HCl + Anhydrous ZnCl₂.<br>
+                                - 3° Alcohol: Turbidity (cloudiness) appears immediately.<br>
+                                - 2° Alcohol: Turbidity appears in 5 minutes.<br>
+                                - 1° Alcohol: No turbidity at room temperature.
+                            </span></li>
+                            <li><span><strong>Victor Meyer Test (RBC Rule):</strong><br>
+                                - 1° Alcohol gives <strong>Red</strong> color.<br>
+                                - 2° Alcohol gives <strong>Blue</strong> color.<br>
+                                - 3° Alcohol gives <strong>Colorless</strong> solution.
+                            </span></li>
                         </ul>
                     </div>
                     <div class="sub-topic">
-                        <h4>Dehydration (Zaitsev's Rule)</h4>
-                        <p>Heating with conc. H₂SO₄ at 443 K yields alkenes. Ease of dehydration: 3° > 2° > 1°.</p>
-                    </div>
-                    <div class="sub-topic">
-                        <h4>Oxidation</h4>
+                        <h4>Dehydration & Oxidation</h4>
                         <ul>
-                            <li><strong>1° Alcohol:</strong> Mild oxidizing agent (PCC/CrO₃) gives Aldehyde. Strong (KMnO₄) gives Carboxylic Acid.</li>
-                            <li><strong>2° Alcohol:</strong> Oxidized to Ketones.</li>
-                            <li><strong>3° Alcohol:</strong> Do not undergo oxidation easily. (With heated Cu at 573K, they undergo dehydration to form alkenes).</li>
+                            <li><span><strong>Dehydration:</strong> Heating with conc. H₂SO₄ at 443 K yields alkenes (follows Zaitsev's Rule). Ease of dehydration: 3° > 2° > 1° because 3° carbocation is most stable.</span></li>
+                            <li><span><strong>Oxidation (with KMnO₄ or K₂Cr₂O₇):</strong> <br>
+                                - 1° Alcohol &rarr; Aldehyde &rarr; Carboxylic Acid.<br>
+                                - 2° Alcohol &rarr; Ketone.<br>
+                                - 3° Alcohol &rarr; Resistant to oxidation.
+                            </span></li>
+                            <li><span><strong>Action of Heated Copper (Cu at 573 K):</strong> <br>
+                                - 1° Alcohol undergoes dehydrogenation to give Aldehyde.<br>
+                                - 2° Alcohol gives Ketone.<br>
+                                - <strong>Exception:</strong> 3° Alcohol undergoes <em>dehydration</em> to give an <strong>Alkene</strong>.
+                            </span></li>
                         </ul>
                     </div>
                 </div>
-            </details>
+            </div>
 
-            <details>
-                <summary>Chemical Properties of Phenols (Name Reactions)</summary>
+            <div class="card">
+                <div class="card-header">4. Chemical Properties of Phenols</div>
                 <div class="content">
                     <div class="sub-topic">
                         <h4>Acidity of Phenols</h4>
-                        <p>Phenols are much more acidic than alcohols because the phenoxide ion is resonance stabilized. Electron withdrawing groups (like -NO₂) increase acidity, electron donating groups (like -CH₃) decrease acidity.</p>
+                        <p>Phenols are much more acidic than alcohols because the phenoxide ion is highly resonance stabilized. <br>
+                        - Electron Withdrawing Groups (-NO₂) <strong>increase</strong> acidity (e.g., 2,4,6-trinitrophenol or Picric Acid is highly acidic).<br>
+                        - Electron Donating Groups (-CH₃) <strong>decrease</strong> acidity.</p>
                     </div>
                     <div class="sub-topic">
                         <h4>Electrophilic Aromatic Substitution</h4>
                         <ul>
-                            <li><strong>Nitration:</strong> Dilute HNO₃ gives ortho & para nitrophenols (separated by steam distillation). Conc. HNO₃ gives 2,4,6-trinitrophenol (Picric Acid).</li>
-                            <li><strong>Halogenation:</strong> Bromine water gives white ppt of 2,4,6-tribromophenol. Br₂ in CS₂ (low polarity solvent) gives mono-substituted o- and p-bromophenol.</li>
+                            <li><span><strong>Halogenation:</strong> <br>
+                                - Bromine in CS₂ (low polarity) at 273 K gives mono-substituted <em>o-</em> and <em>p-bromophenol</em>.<br>
+                                - Bromine Water (highly polar) gives white ppt of <em>2,4,6-tribromophenol</em>.
+                            </span></li>
+                            <li><span><strong>Nitration:</strong> Dilute HNO₃ gives ortho & para nitrophenols (separated by steam distillation, ortho is volatile due to intramolecular H-bonding). Conc. HNO₃ gives Picric Acid.</span></li>
                         </ul>
                     </div>
                     <div class="sub-topic">
-                        <h4>Kolbe's Reaction</h4>
-                        <p>Sodium phenoxide is heated with CO₂ under pressure, followed by acidification to yield Salicylic acid (2-Hydroxybenzoic acid).</p>
-                        <span class="formula">Phenol &rarr; (NaOH, then CO₂, H⁺) &rarr; Salicylic Acid</span>
-                    </div>
-                    <div class="sub-topic">
-                        <h4>Reimer-Tiemann Reaction</h4>
-                        <p>Treatment of phenol with chloroform (CHCl₃) in presence of aqueous NaOH introduces an aldehyde group (-CHO) at the ortho position.</p>
-                        <span class="formula">Phenol + CHCl₃ + aq. NaOH &rarr; Salicylaldehyde</span>
-                    </div>
-                    <div class="sub-topic">
-                        <h4>Oxidation</h4>
-                        <p>Phenol oxidized by Na₂Cr₂O₇/H₂SO₄ produces a conjugated diketone known as <strong>benzoquinone</strong>.</p>
+                        <h4>Name Reactions of Phenol</h4>
+                        <ul>
+                            <li><span><strong>Kolbe's Reaction:</strong> Sodium phenoxide + CO₂ (pressure) &rarr; Acidification &rarr; <strong>Salicylic acid</strong> (2-Hydroxybenzoic acid).</span></li>
+                            <li><span><strong>Reimer-Tiemann Reaction:</strong> Phenol + Chloroform (CHCl₃) + aq. NaOH &rarr; Intermediate &rarr; <strong>Salicylaldehyde</strong>.</span></li>
+                            <li><span><strong>Reaction with Zinc Dust:</strong> Phenol is reduced to <strong>Benzene</strong> when distilled with Zn dust.</span></li>
+                            <li><span><strong>Oxidation:</strong> Oxidized by Na₂Cr₂O₇/H₂SO₄ to a conjugated diketone called <strong>Benzoquinone</strong>.</span></li>
+                        </ul>
                     </div>
                 </div>
-            </details>
+            </div>
 
-            <details>
-                <summary>Ethers: Preparation & Properties</summary>
+            <div class="card">
+                <div class="card-header">5. Ethers: Preparation & Cleavage</div>
                 <div class="content">
                     <div class="sub-topic">
                         <h4>Preparation (Williamson Synthesis)</h4>
-                        <p>Important laboratory method for symmetrical and unsymmetrical ethers. Follows SN2 mechanism.</p>
+                        <p>Follows SN2 mechanism. Sodium alkoxide reacts with an alkyl halide.</p>
                         <span class="formula">R-X + R'-O⁻Na⁺ &rarr; R-O-R' + NaX</span>
-                        <p><em>Crucial Rule:</em> The alkyl halide (R-X) must be Primary (1°). If 3° alkyl halide is used, elimination dominates and an alkene is formed instead of ether.</p>
+                        <p><em>Crucial Rule:</em> The alkyl halide (R-X) <strong>must be Primary (1°)</strong>. If 3° alkyl halide is used, the alkoxide acts as a strong base, elimination dominates, and an <strong>Alkene</strong> is formed instead of ether.</p>
                     </div>
                     <div class="sub-topic">
                         <h4>Cleavage by HX (Chemical Property)</h4>
                         <p>Ethers are cleaved by concentrated HI or HBr at high temperatures.</p>
                         <span class="formula">R-O-R' + HI &rarr; R-I + R'-OH</span>
                         <ul>
-                            <li>If alkyl groups are primary/secondary, the Halide (I⁻) goes to the <strong>smaller alkyl group</strong> (SN2 steric reasons).</li>
-                            <li>If one group is Tertiary (3°), the Halide (I⁻) goes to the <strong>tertiary group</strong> (SN1 carbocation stability).</li>
-                            <li>In Alkyl Aryl ethers (Anisole), cleavage always produces Phenol and Alkyl Halide (because Aryl-Oxygen bond has double bond character).</li>
+                            <li><span><strong>If alkyl groups are 1° or 2°:</strong> Reaction follows SN2. The Halide (I⁻) goes to the <strong>smaller, less hindered alkyl group</strong>.</span></li>
+                            <li><span><strong>If one group is Tertiary (3°):</strong> Reaction shifts to SN1 due to stable carbocation. The Halide (I⁻) goes to the <strong>tertiary group</strong>.</span></li>
+                            <li><span><strong>In Alkyl Aryl ethers (Anisole):</strong> Cleavage always produces <strong>Phenol</strong> and Alkyl Halide because the Aryl-Oxygen bond has partial double bond character and cannot be broken by I⁻.</span></li>
                         </ul>
                     </div>
                 </div>
-            </details>
+            </div>
         </div>
 
         <div class="resources-section">
             <h3>📂 Advance Study Materials</h3>
             <p>Master reactions like Kolbe, Reimer-Tiemann, and Williamson Synthesis by practicing PYQs and reading in-depth Long Notes.</p>
             <div class="resource-buttons">
-                <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-                <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+                <button class="res-btn btn-notes">📖 Read Long Notes</button>
+                <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
+            </div>
+        </div>
+
+        <div class="trusted-section">
+            <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                        <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                        <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                        <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                    </div>
+                    
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                        <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                        <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                        <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                    </div>
+                    <div class="trusted-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                        <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -268,56 +351,90 @@
         </div>
     </div>
 
-    <!-- Trusted Section -->
-    <div class="trusted-section">
-        <h3 class="trusted-title">Trusted By Shoorveer Notes</h3>
-        <div class="marquee-container" id="marquee-container">
-            <!-- SVGs injected via script -->
+    <footer style="background: #06080d; padding: 40px 20px; text-align: center; border-top: 2px solid var(--primary);">
+        <div class="made-by" style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 10px;">
+            MADE WITH ❤️ BY <span style="color: var(--primary); font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
         </div>
-    </div>
-
-    <!-- Universal Footer -->
-    <footer style="background: rgba(0, 0, 0, 0.6); padding: 40px 20px; text-align: center; backdrop-filter: blur(10px);">
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+        <div class="founder-sign" style="font-size: 1.3rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #d946ef, #fbcfe8, #a855f7, #d946ef); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
             ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
         </div>
         <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">Privacy Policy</a>
+            <a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">Privacy Policy</a>
             <span style="color: #3f3f46;">|</span>
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">About Us</a>
+            <a href="about.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">About Us</a>
         </div>
     </footer>
 
-    <!-- Script for SVG Marquee -->
     <script>
-        const svgs = {
-            physics: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>',
-            maths: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>',
-            english: '<svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>',
-            biology: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>'
-        };
-
-        const trustedData = [
-            { text: "12TH PHYSICS SHOORVEER NOTES", icon: svgs.physics },
-            { text: "12TH MATHS SHOORVEER NOTES", icon: svgs.maths },
-            { text: "12TH ENGLISH SHOORVEER NOTES", icon: svgs.english },
-            { text: "12TH BIOLOGY SHOORVEER NOTES", icon: svgs.biology }
+        const quotes = [
+            {"en": "Don't stop when you are tired. Stop when you are done.", "hi": "जब आप थक जाएं तो रुकें नहीं। जब आपका काम पूरा हो जाए तब रुकें।"},
+            {"en": "The secret of getting ahead is getting started.", "hi": "आगे बढ़ने का रहस्य शुरुआत करना है।"},
+            {"en": "Hard work beats talent when talent doesn't work hard.", "hi": "कड़ी मेहनत प्रतिभा को हरा देती है जब प्रतिभा कड़ी मेहनत नहीं करती।"},
+            {"en": "Your limitation—it's only your imagination.", "hi": "आपकी सीमा—यह सिर्फ आपकी कल्पना है।"},
+            {"en": "Push yourself, because no one else is going to do it for you.", "hi": "खुद को आगे बढ़ाएं, क्योंकि कोई और आपके लिए यह नहीं करने वाला है।"},
+            {"en": "Great things never come from comfort zones.", "hi": "महान चीजें कभी भी आराम क्षेत्र से नहीं आती हैं।"},
+            {"en": "Dream it. Wish it. Do it.", "hi": "सपना देखो। कामना करो। कर डालो।"},
+            {"en": "Success doesn’t just find you. You have to go out and get it.", "hi": "सफलता सिर्फ आपको नहीं मिलती। आपको बाहर जाकर इसे हासिल करना होगा।"},
+            {"en": "The harder you work for something, the greater you’ll feel when you achieve it.", "hi": "आप किसी चीज़ के लिए जितनी कड़ी मेहनत करेंगे, उसे हासिल करने पर आपको उतनी ही अधिक खुशी होगी।"},
+            {"en": "Dream bigger. Do bigger.", "hi": "बड़े सपने देखें। बड़ा करें।"},
+            {"en": "Don’t stop until you’re proud.", "hi": "तब तक न रुकें जब तक आपको गर्व न हो।"},
+            {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "दृढ़ संकल्प के साथ उठें। संतुष्टि के साथ सोएं।"},
+            {"en": "Do something today that your future self will thank you for.", "hi": "आज कुछ ऐसा करें जिसके लिए आपका भविष्य का स्वरूप आपको धन्यवाद दे।"},
+            {"en": "Little things make big days.", "hi": "छोटी-छोटी चीजें बड़े दिन बनाती हैं।"},
+            {"en": "It’s going to be hard, but hard does not mean impossible.", "hi": "यह कठिन होने वाला है, लेकिन कठिन का मतलब असंभव नहीं है।"},
+            {"en": "Don’t wait for opportunity. Create it.", "hi": "अवसर की प्रतीक्षा न करें। इसे बनाएं।"},
+            {"en": "Sometimes we’re tested not to show our weaknesses, but to discover our strengths.", "hi": "कभी-कभी हमारा परीक्षण हमारी कमजोरियों को दिखाने के लिए नहीं, बल्कि हमारी ताकत खोजने के लिए किया जाता है।"},
+            {"en": "The key to success is to focus on goals, not obstacles.", "hi": "सफलता की कुंजी बाधाओं पर नहीं, लक्ष्यों पर ध्यान केंद्रित करना है।"},
+            {"en": "Dream it. Believe it. Build it.", "hi": "सपना देखो। विश्वास करो। निर्माण करो।"},
+            {"en": "Motivation is what gets you started. Habit is what keeps you going.", "hi": "प्रेरणा वह है जो आपको शुरू करती है। आदत वह है जो आपको चलते रहने देती है।"},
+            {"en": "We may encounter many defeats but we must not be defeated.", "hi": "हमें कई हार का सामना करना पड़ सकता है लेकिन हमें हार नहीं माननी चाहिए।"},
+            {"en": "Whether you think you can or think you can’t, you’re right.", "hi": "चाहे आपको लगे कि आप कर सकते हैं या नहीं कर सकते, आप सही हैं।"},
+            {"en": "Security is mostly a superstition. Life is either a daring adventure or nothing.", "hi": "सुरक्षा ज्यादातर एक अंधविश्वास है। जीवन या तो एक साहसिक रोमांच है या कुछ नहीं।"},
+            {"en": "The man who has confidence in himself gains the confidence of others.", "hi": "जिस व्यक्ति को खुद पर विश्वास होता है, वह दूसरों का विश्वास हासिल कर लेता है।"},
+            {"en": "The only limit to our realization of tomorrow will be our doubts of today.", "hi": "कल की हमारी प्राप्ति की एकमात्र सीमा आज के हमारे संदेह होंगे।"},
+            {"en": "Creativity is intelligence having fun.", "hi": "रचनात्मकता बुद्धिमत्ता का मज़ा है।"},
+            {"en": "What you lack in talent can be made up with desire, hustle and giving 110% all the time.", "hi": "आप में जो प्रतिभा की कमी है, उसे इच्छा, संघर्ष और हर समय 110% देकर पूरा किया जा सकता है।"},
+            {"en": "Do what you can with all you have, wherever you are.", "hi": "आप जहां भी हों, अपने पास मौजूद हर चीज के साथ जो कर सकते हैं, करें।"},
+            {"en": "Develop an ‘Attitude of Gratitude’.", "hi": "'कृतज्ञता का दृष्टिकोण' विकसित करें।"},
+            {"en": "You are never too old to set another goal or to dream a new dream.", "hi": "कोई नया लक्ष्य निर्धारित करने या नया सपना देखने के लिए आप कभी भी बूढ़े नहीं होते।"},
+            {"en": "To see what is right and not do it is a lack of courage.", "hi": "जो सही है उसे देखना और न करना साहस की कमी है।"},
+            {"en": "Reading is to the mind, as exercise is to the body.", "hi": "पढ़ना दिमाग के लिए वैसा ही है, जैसे व्यायाम शरीर के लिए।"},
+            {"en": "Fake it until you make it! Act as if you had all the confidence you require.", "hi": "जब तक तुम इसे हासिल न कर लो, तब तक ऐसा नाटक करो! ऐसे काम करो जैसे तुम्हारे पास वह सारा आत्मविश्वास हो जिसकी तुम्हें ज़रूरत है।"},
+            {"en": "The future belongs to the competent. Get good, get better, be the best!", "hi": "भविष्य सक्षम लोगों का है। अच्छे बनो, बेहतर बनो, सर्वश्रेष्ठ बनो!"},
+            {"en": "For every reason it’s not possible, there are hundreds of people who have faced the same circumstances and succeeded.", "hi": "हर कारण के लिए यह संभव नहीं है, सैकड़ों लोग हैं जिन्होंने समान परिस्थितियों का सामना किया है और सफल हुए हैं।"},
+            {"en": "Things work out best for those who make the best of how things work out.", "hi": "चीजें उन लोगों के लिए सबसे अच्छा काम करती हैं जो चीजों के काम करने के तरीके का सबसे अच्छा उपयोग करते हैं।"},
+            {"en": "A room without books is like a body without a soul.", "hi": "बिना किताबों का कमरा बिना आत्मा के शरीर के समान है।"},
+            {"en": "I think goals should never be easy, they should force you to work, even if they are uncomfortable at the time.", "hi": "मुझे लगता है कि लक्ष्य कभी आसान नहीं होने चाहिए, उन्हें आपको काम करने के लिए मजबूर करना चाहिए, भले ही वे उस समय असुविधाजनक हों।"},
+            {"en": "One of the lessons that I grew up with was to always stay true to yourself.", "hi": "जिन पाठों के साथ मैं बड़ा हुआ उनमें से एक यह था कि हमेशा अपने प्रति सच्चे रहो।"},
+            {"en": "Today’s accomplishments were yesterday’s impossibilities.", "hi": "आज की उपलब्धियां कल की असंभवताएं थीं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "If you can dream it, you can do it.", "hi": "यदि आप इसका सपना देख सकते हैं, तो आप इसे कर सकते हैं।"},
+            {"en": "Don’t sit down and wait for the opportunities to come. Get up and make them.", "hi": "बैठकर अवसरों के आने का इंतज़ार मत करो। उठो और उन्हें बनाओ।"},
+            {"en": "A winner is a dreamer who never gives up.", "hi": "विजेता वह सपने देखने वाला होता है जो कभी हार नहीं मानता।"},
+            {"en": "The expert in anything was once a beginner.", "hi": "किसी भी चीज का विशेषज्ञ कभी शुरुआती था।"},
+            {"en": "It always seems impossible until it is done.", "hi": "जब तक यह हो नहीं जाता, तब तक यह हमेशा असंभव लगता है।"},
+            {"en": "You don’t have to be great to start, but you have to start to be great.", "hi": "शुरू करने के लिए आपको महान होने की आवश्यकता नहीं है, लेकिन महान होने के लिए आपको शुरुआत करनी होगी।"},
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you’re halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only place where success comes before work is in the dictionary.", "hi": "एकमात्र जगह जहां सफलता काम से पहले आती है, वह डिक्शनरी है।"}
         ];
+        
+        let quoteIndex = 1; 
+        const hindiEl = document.getElementById('shayari-hi');
+        const engEl = document.getElementById('shayari-en');
+        const box = document.getElementById('shayari-box');
 
-        const marquee = document.getElementById('marquee-container');
-        function buildMarquee() {
-            let html = '';
-            for(let i=0; i<4; i++) {
-                trustedData.forEach(item => {
-                    html += `<div class="trusted-item">${item.icon}<div class="trusted-text">${item.text}</div></div>`;
-                });
-            }
-            marquee.innerHTML = html;
+        if (hindiEl && engEl && box) {
+            setInterval(function() {
+                box.style.opacity = 0;
+                setTimeout(function() {
+                    hindiEl.textContent = quotes[quoteIndex].hi;
+                    engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                    box.style.opacity = 1;
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                }, 500);
+            }, 5000);
         }
-        buildMarquee();
     </script>
 </body>
 </html>
