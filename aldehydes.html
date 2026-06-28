@@ -1,26 +1,38 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 8: Aldehydes, Ketones & Carboxylic Acids - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
         /* Dark Navy & Sky Blue Premium Theme */
-        body { background-color: #082f49; color: #f0f9ff; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
+        body { background-color: #082f49; color: #f0f9ff; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navbar */
+        nav {
+            width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(8, 47, 73, 0.8); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; font-family: 'Orbitron', sans-serif;}
+        .nav-logo span { color: #38bdf8; }
+        .back-btn { padding: 8px 20px; border: 1px solid #38bdf8; color: #e0f2fe; border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .back-btn:hover { background: #38bdf8; color: #082f49; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
         
         .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #38bdf8; font-size: 2.2rem; text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); }
+        .header h1 { color: #38bdf8; font-size: 2.2rem; text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); font-family: 'Orbitron', sans-serif; }
         .header p { color: #bae6fd; font-size: 1rem; }
 
         /* Dynamic Motivation Section */
         .motivation-container {
             max-width: 800px;
             margin: 0 auto 2rem auto;
-            background: linear-gradient(135deg, #0284c7, #0369a1);
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(3, 105, 161, 0.1));
             padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
@@ -30,20 +42,24 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            backdrop-filter: blur(10px);
         }
         #hindiQuote { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; transition: opacity 0.5s; }
-        #englishQuote { font-size: 0.95rem; font-style: italic; color: #e0f2fe; transition: opacity 0.5s; }
+        #englishQuote { font-size: 0.95rem; font-style: italic; color: #38bdf8; transition: opacity 0.5s; }
 
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
         /* Sky Blue Accordion Design */
         details {
-            background: #0c4a6e;
+            background: rgba(12, 74, 110, 0.6);
             border: 1px solid #0284c7;
             border-radius: 8px;
             margin-bottom: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
         }
+        details:hover { border-color: #38bdf8; transform: translateY(-2px); }
         
         summary {
             font-size: 1.15rem;
@@ -68,9 +84,9 @@
             padding: 0 15px 15px 15px;
             color: #e0f2fe;
             font-size: 0.95rem;
-            border-top: 1px solid #0284c7;
+            border-top: 1px dashed #0284c7;
             margin-top: 5px;
-            padding-top: 10px;
+            padding-top: 15px;
         }
 
         .sub-topic { margin-bottom: 15px; }
@@ -80,7 +96,7 @@
         
         .formula {
             display: block;
-            background: #082f49;
+            background: rgba(0, 0, 0, 0.4);
             padding: 10px;
             border-radius: 5px;
             color: #fde047; /* Yellow highlight for formulas */
@@ -96,7 +112,7 @@
             max-width: 800px;
             margin: 3rem auto 1rem auto;
             background: rgba(2, 132, 199, 0.15);
-            border: 2px dashed #38bdf8;
+            border: 1px dashed #38bdf8;
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
@@ -106,22 +122,23 @@
         .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .res-btn {
             padding: 12px 25px;
-            border-radius: 8px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
+            border: 1px solid transparent;
         }
         .btn-notes { background: #38bdf8; color: #082f49; }
-        .btn-notes:hover { background: #0ea5e9; }
+        .btn-notes:hover { background: transparent; border-color: #38bdf8; color: #38bdf8; }
         .btn-pyq { background: #dc2626; color: #fff; }
-        .btn-pyq:hover { background: #b91c1c; }
+        .btn-pyq:hover { background: transparent; border-color: #dc2626; color: #dc2626; }
 
-        /* Trusted By Infinite Marquee with Professional SVG Logos */
+        /* Trusted By Infinite Marquee */
         .trusted-section {
             margin: 4rem 0;
             text-align: center;
             overflow: hidden;
-            background: #042f40;
+            background: rgba(0, 0, 0, 0.3);
             padding: 2rem 0;
             border-top: 1px solid #0284c7;
             border-bottom: 1px solid #0284c7;
@@ -129,7 +146,7 @@
         .trusted-section h3 {
             color: #7dd3fc;
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -149,203 +166,196 @@
             white-space: nowrap;
             color: #e0f2fe;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
-        .svg-logo { width: 35px; height: 35px; fill: #38bdf8; }
+        .svg-logo { width: 30px; height: 30px; fill: #38bdf8; }
         
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: #082f49;
-            color: #bae6fd;
-            font-size: 0.95rem;
-        }
-        footer p { margin-bottom: 5px; }
-        footer a { color: #38bdf8; text-decoration: none; font-weight: bold; }
-
         /* Navigation */
         .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-home { background: #0c4a6e; border: 1px solid #0284c7; }
+        .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s;}
+        .btn-home { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .btn-home:hover { background: rgba(255,255,255,0.2); }
         .btn-next { background: #38bdf8; color: #082f49; }
+        .btn-next:hover { box-shadow: 0 0 15px #38bdf8; }
+
+        @media (max-width: 768px) { nav { padding: 15px 20px; } .header h1 { font-size: 2rem; } .nav-section { flex-direction: column; gap: 15px; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <!-- Dynamic Motivation Section -->
-    <div class="motivation-container">
-        <div id="hindiQuote">मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!</div>
-        <div id="englishQuote">"Success is the sum of small efforts, repeated day in and day out."</div>
-    </div>
+    <nav>
+        <a href="index.html" class="nav-logo">Shoorveer <span>Notes</span></a>
+        <a href="index.html" class="back-btn">Back to Dashboard</a>
+    </nav>
 
-    <div class="header">
-        <h1>Chapter 8: Aldehydes, Ketones & Carboxylic Acids</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
-    </div>
-
-    <div class="mindmap-container">
-
-        <!-- 1. Preparation of Aldehydes & Ketones -->
-        <details>
-            <summary>Preparation of Aldehydes & Ketones (Name Reactions)</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Rosenmund Reduction (Only Aldehydes)</h4>
-                    <p>Acyl chlorides (acid chlorides) are hydrogenated over catalyst, palladium on barium sulphate. BaSO₄ acts as a poison to prevent further reduction to alcohol.</p>
-                    <span class="formula">R-COCl + H₂ (Pd/BaSO₄) &rarr; R-CHO + HCl</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Stephen Reaction (From Nitriles)</h4>
-                    <p>Nitriles are reduced to corresponding imines with stannous chloride (SnCl₂) in the presence of HCl, which on hydrolysis give corresponding aldehyde.</p>
-                    <span class="formula">R-CN + SnCl₂ + HCl &rarr; R-CH=NH (H₃O⁺) &rarr; R-CHO</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Etard Reaction</h4>
-                    <p>Chromyl chloride (CrO₂Cl₂) oxidizes the methyl group of Toluene to a chromium complex, which on hydrolysis gives Benzaldehyde.</p>
-                    <span class="formula">C₆H₅CH₃ + CrO₂Cl₂ (CS₂) &rarr; Chromium Complex (H₃O⁺) &rarr; C₆H₅CHO</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Gattermann-Koch Reaction</h4>
-                    <p>Benzene is treated with carbon monoxide (CO) and hydrogen chloride (HCl) in the presence of anhydrous AlCl₃/CuCl to give benzaldehyde.</p>
-                    <span class="formula">Benzene + CO + HCl (Anhyd. AlCl₃) &rarr; Benzaldehyde</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Preparation of Ketones</h4>
-                    <ul>
-                        <li><strong>From Acyl Chlorides:</strong> 2R-MgX + CdCl₂ &rarr; R₂Cd + Mg(X)Cl. Then, 2R'-COCl + R₂Cd &rarr; 2R'-CO-R + CdCl₂.</li>
-                        <li><strong>Friedel-Crafts Acylation:</strong> Benzene + R-COCl (Anhyd. AlCl₃) &rarr; Aryl Ketone.</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <!-- 2. Chemical Properties (Nucleophilic Addition) -->
-        <details>
-            <summary>Reactions: Nucleophilic Addition</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Why are Aldehydes more reactive than Ketones?</h4>
-                    <p><strong>Steric Factor:</strong> Two alkyl groups in ketones hinder the approach of nucleophile. <br><strong>Electronic Factor:</strong> Alkyl groups show +I effect, which reduces the electrophilicity of the carbonyl carbon in ketones.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Addition Reactions</h4>
-                    <ul>
-                        <li><strong>Addition of HCN:</strong> Forms cyanohydrins. Catalyst: base (to generate stronger nucleophile CN⁻).</li>
-                        <li><strong>Addition of NaHSO₃:</strong> Forms bisulphite addition compound (white crystalline solid). Used for purification and separation of aldehydes/ketones.</li>
-                        <li><strong>Addition of Alcohols:</strong> Aldehydes react with monohydric alcohol to form hemiacetals, then Acetals. Ketones form Ketals with ethylene glycol.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Addition of Ammonia Derivatives</h4>
-                    <p>Reacts with derivatives (NH₂-Z) to form &gt;C=N-Z. Examples:</p>
-                    <ul>
-                        <li>Hydroxylamine (NH₂OH) &rarr; Oxime</li>
-                        <li>Hydrazine (NH₂NH₂) &rarr; Hydrazone</li>
-                        <li>2,4-Dinitrophenylhydrazine (2,4-DNP) &rarr; 2,4-DNP derivative (Orange-Red precipitate - used as a test for carbonyl group).</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <!-- 3. Reduction & Oxidation Tests -->
-        <details>
-            <summary>Reduction & Oxidation Tests</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Reduction to Hydrocarbons (Very Important)</h4>
-                    <ul>
-                        <li><strong>Clemmensen Reduction:</strong> Carbonyl group is reduced to CH₂ group using Zinc amalgam and conc. HCl.<br><span class="formula">&gt;C=O + Zn-Hg / conc. HCl &rarr; &gt;CH₂ + H₂O</span></li>
-                        <li><strong>Wolff-Kishner Reduction:</strong> Carbonyl group is reduced using Hydrazine (NH₂NH₂) followed by heating with KOH in ethylene glycol.<br><span class="formula">&gt;C=O + NH₂NH₂ &rarr; Hydrazone (KOH/Glycol, heat) &rarr; &gt;CH₂ + N₂</span></li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Distinction Tests (Oxidation)</h4>
-                    <ul>
-                        <li><strong>Tollens' Test (Silver Mirror Test):</strong> Aldehydes (aliphatic & aromatic) reduce Tollens' reagent (ammoniacal silver nitrate) to a bright silver mirror. Ketones do not.</li>
-                        <li><strong>Fehling's Test:</strong> Aliphatic aldehydes reduce Fehling's solution (Cu²⁺) to red-brown precipitate of Cu₂O. (Aromatic aldehydes and Ketones do NOT give this test).</li>
-                        <li><strong>Haloform (Iodoform) Test:</strong> Compounds having CH₃-CO- group (or CH₃-CH(OH)- group) react with NaOI (I₂ + NaOH) to give yellow precipitate of Iodoform (CHI₃).</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <!-- 4. Reactions of Alpha-Hydrogen -->
-        <details>
-            <summary>Reactions due to Alpha-Hydrogen</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Aldol Condensation</h4>
-                    <p>Aldehydes and ketones having <strong>at least one &alpha;-hydrogen</strong> undergo a reaction in the presence of dilute alkali (dil. NaOH) to form &beta;-hydroxy aldehydes (aldol) or &beta;-hydroxy ketones (ketol). On heating, they lose water to form &alpha;,&beta;-unsaturated carbonyl compounds.</p>
-                    <span class="formula">2 CH₃CHO (dil. NaOH) &rarr; CH₃-CH(OH)-CH₂-CHO (Heat) &rarr; CH₃-CH=CH-CHO (But-2-enal)</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Cross-Aldol Condensation</h4>
-                    <p>When Aldol condensation is carried out between two different aldehydes/ketones. If both contain &alpha;-hydrogen, it gives a mixture of 4 products.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Cannizzaro Reaction (No Alpha-Hydrogen)</h4>
-                    <p>Aldehydes which <strong>DO NOT</strong> have an &alpha;-hydrogen atom (like Formaldehyde HCHO, Benzaldehyde C₆H₅CHO) undergo self oxidation-reduction (disproportionation) when heated with <strong>concentrated alkali</strong> (conc. KOH/NaOH).</p>
-                    <span class="formula">2 HCHO + conc. KOH &rarr; CH₃OH (Methanol) + HCOOK (Potassium formate)</span>
-                </div>
-            </div>
-        </details>
-
-        <!-- 5. Carboxylic Acids -->
-        <details>
-            <summary>Carboxylic Acids & HVZ Reaction</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Preparation</h4>
-                    <ul>
-                        <li><strong>From 1° Alcohols & Aldehydes:</strong> Oxidation using alkaline KMnO₄ or acidic K₂Cr₂O₇.</li>
-                        <li><strong>From Nitriles & Amides:</strong> Hydrolysis with H⁺ or OH⁻ with heat.</li>
-                        <li><strong>From Grignard Reagents:</strong> RMgX + Solid CO₂ (Dry ice) &rarr; R-COOMgX (H₃O⁺) &rarr; R-COOH.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Acidic Strength</h4>
-                    <p>Carboxylic acids are stronger acids than phenols because carboxylate ion is stabilized by two equivalent resonance structures (negative charge on more electronegative oxygen atoms).</p>
-                    <ul>
-                        <li>Electron Withdrawing Groups (EWG) like -NO₂, -Cl <strong>increase</strong> acidic strength. (Cl₃C-COOH is strongest).</li>
-                        <li>Electron Donating Groups (EDG) like -CH₃ <strong>decrease</strong> acidic strength.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Hell-Volhard-Zelinsky (HVZ) Reaction</h4>
-                    <p>Carboxylic acids having an <strong>&alpha;-hydrogen</strong> are halogenated at the &alpha;-position on treatment with chlorine or bromine in the presence of small amount of red phosphorus.</p>
-                    <span class="formula">R-CH₂-COOH + (i) X₂/Red P (ii) H₂O &rarr; R-CH(X)-COOH</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Decarboxylation</h4>
-                    <p>Sodium salts of carboxylic acids heated with soda lime (NaOH + CaO in 3:1 ratio) lose carbon dioxide to form hydrocarbons containing one carbon less.</p>
-                    <span class="formula">R-COONa + NaOH (CaO, Heat) &rarr; R-H + Na₂CO₃</span>
-                </div>
-            </div>
-        </details>
-
-    </div>
-
-    <!-- Long Notes & PYQ Space -->
-    <div class="resources-section">
-        <h3>📂 Advance Study Materials</h3>
-        <p>Master Aldol, Cannizzaro, and Iodoform tests by practicing PYQs and reading in-depth Long Notes.</p>
-        <div class="resource-buttons">
-            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+    <div class="container">
+        <div class="motivation-container">
+            <div id="hindiQuote">मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!</div>
+            <div id="englishQuote">"Success is the sum of small efforts, repeated day in and day out."</div>
         </div>
-    </div>
 
-    <!-- Professional Trusted By Marquee -->
-    <div class="trusted-section">
+        <div class="header">
+            <h1>Chapter 8: Aldehydes, Ketones & Carboxylic Acids</h1>
+            <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+        </div>
+
+        <div class="mindmap-container">
+            <details>
+                <summary>Preparation of Aldehydes & Ketones (Name Reactions)</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Rosenmund Reduction (Only Aldehydes)</h4>
+                        <p>Acyl chlorides (acid chlorides) are hydrogenated over catalyst, palladium on barium sulphate. BaSO₄ acts as a poison to prevent further reduction to alcohol.</p>
+                        <span class="formula">R-COCl + H₂ (Pd/BaSO₄) &rarr; R-CHO + HCl</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Stephen Reaction (From Nitriles)</h4>
+                        <p>Nitriles are reduced to corresponding imines with stannous chloride (SnCl₂) in the presence of HCl, which on hydrolysis give corresponding aldehyde.</p>
+                        <span class="formula">R-CN + SnCl₂ + HCl &rarr; R-CH=NH (H₃O⁺) &rarr; R-CHO</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Etard Reaction</h4>
+                        <p>Chromyl chloride (CrO₂Cl₂) oxidizes the methyl group of Toluene to a chromium complex, which on hydrolysis gives Benzaldehyde.</p>
+                        <span class="formula">C₆H₅CH₃ + CrO₂Cl₂ (CS₂) &rarr; Chromium Complex (H₃O⁺) &rarr; C₆H₅CHO</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Gattermann-Koch Reaction</h4>
+                        <p>Benzene is treated with carbon monoxide (CO) and hydrogen chloride (HCl) in the presence of anhydrous AlCl₃/CuCl to give benzaldehyde.</p>
+                        <span class="formula">Benzene + CO + HCl (Anhyd. AlCl₃) &rarr; Benzaldehyde</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Preparation of Ketones</h4>
+                        <ul>
+                            <li><strong>From Acyl Chlorides:</strong> 2R-MgX + CdCl₂ &rarr; R₂Cd + Mg(X)Cl. Then, 2R'-COCl + R₂Cd &rarr; 2R'-CO-R + CdCl₂.</li>
+                            <li><strong>Friedel-Crafts Acylation:</strong> Benzene + R-COCl (Anhyd. AlCl₃) &rarr; Aryl Ketone.</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Reactions: Nucleophilic Addition</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Why are Aldehydes more reactive than Ketones?</h4>
+                        <p><strong>Steric Factor:</strong> Two alkyl groups in ketones hinder the approach of nucleophile. <br><strong>Electronic Factor:</strong> Alkyl groups show +I effect, which reduces the electrophilicity of the carbonyl carbon in ketones.</p>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Addition Reactions</h4>
+                        <ul>
+                            <li><strong>Addition of HCN:</strong> Forms cyanohydrins. Catalyst: base (to generate stronger nucleophile CN⁻).</li>
+                            <li><strong>Addition of NaHSO₃:</strong> Forms bisulphite addition compound (white crystalline solid). Used for purification and separation of aldehydes/ketones.</li>
+                            <li><strong>Addition of Alcohols:</strong> Aldehydes react with monohydric alcohol to form hemiacetals, then Acetals. Ketones form Ketals with ethylene glycol.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Addition of Ammonia Derivatives</h4>
+                        <p>Reacts with derivatives (NH₂-Z) to form &gt;C=N-Z. Examples:</p>
+                        <ul>
+                            <li>Hydroxylamine (NH₂OH) &rarr; Oxime</li>
+                            <li>Hydrazine (NH₂NH₂) &rarr; Hydrazone</li>
+                            <li>2,4-Dinitrophenylhydrazine (2,4-DNP) &rarr; 2,4-DNP derivative (Orange-Red precipitate - used as a test for carbonyl group).</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Reduction & Oxidation Tests</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Reduction to Hydrocarbons (Very Important)</h4>
+                        <ul>
+                            <li><strong>Clemmensen Reduction:</strong> Carbonyl group is reduced to CH₂ group using Zinc amalgam and conc. HCl.<br><span class="formula">&gt;C=O + Zn-Hg / conc. HCl &rarr; &gt;CH₂ + H₂O</span></li>
+                            <li><strong>Wolff-Kishner Reduction:</strong> Carbonyl group is reduced using Hydrazine (NH₂NH₂) followed by heating with KOH in ethylene glycol.<br><span class="formula">&gt;C=O + NH₂NH₂ &rarr; Hydrazone (KOH/Glycol, heat) &rarr; &gt;CH₂ + N₂</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Distinction Tests (Oxidation)</h4>
+                        <ul>
+                            <li><strong>Tollens' Test (Silver Mirror Test):</strong> Aldehydes (aliphatic & aromatic) reduce Tollens' reagent (ammoniacal silver nitrate) to a bright silver mirror. Ketones do not.</li>
+                            <li><strong>Fehling's Test:</strong> Aliphatic aldehydes reduce Fehling's solution (Cu²⁺) to red-brown precipitate of Cu₂O. (Aromatic aldehydes and Ketones do NOT give this test).</li>
+                            <li><strong>Haloform (Iodoform) Test:</strong> Compounds having CH₃-CO- group (or CH₃-CH(OH)- group) react with NaOI (I₂ + NaOH) to give yellow precipitate of Iodoform (CHI₃).</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Reactions due to Alpha-Hydrogen</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Aldol Condensation</h4>
+                        <p>Aldehydes and ketones having <strong>at least one &alpha;-hydrogen</strong> undergo a reaction in the presence of dilute alkali (dil. NaOH) to form &beta;-hydroxy aldehydes (aldol) or &beta;-hydroxy ketones (ketol). On heating, they lose water to form &alpha;,&beta;-unsaturated carbonyl compounds.</p>
+                        <span class="formula">2 CH₃CHO (dil. NaOH) &rarr; CH₃-CH(OH)-CH₂-CHO (Heat) &rarr; CH₃-CH=CH-CHO (But-2-enal)</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Cross-Aldol Condensation</h4>
+                        <p>When Aldol condensation is carried out between two different aldehydes/ketones. If both contain &alpha;-hydrogen, it gives a mixture of 4 products.</p>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Cannizzaro Reaction (No Alpha-Hydrogen)</h4>
+                        <p>Aldehydes which <strong>DO NOT</strong> have an &alpha;-hydrogen atom (like Formaldehyde HCHO, Benzaldehyde C₆H₅CHO) undergo self oxidation-reduction (disproportionation) when heated with <strong>concentrated alkali</strong> (conc. KOH/NaOH).</p>
+                        <span class="formula">2 HCHO + conc. KOH &rarr; CH₃OH (Methanol) + HCOOK (Potassium formate)</span>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Carboxylic Acids & HVZ Reaction</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Preparation</h4>
+                        <ul>
+                            <li><strong>From 1° Alcohols & Aldehydes:</strong> Oxidation using alkaline KMnO₄ or acidic K₂Cr₂O₇.</li>
+                            <li><strong>From Nitriles & Amides:</strong> Hydrolysis with H⁺ or OH⁻ with heat.</li>
+                            <li><strong>From Grignard Reagents:</strong> RMgX + Solid CO₂ (Dry ice) &rarr; R-COOMgX (H₃O⁺) &rarr; R-COOH.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Acidic Strength</h4>
+                        <p>Carboxylic acids are stronger acids than phenols because carboxylate ion is stabilized by two equivalent resonance structures (negative charge on more electronegative oxygen atoms).</p>
+                        <ul>
+                            <li>Electron Withdrawing Groups (EWG) like -NO₂, -Cl <strong>increase</strong> acidic strength. (Cl₃C-COOH is strongest).</li>
+                            <li>Electron Donating Groups (EDG) like -CH₃ <strong>decrease</strong> acidic strength.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Hell-Volhard-Zelinsky (HVZ) Reaction</h4>
+                        <p>Carboxylic acids having an <strong>&alpha;-hydrogen</strong> are halogenated at the &alpha;-position on treatment with chlorine or bromine in the presence of small amount of red phosphorus.</p>
+                        <span class="formula">R-CH₂-COOH + (i) X₂/Red P (ii) H₂O &rarr; R-CH(X)-COOH</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Decarboxylation</h4>
+                        <p>Sodium salts of carboxylic acids heated with soda lime (NaOH + CaO in 3:1 ratio) lose carbon dioxide to form hydrocarbons containing one carbon less.</p>
+                        <span class="formula">R-COONa + NaOH (CaO, Heat) &rarr; R-H + Na₂CO₃</span>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+
+        <div class="resources-section">
+            <h3>📂 Advance Study Materials</h3>
+            <p>Master Aldol, Cannizzaro, and Iodoform tests by practicing PYQs and reading in-depth Long Notes.</p>
+            <div class="resource-buttons">
+                <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
+                <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <a href="alcohols.html" class="btn btn-home">⬅ Prev: Alcohols</a>
+            <a href="amines.html" class="btn btn-next">Next: Amines ➡</a>
+        </div>
+    </div> <div class="trusted-section">
         <h3>TRUSTED BY SHOORVEER NOTES GROUP</h3>
         <div class="marquee-container">
-            <!-- Set 1 -->
             <div class="brand-item">
                 <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M8.5,12A3.5,3.5 0 0,0 12,15.5A3.5,3.5 0 0,0 15.5,12A3.5,3.5 0 0,0 12,8.5A3.5,3.5 0 0,0 8.5,12Z"/></svg>
                 12TH PHYSICS SHOORVEER NOTES
@@ -359,7 +369,6 @@
                 12TH CHEMISTRY SHOORVEER NOTES
             </div>
             
-            <!-- Set 2 (Exact Duplicate for Seamless Loop) -->
             <div class="brand-item">
                 <svg class="svg-logo" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M8.5,12A3.5,3.5 0 0,0 12,15.5A3.5,3.5 0 0,0 15.5,12A3.5,3.5 0 0,0 12,8.5A3.5,3.5 0 0,0 8.5,12Z"/></svg>
                 12TH PHYSICS SHOORVEER NOTES
@@ -375,20 +384,23 @@
         </div>
     </div>
 
-    <!-- Navigation -->
-    <div class="nav-section">
-        <a href="alcohols.html" class="btn btn-home">⬅ Prev: Alcohols</a>
-        <a href="amines.html" class="btn btn-next">Next: Amines ➡</a>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p><strong>Made with 🔥 by Shoorveer Notes</strong></p>
-        <p>Created By: <strong>Jatin Sharma</strong></p>
-        <p>Have questions? Email us at: <a href="mailto:contact@shoorveernotes.com">contact@shoorveernotes.com</a></p>
+    <footer style="background: rgba(0, 0, 0, 0.6); padding: 40px 20px; text-align: center; backdrop-filter: blur(10px);">
+        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
+            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
+        </div>
+        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
+            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
+        </div>
+        
+        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
+            
+            <span style="color: #3f3f46;">|</span>
+            
+            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+        </div>
     </footer>
 
-    <!-- JavaScript for Dynamic Motivation (Changes Every 5 Seconds) -->
     <script>
         const hindiQuotes = [
             "मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!",
@@ -437,25 +449,6 @@
             }, 500); // Wait for fade out to complete
             
         }, 5000); // Runs every 5 seconds
-            <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
-        </div>
-    </footer>
-
     </script>
 </body>
 </html>
-
