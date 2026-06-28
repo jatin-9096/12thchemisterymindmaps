@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,13 +37,13 @@
 
         header {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 3rem 1rem 1rem 1rem;
             position: relative;
         }
 
         h1.chapter-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -64,9 +64,10 @@
             background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
             border: 1px solid rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 0 auto 30px auto;
             text-align: center;
             min-height: 120px;
@@ -78,38 +79,41 @@
         }
 
         .shayari-hindi {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--primary);
             margin-bottom: 10px;
             font-weight: 600;
         }
 
         .shayari-eng {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent2);
             font-style: italic;
         }
 
         /* English Motivation Block */
         .motivation-block {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 0 auto 40px auto;
             padding: 2rem;
             background: rgba(0,0,0,0.4);
             border-left: 5px solid var(--accent1);
             border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .motivation-text {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             color: #fff;
+            text-align: justify;
         }
 
         .founder-sign {
             text-align: right;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 800;
             text-transform: uppercase;
             background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844);
@@ -127,13 +131,13 @@
         /* Container for content */
         .content-wrapper {
             width: 90%;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         /* Section Headings */
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
             border-bottom: 2px solid var(--border-glow);
             padding-bottom: 10px;
@@ -142,54 +146,56 @@
         }
 
         /* Grid Layouts */
+        .grid-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
             margin-bottom: 30px;
         }
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
         }
 
         /* Cards */
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px var(--border-glow);
+            box-shadow: 0 12px 30px var(--border-glow);
             border-color: var(--primary);
         }
 
         .card h3 {
             color: var(--accent2);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             border-bottom: 1px dashed rgba(255,255,255,0.2);
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
 
-        .card ul {
-            list-style: none;
-        }
-
+        .card ul { list-style: none; }
         .card ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+            margin-bottom: 12px;
+            padding-left: 22px;
             position: relative;
             line-height: 1.6;
         }
-
         .card ul li::before {
             content: '➤';
             position: absolute;
@@ -205,7 +211,7 @@
             margin-top: 15px;
             border-radius: 0 8px 8px 0;
             font-family: monospace;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #a7f3d0;
             overflow-x: auto;
         }
@@ -215,6 +221,27 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             margin-bottom: 5px;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        th, td {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: rgba(0, 242, 254, 0.15);
+            color: var(--primary);
+            font-weight: 600;
         }
 
         /* Placeholder Spaces at Bottom */
@@ -227,32 +254,35 @@
 
         .placeholder-box {
             width: 100%;
-            min-height: 200px;
+            min-height: 150px;
             border: 2px dashed var(--text-muted);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255,255,255,0.02);
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             transition: all 0.3s;
             cursor: pointer;
+            text-align: center;
+            padding: 20px;
         }
 
         .placeholder-box:hover {
             border-color: var(--accent1);
             color: var(--accent1);
             background: rgba(255, 8, 68, 0.05);
+            box-shadow: 0 0 15px rgba(255, 8, 68, 0.2);
         }
 
         /* Trusted By Section */
         .trusted-section {
             margin: 50px 0;
             padding: 30px 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             border-top: 1px solid rgba(255,255,255,0.1);
             border-bottom: 1px solid rgba(255,255,255,0.1);
             overflow: hidden;
@@ -263,118 +293,61 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 1.2rem;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .marquee-container {
             display: flex;
-            width: 200%;
-            animation: marquee 20s linear infinite;
+            width: 250%;
+            animation: marquee 25s linear infinite;
         }
-
-        .marquee-container:hover {
-            animation-play-state: paused;
-        }
+        .marquee-container:hover { animation-play-state: paused; }
 
         .trusted-item {
             display: flex;
             align-items: center;
             gap: 15px;
-            padding: 15px 30px;
+            padding: 12px 30px;
             background: rgba(255,255,255,0.05);
             border-radius: 50px;
             margin: 0 15px;
             white-space: nowrap;
             transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .trusted-item:hover {
             background: rgba(255,255,255,0.1);
             transform: scale(1.05);
             border: 1px solid var(--primary);
+            box-shadow: 0 0 15px var(--border-glow);
         }
 
-        .trusted-item svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--primary);
-        }
-
-        .trusted-text {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #fff;
-        }
+        .trusted-item svg { width: 28px; height: 28px; fill: var(--primary); }
+        .trusted-text { font-weight: 600; font-size: 1.1rem; color: #fff; }
 
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Next Chapter Section */
-        .next-chapter-box {
-            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
-            border: 1px solid var(--primary);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 50px 0;
-            text-align: center;
-        }
-
-        .next-chapter-box h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        /* Footer */
+        /* Fix for Footer */
         footer {
-            background: #000;
+            background: #050810;
             padding: 40px 20px;
             text-align: center;
             border-top: 2px solid var(--accent1);
+            position: relative;
+            z-index: 10;
         }
 
-        .footer-content h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .footer-content p {
-            color: var(--text-muted);
-            margin-bottom: 5px;
-        }
-
-        .made-by {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #fff;
-        }
-
-        .made-by span {
-            color: var(--accent1);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        
-        /* Table styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background: rgba(0,0,0,0.3);
-        }
-        th, td {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background: rgba(0, 242, 254, 0.2);
-            color: var(--primary);
+        @media (max-width: 768px) {
+            h1.chapter-title { font-size: 2.2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .motivation-block { width: 95%; padding: 1.5rem; }
+            .reaction-box { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -385,232 +358,272 @@
         <div class="subtitle">Complete Master Class & Mind Map by Shoorveer Notes</div>
     </header>
 
-    <!-- Shayari Section (Dynamic) -->
     <div class="shayari-container" id="shayari-box">
-        <div class="shayari-hindi" id="shayari-hi">लोड हो रहा है...</div>
-        <div class="shayari-eng" id="shayari-en">Loading...</div>
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
     </div>
 
-    <!-- English Motivation Section -->
     <div class="motivation-block">
         <div class="motivation-text">
-            "Your journey to crack the exams is paved with continuous effort, relentless focus, and a burning desire to succeed. The concepts you master today will build the foundation for your brilliant tomorrow. Never settle for mediocrity when greatness is within your reach. Keep pushing!"
+            "Your journey to crack the exams is paved with continuous effort, relentless focus, and a burning desire to succeed. The concepts you master today will build the foundation for your brilliant tomorrow. Never settle for mediocrity when greatness is within your reach. Keep pushing! The world belongs to those who do not flinch in the face of adversity."
         </div>
-        <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+        <div class="founder-sign">~ Jatin Sharma<br><span style="font-size:0.8rem; font-weight:normal; letter-spacing:1px; color:#94a3b8; text-transform:none; text-shadow:none;">(Founder of Shoorveer Notes Group)</span></div>
     </div>
 
     <div class="content-wrapper">
-        <h2 class="section-title">I. Carbohydrates</h2>
+        
+        <h2 class="section-title">I. Carbohydrates (Deep Dive)</h2>
+        <div class="grid-1">
+            <div class="card">
+                <h3>Introduction & D/L Configuration</h3>
+                <p>Carbohydrates are optically active polyhydroxy aldehydes or ketones. They are also called Saccharides.</p>
+                <ul>
+                    <li><strong>D and L Nomenclature:</strong> It is a relative configuration based on Glyceraldehyde. If the -OH group on the lowest chiral carbon (bottom-most chiral center in Fischer projection) is on the <strong>Right</strong> side, it is D-sugar. If it is on the <strong>Left</strong> side, it is L-sugar.</li>
+                    <li><em>Note:</em> D/L has NO relation with optical rotation (+ or dextrorotatory, - or laevorotatory). Naturally occurring glucose is D(+)-Glucose.</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="grid-2">
             <div class="card">
-                <h3>Classification</h3>
+                <h3>Monosaccharides (Glucose & Fructose)</h3>
                 <ul>
-                    <li><strong>Monosaccharides:</strong> Simplest carbs, cannot be hydrolyzed further. (e.g., Glucose, Fructose, Ribose).</li>
-                    <li><strong>Oligosaccharides:</strong> Yield 2-10 monosaccharide units on hydrolysis. Includes Disaccharides (Sucrose, Maltose, Lactose).</li>
-                    <li><strong>Polysaccharides:</strong> Yield large number of monosaccharide units. (e.g., Starch, Cellulose, Glycogen).</li>
-                    <li><strong>Reducing Sugars:</strong> Reduce Fehling's & Tollens' reagent (All monosaccharides, Maltose, Lactose).</li>
-                    <li><strong>Non-Reducing Sugars:</strong> Do not reduce (e.g., Sucrose - due to glycosidic bond involving both anomeric carbons).</li>
+                    <li><strong>Glucose (Aldohexose):</strong> Monomer of starch, cellulose. Prepared industrially by acid hydrolysis of starch. Known as blood sugar or dextrose.</li>
+                    <li><strong>Fructose (Ketohexose):</strong> Found in fruits, honey. It is an important ketohexose. It is D(-)-Fructose (Laevorotatory).</li>
+                    <li><strong>Epimers:</strong> Carbohydrates that differ in configuration at exactly one chiral center (e.g., Glucose and Galactose are C-4 epimers).</li>
                 </ul>
             </div>
             
             <div class="card">
-                <h3>Preparation of Glucose</h3>
+                <h3>Cyclic Structure & Mutarotation</h3>
                 <ul>
-                    <li><strong>From Sucrose (Cane Sugar):</strong> Boiled with dilute HCl/H2SO4 in alcoholic solution.<br>
-                        <span style="color:#a7f3d0;">C12H22O11 + H2O → C6H12O6 (Glucose) + C6H12O6 (Fructose)</span>
-                    </li>
-                    <li><strong>From Starch:</strong> Commercial method. Hydrolysis of starch by boiling with dil. H2SO4 at 393 K under pressure.<br>
-                        <span style="color:#a7f3d0;">(C6H10O5)n + nH2O → nC6H12O6 (Glucose)</span>
-                    </li>
+                    <li><strong>Haworth Projections:</strong> Cyclic structures represented as Pyranose (6-membered, 5 Carbon + 1 Oxygen) for Glucose, and Furanose (5-membered, 4 Carbon + 1 Oxygen) for Fructose.</li>
+                    <li><strong>Anomers:</strong> Isomers that differ ONLY in the configuration of the hydroxyl group at C-1 (the anomeric carbon). Known as α-form and β-form.</li>
+                    <li><strong>Mutarotation:</strong> Spontaneous change in the specific optical rotation of an optically active compound in aqueous solution until equilibrium is reached. (e.g., α-D-Glucose +111° changes to equilibrium value +52.5°).</li>
                 </ul>
             </div>
         </div>
 
         <div class="card" style="margin-bottom: 30px;">
-            <h3>Mega Reactions of Glucose (V.V.I.)</h3>
+            <h3>Chemical Reactions of Glucose (V.V.I.)</h3>
             <div class="grid-2">
                 <div class="reaction-box">
                     <div class="reaction-title">1. Reaction with HI & Red P</div>
                     Glucose + HI (heat) → n-Hexane<br>
-                    <small><i>(Proves straight chain of 6 carbon atoms)</i></small>
+                    <small><i>(Proves straight unbranched chain of 6 carbon atoms)</i></small>
                 </div>
                 <div class="reaction-box">
-                    <div class="reaction-title">2. Reaction with Hydroxylamine (NH2OH)</div>
+                    <div class="reaction-title">2. Reaction with NH2OH (Hydroxylamine)</div>
                     Glucose + NH2OH → Glucose Oxime<br>
-                    <small><i>(Confirms presence of Carbonyl group)</i></small>
+                    <small><i>(Confirms presence of a Carbonyl >C=O group)</i></small>
                 </div>
                 <div class="reaction-box">
                     <div class="reaction-title">3. Reaction with HCN</div>
                     Glucose + HCN → Glucose Cyanohydrin<br>
-                    <small><i>(Confirms Carbonyl group)</i></small>
+                    <small><i>(Further confirms Carbonyl group)</i></small>
                 </div>
                 <div class="reaction-box">
-                    <div class="reaction-title">4. Oxidation with Mild Agent (Br2 Water)</div>
+                    <div class="reaction-title">4. Mild Oxidation (Bromine Water)</div>
                     Glucose + Br2 Water → Gluconic Acid<br>
-                    <small><i>(Confirms presence of Aldehyde group)</i></small>
+                    <small><i>(Proves carbonyl group is an Aldehyde -CHO, not ketone)</i></small>
                 </div>
                 <div class="reaction-box">
-                    <div class="reaction-title">5. Oxidation with Strong Agent (HNO3)</div>
+                    <div class="reaction-title">5. Strong Oxidation (Nitric Acid HNO3)</div>
                     Glucose + HNO3 → Saccharic Acid (Glucaric acid)<br>
-                    <small><i>(Confirms presence of primary alcoholic group)</i></small>
+                    <small><i>(Proves presence of one primary alcoholic -CH2OH group at the end)</i></small>
                 </div>
                 <div class="reaction-box">
-                    <div class="reaction-title">6. Acetylation with Acetic Anhydride</div>
+                    <div class="reaction-title">6. Acetylation (Acetic Anhydride)</div>
                     Glucose + (CH3CO)2O → Glucose Pentaacetate<br>
-                    <small><i>(Confirms presence of 5 -OH groups)</i></small>
-                </div>
-                <div class="reaction-box">
-                    <div class="reaction-title">7. Osazone Formation (Extra Content)</div>
-                    Glucose + 3 Phenylhydrazine → Glucosazone<br>
-                    <small><i>(Important for identifying sugars. Fructose also forms same osazone)</i></small>
-                </div>
-                <div class="reaction-box">
-                    <div class="reaction-title">8. Ruff Degradation (Extra Content)</div>
-                    Aldohexose → Aldopentose (Step-down reaction)<br>
-                    <small><i>(Oxidation followed by decarboxylation)</i></small>
+                    <small><i>(Proves presence of 5 -OH groups attached to different carbons)</i></small>
                 </div>
             </div>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-2">
             <div class="card">
-                <h3>Disaccharides linkages</h3>
+                <h3>Disaccharides & Glycosidic Linkage</h3>
+                <p>Two monosaccharides are joined together by an oxide linkage formed by the loss of a water molecule. This linkage is called a <strong>Glycosidic Linkage</strong>.</p>
                 <ul>
-                    <li><strong>Sucrose:</strong> α-D-glucose (C1) and β-D-fructose (C2). Invert sugar (Optical rotation changes from D to L on hydrolysis).</li>
-                    <li><strong>Maltose:</strong> α-D-glucose (C1) and α-D-glucose (C4).</li>
-                    <li><strong>Lactose:</strong> β-D-galactose (C1) and β-D-glucose (C4). Present in milk.</li>
+                    <li><strong>Sucrose (Invert Sugar):</strong> Formed by α-D-Glucose (C1) + β-D-Fructose (C2). Non-reducing sugar. Hydrolysis converts dextrorotatory sucrose to laevorotatory mixture.</li>
+                    <li><strong>Maltose:</strong> Formed by two α-D-Glucose units (C1-C4 linkage). Reducing sugar.</li>
+                    <li><strong>Lactose (Milk Sugar):</strong> Formed by β-D-Galactose (C1) + β-D-Glucose (C4). Reducing sugar.</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>Polysaccharides</h3>
                 <ul>
-                    <li><strong>Starch:</strong> Plants store food. Two components:<br> 
-                        - <i>Amylose</i>: Water soluble, unbranched (C1-C4 α-glycosidic).<br>
-                        - <i>Amylopectin</i>: Insoluble, branched (C1-C4 and C1-C6).
+                    <li><strong>Starch:</strong> Main storage in plants. Mixture of:<br> 
+                        - <i>Amylose (15-20%):</i> Water soluble, straight chain (C1-C4 α-glycosidic).<br>
+                        - <i>Amylopectin (80-85%):</i> Insoluble, branched chain (C1-C4 and branching at C1-C6).
                     </li>
-                    <li><strong>Cellulose:</strong> Cell wall of plants. Polymer of β-D-glucose (C1-C4 linkage).</li>
-                    <li><strong>Glycogen:</strong> Animal starch. Similar to amylopectin but more branched.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Cyclic Structures</h3>
-                <ul>
-                    <li><strong>Pyranose:</strong> 6-membered ring containing oxygen (Glucose).</li>
-                    <li><strong>Furanose:</strong> 5-membered ring containing oxygen (Fructose).</li>
-                    <li><strong>Anomers:</strong> Isomers differing at C1 configuration (α & β forms).</li>
-                    <li><strong>Mutarotation:</strong> Spontaneous change in specific rotation of an optically active compound in solution.</li>
+                    <li><strong>Cellulose:</strong> Structural material of plant cell walls. Straight chain polymer of β-D-Glucose (C1-C4 linkage). Human body cannot digest it due to lack of cellulase enzyme.</li>
+                    <li><strong>Glycogen:</strong> Animal starch stored in liver, muscles, brain. Highly branched (similar to amylopectin).</li>
                 </ul>
             </div>
         </div>
 
-        <h2 class="section-title">II. Proteins</h2>
-        <div class="grid-2">
+        <h2 class="section-title">II. Proteins & Amino Acids (Deep Dive)</h2>
+        <div class="grid-1">
             <div class="card">
-                <h3>Amino Acids & Classification</h3>
-                <p>Polymers of α-amino acids. Contain -NH2 and -COOH groups.</p>
+                <h3>Amino Acids & Zwitterion Mechanism</h3>
+                <p>Proteins are polymers of α-amino acids connected by <strong>Peptide Bonds (-CO-NH-)</strong>.</p>
                 <ul>
-                    <li><strong>Neutral:</strong> Equal NH2 & COOH (e.g., Glycine, Alanine).</li>
-                    <li><strong>Acidic:</strong> More COOH > NH2 (e.g., Aspartic acid).</li>
-                    <li><strong>Basic:</strong> More NH2 > COOH (e.g., Lysine, Arginine).</li>
-                    <li><strong>Essential:</strong> Cannot be synthesized in body, required in diet (e.g., Valine, Leucine).</li>
-                    <li><strong>Non-Essential:</strong> Synthesized in body (e.g., Glycine).</li>
+                    <li><strong>Essential Amino Acids:</strong> Body cannot make them, required through diet (e.g., Valine, Leucine, Isoleucine).</li>
+                    <li><strong>Non-Essential Amino Acids:</strong> Body can synthesize them (e.g., Glycine, Alanine).</li>
+                    <li><strong>Zwitterion:</strong> In aqueous solution, the -COOH group loses a proton and -NH2 group accepts a proton, forming a dipolar ion (Zwitterion). This makes them amphoteric in nature.</li>
+                    <li><strong>Isoelectric Point (pI):</strong> The pH at which the amino acid zwitterion does not migrate in an electric field.</li>
                 </ul>
-                <div class="reaction-box" style="margin-top:10px;">
-                    <div class="reaction-title">Zwitter Ion & Isoelectric Point</div>
-                    Amino acids in aqueous solution form dipolar ions (Zwitterion). The pH at which it does not migrate in an electric field is the Isoelectric point.
-                </div>
             </div>
+        </div>
+        <div class="grid-2">
             <div class="card">
                 <h3>Structure of Proteins</h3>
                 <ul>
-                    <li><strong>Primary:</strong> Sequence of amino acids linked by peptide bonds (CONH).</li>
-                    <li><strong>Secondary:</strong> Folding of chain.<br>
-                        - <i>α-Helix:</i> H-bonding between C=O and N-H of different residues.<br>
-                        - <i>β-Pleated sheet:</i> Chains laid side by side.
+                    <li><strong>Primary:</strong> Exact sequence of amino acids. Any change creates a different protein (e.g., Sickle cell anemia is caused by a single amino acid change).</li>
+                    <li><strong>Secondary:</strong> Folding of polypeptide backbone.<br>
+                        - <i>α-Helix:</i> Coiled like a spring, stabilized by H-bonds between >C=O and -NH groups.<br>
+                        - <i>β-Pleated sheet:</i> Chains stretched out and laid side-by-side, held by intermolecular H-bonds.
                     </li>
-                    <li><strong>Tertiary:</strong> Overall 3D folding (Fibrous & Globular shapes). Stabilized by H-bonds, disulfide, van der Waals, electrostatic forces.</li>
-                    <li><strong>Quaternary:</strong> Spatial arrangement of multiple sub-units.</li>
-                    <li><strong>Denaturation:</strong> Loss of biological activity due to change in physical (temp) or chemical (pH) conditions. Secondary/Tertiary structure destroyed, Primary remains intact.</li>
+                    <li><strong>Tertiary:</strong> Overall 3D folding (Fibrous & Globular). Stabilized by Hydrogen bonds, Disulfide linkages (-S-S-), van der Waals forces, and electrostatic forces.</li>
+                    <li><strong>Quaternary:</strong> Arrangement of two or more polypeptide sub-units (e.g., Hemoglobin has 4 subunits).</li>
                 </ul>
+            </div>
+            <div class="card">
+                <h3>Classification & Denaturation</h3>
+                <ul>
+                    <li><strong>Fibrous Proteins:</strong> Thread-like, insoluble in water. Provide structure (e.g., Keratin in hair, Myosin in muscles).</li>
+                    <li><strong>Globular Proteins:</strong> Spherical shape, soluble in water. (e.g., Insulin, Albumin).</li>
+                    <li><strong>Denaturation:</strong> When protein is subjected to physical change (heat) or chemical change (pH), H-bonds are disturbed. 2° and 3° structures are destroyed but 1° structure remains intact. Uncoiling occurs. (Example: Coagulation of egg white on boiling, curdling of milk).</li>
+                </ul>
+                <div class="reaction-box" style="margin-top:10px;">
+                    <div class="reaction-title">Biuret Test (For Peptide Bond)</div>
+                    Protein + CuSO4 + NaOH → Purple/Violet color.
+                </div>
+                <div class="reaction-box" style="margin-top:10px;">
+                    <div class="reaction-title">Ninhydrin Test (For Amino Acids)</div>
+                    Amino Acid + Ninhydrin → Deep blue/Purple color (Ruhemann's purple).
+                </div>
             </div>
         </div>
 
-        <h2 class="section-title">III. Nucleic Acids, Vitamins, Hormones & Enzymes</h2>
+        <h2 class="section-title">III. Enzymes & Vitamins</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>Nucleic Acids (DNA & RNA)</h3>
+                <h3>Enzymes (Biocatalysts)</h3>
+                <p>Almost all enzymes are globular proteins. They are highly specific and work optimally at physiological pH (7.4) and body temperature (37°C).</p>
+                <ul>
+                    <li><strong>Mechanism:</strong> Follows 'Lock and Key' or 'Induced Fit' model. The substrate fits into the active site of the enzyme forming an E-S complex, which reduces Activation Energy.</li>
+                    <li><strong>Coenzymes & Prosthetic Groups:</strong> Some enzymes require a non-protein part to function. If organic and loosely bound, it's a coenzyme (like Vitamins). If tightly bound, it's a prosthetic group.</li>
+                    <li><strong>Examples:</strong> Zymase (Glucose to Ethanol), Maltase (Maltose to Glucose), Pepsin (Proteins to Peptides in stomach).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Vitamins (Complete Chart)</h3>
                 <table>
                     <tr>
-                        <th>Feature</th>
-                        <th>DNA</th>
-                        <th>RNA</th>
+                        <th>Vitamin</th>
+                        <th>Chemical Name</th>
+                        <th>Deficiency Disease</th>
                     </tr>
                     <tr>
-                        <td>Sugar</td>
-                        <td>β-D-2-deoxyribose</td>
-                        <td>β-D-ribose</td>
+                        <td>A (Fat sol.)</td>
+                        <td>Retinol</td>
+                        <td>Night blindness, Xerophthalmia</td>
                     </tr>
                     <tr>
-                        <td>Bases</td>
-                        <td>A, G, C, <b>T</b></td>
-                        <td>A, G, C, <b>U</b></td>
+                        <td>B1 (Water)</td>
+                        <td>Thiamine</td>
+                        <td>Beri-Beri (loss of appetite)</td>
                     </tr>
                     <tr>
-                        <td>Structure</td>
-                        <td>Double stranded helix</td>
-                        <td>Single stranded</td>
+                        <td>B2 (Water)</td>
+                        <td>Riboflavin</td>
+                        <td>Cheilosis (cracking of lips/mouth)</td>
+                    </tr>
+                    <tr>
+                        <td>B6 (Water)</td>
+                        <td>Pyridoxine</td>
+                        <td>Convulsions</td>
+                    </tr>
+                    <tr>
+                        <td>B12 (Water)</td>
+                        <td>Cyanocobalamin</td>
+                        <td>Pernicious anemia (RBC deficiency)</td>
+                    </tr>
+                    <tr>
+                        <td>C (Water)</td>
+                        <td>Ascorbic Acid</td>
+                        <td>Scurvy (bleeding gums)</td>
+                    </tr>
+                    <tr>
+                        <td>D (Fat sol.)</td>
+                        <td>Calciferol</td>
+                        <td>Rickets (bone deformity)</td>
+                    </tr>
+                    <tr>
+                        <td>E (Fat sol.)</td>
+                        <td>Tocopherol</td>
+                        <td>Muscular weakness, Sterility</td>
+                    </tr>
+                    <tr>
+                        <td>K (Fat sol.)</td>
+                        <td>Phylloquinone</td>
+                        <td>Increased blood clotting time</td>
                     </tr>
                 </table>
-                <ul style="margin-top: 15px;">
-                    <li><strong>Nucleoside:</strong> Base + Sugar (at 1' position).</li>
-                    <li><strong>Nucleotide:</strong> Base + Sugar + Phosphoric acid (at 5' position).</li>
-                    <li>Phosphodiester linkage connects nucleotides.</li>
+                <small style="color: #94a3b8; display:block; margin-top:5px;">*Note: Vitamin B12 is water-soluble but can be stored in the liver.</small>
+            </div>
+        </div>
+
+        <h2 class="section-title">IV. Nucleic Acids (DNA & RNA)</h2>
+        <div class="grid-1">
+            <div class="card">
+                <h3>Structure of Nucleic Acids</h3>
+                <p>Nucleic acids are polymers of nucleotides, responsible for heredity and protein synthesis.</p>
+                <ul>
+                    <li><strong>Nucleoside:</strong> Base + Pentose Sugar (Linked at 1' position via N-glycosidic linkage).</li>
+                    <li><strong>Nucleotide:</strong> Base + Pentose Sugar + Phosphate Group (Linked at 5' OH of sugar).</li>
+                    <li><strong>Phosphodiester Linkage:</strong> Nucleotides are joined together by linking the 5' phosphate of one nucleotide to the 3' hydroxyl of the next, forming the sugar-phosphate backbone.</li>
                 </ul>
             </div>
-            
+        </div>
+        <div class="grid-2">
             <div class="card">
-                <h3>Vitamins</h3>
+                <h3>Deoxyribonucleic Acid (DNA)</h3>
                 <ul>
-                    <li><strong>Fat Soluble:</strong> A, D, E, K (Stored in liver/adipose tissue).</li>
-                    <li><strong>Water Soluble:</strong> B group, C (Must be supplied regularly, excreted in urine). Note: B12 is water soluble but stored in body.</li>
-                    <li><strong>Deficiencies:</strong><br>
-                        - Vit A: Night blindness.<br>
-                        - Vit B1: Beri-Beri.<br>
-                        - Vit C: Scurvy.<br>
-                        - Vit D: Rickets.
+                    <li><strong>Sugar:</strong> β-D-2-deoxyribose (Lacks oxygen at 2' Carbon).</li>
+                    <li><strong>Nitrogenous Bases:</strong><br>
+                        - Purines: Adenine (A), Guanine (G)<br>
+                        - Pyrimidines: Cytosine (C), <strong>Thymine (T)</strong>
+                    </li>
+                    <li><strong>Double Helix Model (Watson & Crick):</strong> Two anti-parallel strands held together by Hydrogen bonds.</li>
+                    <li><strong>Base Pairing Rule:</strong><br>
+                        - Adenine pairs with Thymine (A = T) via <strong>2 H-bonds</strong>.<br>
+                        - Guanine pairs with Cytosine (G ≡ C) via <strong>3 H-bonds</strong>.
+                    </li>
+                    <li><strong>Chargaff's Rule:</strong> Amount of Purines always equals amount of Pyrimidines (A+G = T+C).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Ribonucleic Acid (RNA) & Hormones</h3>
+                <ul>
+                    <li><strong>Sugar:</strong> β-D-ribose.</li>
+                    <li><strong>Nitrogenous Bases:</strong> Contains <strong>Uracil (U)</strong> instead of Thymine. (A, G, C, U).</li>
+                    <li><strong>Structure:</strong> Usually single-stranded, but can fold onto itself.</li>
+                    <li><strong>Types of RNA:</strong><br>
+                        - mRNA (Messenger): Carries genetic info from DNA.<br>
+                        - tRNA (Transfer): Transports amino acids to ribosomes.<br>
+                        - rRNA (Ribosomal): Structural component of ribosomes.
                     </li>
                 </ul>
-            </div>
-
-            <div class="card">
-                <h3>Enzymes</h3>
-                <ul>
-                    <li>Biocatalysts, highly specific globular proteins.</li>
-                    <li>Reduce activation energy of reactions.</li>
-                    <li>Work via <i>Lock & Key</i> mechanism or <i>Induced Fit</i> model.</li>
-                    <li>Affected by temp, pH, and inhibitors.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Hormones</h3>
-                <ul>
-                    <li>Chemical messengers secreted by ductless (endocrine) glands.</li>
-                    <li><strong>Steroids:</strong> Testosterone, Estrogen, Androgens.</li>
-                    <li><strong>Protein/Polypeptide:</strong> Insulin, Glucagon, Oxytocin.</li>
-                    <li><strong>Amines:</strong> Thyroxine, Adrenaline.</li>
-                </ul>
+                <div class="reaction-box" style="margin-top:10px;">
+                    <div class="reaction-title">Hormones Quick Note</div>
+                    Intercellular messengers. Types: Steroids (Testosterone, Estrogens), Peptides (Insulin), Amines (Adrenaline).
+                </div>
             </div>
         </div>
 
-        <!-- NEXT CHAPTER SECTION (Modern Style Request) -->
-        <div class="next-chapter-box">
-            <h2>NEXT CHAPTER: POLYMERS & CHEMISTRY IN EVERYDAY LIFE</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 20px; color: #e2e8f0;">Advanced highly optimized notes for the next modules are being prepared with maximum details, 3D structure references, and massive reaction banks!</p>
-            <div style="display:inline-block; padding: 10px 25px; background: var(--primary); color: #000; font-weight:bold; border-radius:30px; cursor:pointer;">UNLOCK NEXT MODULE</div>
-        </div>
-
-        <!-- Placeholders -->
         <div class="bottom-placeholders">
             <div class="placeholder-box">
                 [ + ADD LONG NOTES HERE ]
@@ -621,32 +634,88 @@
         </div>
     </div>
 
-    <!-- Trusted By Section -->
     <div class="trusted-section">
-        <h3 class="trusted-title">Trusted By</h3>
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
         <div class="marquee-container" id="marquee-container">
-            <!-- Items injected by JS for infinite loop effect -->
-        </div>
+            </div>
     </div>
 
     <footer>
-        <div class="footer-content">
-            <h3>Contact Us</h3>
-            <p>Email: contact@shoorveernotes.com</p>
-            <p>Support: +91-XXXX-XXXXXX</p>
+        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
+            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
         </div>
-        <div class="made-by">
-            MADE BY <span>SHOORVEER NOTES</span>
+        
+        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
+            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
+        </div>
+        
+        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
+            
+            <span style="color: #3f3f46;">|</span>
+            
+            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
         </div>
     </footer>
 
     <script>
-        // 50 Quotes Array from Python
-        const quotes = [{"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "\u0938\u092b\u0932\u0924\u093e \u0905\u0902\u0924\u093f\u092e \u0928\u0939\u0940\u0902 \u0939\u0948, \u0905\u0938\u092b\u0932\u0924\u093e \u0918\u093e\u0924\u0915 \u0928\u0939\u0940\u0902 \u0939\u0948: \u092f\u0939 \u091c\u093e\u0930\u0940 \u0930\u0916\u0928\u0947 \u0915\u093e \u0938\u093e\u0939\u0938 \u0939\u0948 \u091c\u094b \u092e\u093e\u092f\u0928\u0947 \u0930\u0916\u0924\u093e \u0939\u0948\u0964"}, {"en": "Believe you can and you're halfway there.", "hi": "\u0935\u093f\u0936\u094d\u0935\u093e\u0938 \u0915\u0930\u0947\u0902 \u0915\u093f \u0906\u092a \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u0906\u092a \u0906\u0927\u0940 \u092e\u0902\u091c\u093f\u0932 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a \u0917\u090f \u0939\u0948\u0902\u0964"}, {"en": "The only way to do great work is to love what you do.", "hi": "\u092e\u0939\u093e\u0928 \u0915\u093e\u0930\u094d\u092f \u0915\u0930\u0928\u0947 \u0915\u093e \u090f\u0915\u092e\u093e\u0924\u094d\u0930 \u0924\u0930\u0940\u0915\u093e \u092f\u0939 \u0939\u0948 \u0915\u093f \u0906\u092a \u091c\u094b \u0915\u0930\u0924\u0947 \u0939\u0948\u0902 \u0909\u0938\u0938\u0947 \u092a\u094d\u092f\u093e\u0930 \u0915\u0930\u0947\u0902\u0964"}, {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "\u0906\u092a\u0915\u093e \u0938\u092e\u092f \u0938\u0940\u092e\u093f\u0924 \u0939\u0948, \u0907\u0938\u0947 \u0915\u093f\u0938\u0940 \u0914\u0930 \u0915\u093e \u091c\u0940\u0935\u0928 \u091c\u0940\u0928\u0947 \u092e\u0947\u0902 \u092c\u0930\u094d\u092c\u093e\u0926 \u0928 \u0915\u0930\u0947\u0902\u0964"}, {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "\u092d\u0935\u093f\u0937\u094d\u092f \u0909\u0928\u0915\u093e \u0939\u0948 \u091c\u094b \u0905\u092a\u0928\u0947 \u0938\u092a\u0928\u094b\u0902 \u0915\u0940 \u0938\u0941\u0902\u0926\u0930\u0924\u093e \u092e\u0947\u0902 \u0935\u093f\u0936\u094d\u0935\u093e\u0938 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964"}, {"en": "Dream big and dare to fail.", "hi": "\u092c\u0921\u093c\u0947 \u0938\u092a\u0928\u0947 \u0926\u0947\u0916\u0947\u0902 \u0914\u0930 \u0905\u0938\u092b\u0932 \u0939\u094b\u0928\u0947 \u0915\u093e \u0938\u093e\u0939\u0938 \u0915\u0930\u0947\u0902\u0964"}, {"en": "Do what you can, with what you have, where you are.", "hi": "\u0906\u092a \u091c\u0939\u093e\u0902 \u0939\u0948\u0902, \u0906\u092a\u0915\u0947 \u092a\u093e\u0938 \u091c\u094b \u0915\u0941\u091b \u0939\u0948, \u0909\u0938\u0940 \u0915\u0947 \u0938\u093e\u0925 \u0935\u0939 \u0915\u0930\u0947\u0902 \u091c\u094b \u0906\u092a \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964"}, {"en": "It always seems impossible until it's done.", "hi": "\u091c\u092c \u0924\u0915 \u092f\u0939 \u0939\u094b \u0928\u0939\u0940\u0902 \u091c\u093e\u0924\u093e, \u0924\u092c \u0924\u0915 \u092f\u0939 \u0939\u092e\u0947\u0936\u093e \u0905\u0938\u0902\u092d\u0935 \u0932\u0917\u0924\u093e \u0939\u0948\u0964"}, {"en": "Don't watch the clock; do what it does. Keep going.", "hi": "\u0918\u0921\u093c\u0940 \u0915\u094b \u092e\u0924 \u0926\u0947\u0916\u094b; \u0935\u0939\u0940 \u0915\u0930\u094b \u091c\u094b \u092f\u0939 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964 \u091a\u0932\u0924\u0947 \u0930\u0939\u094b\u0964"}, {"en": "The harder you work for something, the greater you'll feel when you achieve it.", "hi": "\u0906\u092a \u0915\u093f\u0938\u0940 \u091a\u0940\u091c\u093c \u0915\u0947 \u0932\u093f\u090f \u091c\u093f\u0924\u0928\u0940 \u0915\u0921\u093c\u0940 \u092e\u0947\u0939\u0928\u0924 \u0915\u0930\u0947\u0902\u0917\u0947, \u0909\u0938\u0947 \u0939\u093e\u0938\u093f\u0932 \u0915\u0930\u0928\u0947 \u092a\u0930 \u0906\u092a\u0915\u094b \u0909\u0924\u0928\u0940 \u0939\u0940 \u0905\u0927\u093f\u0915 \u0916\u0941\u0936\u0940 \u0939\u094b\u0917\u0940\u0964"}, {"en": "Success doesn\u2019t just find you. You have to go out and get it.", "hi": "\u0938\u092b\u0932\u0924\u093e \u0938\u093f\u0930\u094d\u092b \u0906\u092a\u0915\u094b \u0928\u0939\u0940\u0902 \u092e\u093f\u0932\u0924\u0940\u0964 \u0906\u092a\u0915\u094b \u092c\u093e\u0939\u0930 \u091c\u093e\u0915\u0930 \u0907\u0938\u0947 \u0939\u093e\u0938\u093f\u0932 \u0915\u0930\u0928\u093e \u0939\u094b\u0917\u093e\u0964"}, {"en": "The key to success is to focus on goals, not obstacles.", "hi": "\u0938\u092b\u0932\u0924\u093e \u0915\u0940 \u0915\u0941\u0902\u091c\u0940 \u092c\u093e\u0927\u093e\u0913\u0902 \u092a\u0930 \u0928\u0939\u0940\u0902, \u0932\u0915\u094d\u0937\u094d\u092f\u094b\u0902 \u092a\u0930 \u0927\u094d\u092f\u093e\u0928 \u0915\u0947\u0902\u0926\u094d\u0930\u093f\u0924 \u0915\u0930\u0928\u093e \u0939\u0948\u0964"}, {"en": "Dream it. Wish it. Do it.", "hi": "\u0938\u092a\u0928\u093e \u0926\u0947\u0916\u094b\u0964 \u0915\u093e\u092e\u0928\u093e \u0915\u0930\u094b\u0964 \u0907\u0938\u0947 \u0915\u0930 \u0921\u093e\u0932\u094b\u0964"}, {"en": "Great things never come from comfort zones.", "hi": "\u092e\u0939\u093e\u0928 \u091a\u0940\u091c\u0947\u0902 \u0915\u092d\u0940 \u092d\u0940 \u0906\u0930\u093e\u092e \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0938\u0947 \u0928\u0939\u0940\u0902 \u0906\u0924\u0940 \u0939\u0948\u0902\u0964"}, {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "\u0926\u0943\u0922\u093c \u0938\u0902\u0915\u0932\u094d\u092a \u0915\u0947 \u0938\u093e\u0925 \u0909\u0920\u0947\u0902\u0964 \u0938\u0902\u0924\u0941\u0937\u094d\u091f\u093f \u0915\u0947 \u0938\u093e\u0925 \u0938\u094b\u0928\u0947 \u091c\u093e\u090f\u0902\u0964"}, {"en": "Do something today that your future self will thank you for.", "hi": "\u0906\u091c \u0915\u0941\u091b \u0910\u0938\u093e \u0915\u0930\u0947\u0902 \u091c\u093f\u0938\u0915\u0947 \u0932\u093f\u090f \u0906\u092a\u0915\u093e \u092d\u0935\u093f\u0937\u094d\u092f \u0915\u093e \u0938\u094d\u0935\u0930\u0942\u092a \u0906\u092a\u0915\u094b \u0927\u0928\u094d\u092f\u0935\u093e\u0926 \u0926\u0947\u0964"}, {"en": "Little things make big days.", "hi": "\u091b\u094b\u091f\u0940-\u091b\u094b\u091f\u0940 \u091a\u0940\u091c\u0947\u0902 \u092c\u0921\u093c\u0947 \u0926\u093f\u0928 \u092c\u0928\u093e\u0924\u0940 \u0939\u0948\u0902\u0964"}, {"en": "It\u2019s going to be hard, but hard does not mean impossible.", "hi": "\u092f\u0939 \u0915\u0920\u093f\u0928 \u0939\u094b\u0928\u0947 \u0935\u093e\u0932\u093e \u0939\u0948, \u0932\u0947\u0915\u093f\u0928 \u0915\u0920\u093f\u0928 \u0915\u093e \u092e\u0924\u0932\u092c \u0905\u0938\u0902\u092d\u0935 \u0928\u0939\u0940\u0902 \u0939\u0948\u0964"}, {"en": "Don\u2019t wait for opportunity. Create it.", "hi": "\u0905\u0935\u0938\u0930 \u0915\u0940 \u092a\u094d\u0930\u0924\u0940\u0915\u094d\u0937\u093e \u0928 \u0915\u0930\u0947\u0902\u0964 \u0907\u0938\u0947 \u092c\u0928\u093e\u090f\u0902\u0964"}, {"en": "Sometimes we\u2019re tested not to show our weaknesses, but to discover our strengths.", "hi": "\u0915\u092d\u0940-\u0915\u092d\u0940 \u0939\u092e\u093e\u0930\u093e \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0939\u092e\u093e\u0930\u0940 \u0915\u092e\u091c\u094b\u0930\u093f\u092f\u094b\u0902 \u0915\u094b \u0926\u093f\u0916\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0928\u0939\u0940\u0902, \u092c\u0932\u094d\u0915\u093f \u0939\u092e\u093e\u0930\u0940 \u0924\u093e\u0915\u0924 \u0916\u094b\u091c\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964"}, {"en": "The only limit to our realization of tomorrow is our doubts of today.", "hi": "\u0915\u0932 \u0915\u0940 \u0939\u092e\u093e\u0930\u0940 \u092a\u094d\u0930\u093e\u092a\u094d\u0924\u093f \u0915\u0940 \u090f\u0915\u092e\u093e\u0924\u094d\u0930 \u0938\u0940\u092e\u093e \u0906\u091c \u0915\u0947 \u0939\u092e\u093e\u0930\u0947 \u0938\u0902\u0926\u0947\u0939 \u0939\u0948\u0902\u0964"}, {"en": "Push yourself, because no one else is going to do it for you.", "hi": "\u0916\u0941\u0926 \u0915\u094b \u0906\u0917\u0947 \u092c\u0922\u093c\u093e\u090f\u0902, \u0915\u094d\u092f\u094b\u0902\u0915\u093f \u0915\u094b\u0908 \u0914\u0930 \u0906\u092a\u0915\u0947 \u0932\u093f\u090f \u092f\u0939 \u0928\u0939\u0940\u0902 \u0915\u0930\u0928\u0947 \u0935\u093e\u0932\u093e \u0939\u0948\u0964"}, {"en": "Success is walking from failure to failure with no loss of enthusiasm.", "hi": "\u0938\u092b\u0932\u0924\u093e \u092c\u093f\u0928\u093e \u0909\u0924\u094d\u0938\u093e\u0939 \u0916\u094b\u090f \u090f\u0915 \u0935\u093f\u092b\u0932\u0924\u093e \u0938\u0947 \u0926\u0942\u0938\u0930\u0940 \u0935\u093f\u092b\u0932\u0924\u093e \u0924\u0915 \u091a\u0932\u0928\u093e \u0939\u0948\u0964"}, {"en": "You don't have to be great to start, but you have to start to be great.", "hi": "\u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0906\u092a\u0915\u094b \u092e\u0939\u093e\u0928 \u0939\u094b\u0928\u0947 \u0915\u0940 \u0906\u0935\u0936\u094d\u092f\u0915\u0924\u093e \u0928\u0939\u0940\u0902 \u0939\u0948, \u0932\u0947\u0915\u093f\u0928 \u092e\u0939\u093e\u0928 \u0939\u094b\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0906\u092a\u0915\u094b \u0936\u0941\u0930\u0941\u0906\u0924 \u0915\u0930\u0928\u0940 \u0939\u094b\u0917\u0940\u0964"}, {"en": "A year from now you may wish you had started today.", "hi": "\u0906\u091c \u0938\u0947 \u090f\u0915 \u0938\u093e\u0932 \u092c\u093e\u0926 \u0906\u092a \u0915\u093e\u092e\u0928\u093e \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902 \u0915\u093f \u0906\u092a\u0928\u0947 \u0906\u091c \u0939\u0940 \u0936\u0941\u0930\u0941\u0906\u0924 \u0915\u0940 \u0939\u094b\u0924\u0940\u0964"}, {"en": "Doubt kills more dreams than failure ever will.", "hi": "\u0938\u0902\u0926\u0947\u0939 \u0905\u0938\u092b\u0932\u0924\u093e \u0938\u0947 \u0915\u0939\u0940\u0902 \u0905\u0927\u093f\u0915 \u0938\u092a\u0928\u094b\u0902 \u0915\u094b \u092e\u093e\u0930 \u0926\u0947\u0924\u093e \u0939\u0948\u0964"}, {"en": "Failure is the opportunity to begin again more intelligently.", "hi": "\u0905\u0938\u092b\u0932\u0924\u093e \u0905\u0927\u093f\u0915 \u092c\u0941\u0926\u094d\u0927\u093f\u092e\u093e\u0928\u0940 \u0938\u0947 \u092b\u093f\u0930 \u0938\u0947 \u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u0947 \u0915\u093e \u0905\u0935\u0938\u0930 \u0939\u0948\u0964"}, {"en": "Don't let yesterday take up too much of today.", "hi": "\u092c\u0940\u0924\u0947 \u0939\u0941\u090f \u0915\u0932 \u0915\u094b \u0906\u091c \u0915\u093e \u092c\u0939\u0941\u0924 \u0905\u0927\u093f\u0915 \u0938\u092e\u092f \u0928 \u0932\u0947\u0928\u0947 \u0926\u0947\u0902\u0964"}, {"en": "You learn more from failure than from success.", "hi": "\u0906\u092a \u0938\u092b\u0932\u0924\u093e \u0915\u0940 \u0924\u0941\u0932\u0928\u093e \u092e\u0947\u0902 \u0905\u0938\u092b\u0932\u0924\u093e \u0938\u0947 \u0905\u0927\u093f\u0915 \u0938\u0940\u0916\u0924\u0947 \u0939\u0948\u0902\u0964"}, {"en": "If you are working on something that you really care about, you don't have to be pushed.", "hi": "\u092f\u0926\u093f \u0906\u092a \u0915\u093f\u0938\u0940 \u0910\u0938\u0940 \u091a\u0940\u091c\u093c \u092a\u0930 \u0915\u093e\u092e \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902 \u091c\u093f\u0938\u0915\u0940 \u0906\u092a\u0915\u094b \u0935\u093e\u0938\u094d\u0924\u0935 \u092e\u0947\u0902 \u092a\u0930\u0935\u093e\u0939 \u0939\u0948, \u0924\u094b \u0906\u092a\u0915\u094b \u0927\u0915\u0947\u0932\u0928\u0947 \u0915\u0940 \u091c\u093c\u0930\u0942\u0930\u0924 \u0928\u0939\u0940\u0902 \u0939\u0948\u0964"}, {"en": "Experience is a hard teacher because she gives the test first, the lesson afterwards.", "hi": "\u0905\u0928\u0941\u092d\u0935 \u090f\u0915 \u0915\u0920\u094b\u0930 \u0936\u093f\u0915\u094d\u0937\u0915 \u0939\u0948 \u0915\u094d\u092f\u094b\u0902\u0915\u093f \u0935\u0939 \u092a\u0939\u0932\u0947 \u092a\u0930\u0940\u0915\u094d\u0937\u093e \u0932\u0947\u0924\u093e \u0939\u0948, \u092c\u093e\u0926 \u092e\u0947\u0902 \u092a\u093e\u0920 \u092a\u0922\u093c\u093e\u0924\u093e \u0939\u0948\u0964"}, {"en": "To know how much there is to know is the beginning of learning to live.", "hi": "\u092f\u0939 \u091c\u093e\u0928\u0928\u093e \u0915\u093f \u091c\u093e\u0928\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u0924\u0928\u093e \u0915\u0941\u091b \u0939\u0948, \u091c\u0940\u0928\u093e \u0938\u0940\u0916\u0928\u0947 \u0915\u0940 \u0936\u0941\u0930\u0941\u0906\u0924 \u0939\u0948\u0964"}, {"en": "Goal setting is the secret to a compelling future.", "hi": "\u0932\u0915\u094d\u0937\u094d\u092f \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u0923 \u090f\u0915 \u0938\u092e\u094d\u092e\u094b\u0939\u0915 \u092d\u0935\u093f\u0937\u094d\u092f \u0915\u093e \u0930\u0939\u0938\u094d\u092f \u0939\u0948\u0964"}, {"en": "Either you run the day or the day runs you.", "hi": "\u092f\u093e \u0924\u094b \u0906\u092a \u0926\u093f\u0928 \u091a\u0932\u093e\u0924\u0947 \u0939\u0948\u0902 \u092f\u093e \u0926\u093f\u0928 \u0906\u092a\u0915\u094b \u091a\u0932\u093e\u0924\u093e \u0939\u0948\u0964"}, {"en": "I find that the harder I work, the more luck I seem to have.", "hi": "\u092e\u0941\u091d\u0947 \u0932\u0917\u0924\u093e \u0939\u0948 \u0915\u093f \u092e\u0948\u0902 \u091c\u093f\u0924\u0928\u0940 \u0905\u0927\u093f\u0915 \u092e\u0947\u0939\u0928\u0924 \u0915\u0930\u0924\u093e \u0939\u0942\u0902, \u092e\u0941\u091d\u0947 \u0909\u0924\u0928\u093e \u0939\u0940 \u092d\u093e\u0917\u094d\u092f \u092e\u093f\u0932\u0924\u093e \u0939\u0948\u0964"}, {"en": "Start where you are. Use what you have. Do what you can.", "hi": "\u0906\u092a \u091c\u0939\u093e\u0902 \u0939\u0948\u0902 \u0935\u0939\u0940\u0902 \u0938\u0947 \u0936\u0941\u0930\u0942 \u0915\u0930\u0947\u0902\u0964 \u0906\u092a\u0915\u0947 \u092a\u093e\u0938 \u091c\u094b \u0939\u0948 \u0909\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0947\u0902\u0964 \u091c\u094b \u0906\u092a \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902 \u0935\u0939 \u0915\u0930\u0947\u0902\u0964"}, {"en": "Fall seven times and stand up eight.", "hi": "\u0938\u093e\u0924 \u092c\u093e\u0930 \u0917\u093f\u0930\u0947\u0902 \u0914\u0930 \u0906\u0920\u0935\u0940\u0902 \u092c\u093e\u0930 \u0916\u0921\u093c\u0947 \u0939\u094b \u091c\u093e\u090f\u0902\u0964"}, {"en": "Everything you\u2019ve ever wanted is on the other side of fear.", "hi": "\u0939\u0930 \u0935\u094b \u091a\u0940\u091c\u093c \u091c\u094b \u0906\u092a\u0928\u0947 \u0915\u092d\u0940 \u091a\u093e\u0939\u0940 \u0939\u0948, \u0935\u094b \u0921\u0930 \u0915\u0947 \u0926\u0942\u0938\u0930\u0940 \u0924\u0930\u092b \u0939\u0948\u0964"}, {"en": "Success is getting what you want. Happiness is wanting what you get.", "hi": "\u0938\u092b\u0932\u0924\u093e \u0935\u0939\u0940 \u092a\u093e\u0928\u093e \u0939\u0948 \u091c\u094b \u0906\u092a \u091a\u093e\u0939\u0924\u0947 \u0939\u0948\u0902\u0964 \u0916\u0941\u0936\u0940 \u0935\u0939\u0940 \u091a\u093e\u0939\u0928\u093e \u0939\u0948 \u091c\u094b \u0906\u092a\u0915\u094b \u092e\u093f\u0932\u0924\u093e \u0939\u0948\u0964"}, {"en": "Quality is not an act, it is a habit.", "hi": "\u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u090f\u0915 \u0915\u093e\u0930\u094d\u092f \u0928\u0939\u0940\u0902 \u0939\u0948, \u092f\u0939 \u090f\u0915 \u0906\u0926\u0924 \u0939\u0948\u0964"}, {"en": "We are what we repeatedly do.", "hi": "\u0939\u092e \u0935\u0939\u0940 \u0939\u0948\u0902 \u091c\u094b \u0939\u092e \u092c\u093e\u0930-\u092c\u093e\u0930 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964"}, {"en": "Make each day your masterpiece.", "hi": "\u0939\u0930 \u0926\u093f\u0928 \u0915\u094b \u0905\u092a\u0928\u0940 \u0909\u0924\u094d\u0915\u0943\u0937\u094d\u091f \u0915\u0943\u0924\u093f \u092c\u0928\u093e\u090f\u0902\u0964"}, {"en": "The best revenge is massive success.", "hi": "\u0938\u092c\u0938\u0947 \u0905\u091a\u094d\u091b\u093e \u092c\u0926\u0932\u093e \u092c\u0921\u093c\u0940 \u0938\u092b\u0932\u0924\u093e \u0939\u0948\u0964"}, {"en": "You miss 100% of the shots you don't take.", "hi": "\u0906\u092a 100% \u0909\u0928 \u092e\u094c\u0915\u094b\u0902 \u0915\u094b \u091a\u0942\u0915 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902 \u091c\u093f\u0928\u094d\u0939\u0947\u0902 \u0906\u092a \u0928\u0939\u0940\u0902 \u0932\u0947\u0924\u0947 \u0939\u0948\u0902\u0964"}, {"en": "There is no substitute for hard work.", "hi": "\u0915\u0921\u093c\u0940 \u092e\u0947\u0939\u0928\u0924 \u0915\u093e \u0915\u094b\u0908 \u0935\u093f\u0915\u0932\u094d\u092a \u0928\u0939\u0940\u0902 \u0939\u0948\u0964"}, {"en": "The successful warrior is the average man, with laser-like focus.", "hi": "\u0938\u092b\u0932 \u092f\u094b\u0926\u094d\u0927\u093e \u0914\u0938\u0924 \u0926\u0930\u094d\u091c\u0947 \u0915\u093e \u0906\u0926\u092e\u0940 \u0939\u094b\u0924\u093e \u0939\u0948, \u091c\u093f\u0938\u092e\u0947\u0902 \u0932\u0947\u091c\u093c\u0930 \u091c\u0948\u0938\u093e \u092b\u094b\u0915\u0938 \u0939\u094b\u0924\u093e \u0939\u0948\u0964"}, {"en": "Action is the foundational key to all success.", "hi": "\u0915\u093e\u0930\u094d\u092f \u0938\u092d\u0940 \u0938\u092b\u0932\u0924\u093e\u0913\u0902 \u0915\u0940 \u092e\u0942\u0932\u092d\u0942\u0924 \u0915\u0941\u0902\u091c\u0940 \u0939\u0948\u0964"}, {"en": "Nothing will work unless you do.", "hi": "\u091c\u092c \u0924\u0915 \u0906\u092a \u0915\u093e\u092e \u0928\u0939\u0940\u0902 \u0915\u0930\u0947\u0902\u0917\u0947 \u0924\u092c \u0924\u0915 \u0915\u0941\u091b \u092d\u0940 \u0915\u093e\u092e \u0928\u0939\u0940\u0902 \u0915\u0930\u0947\u0917\u093e\u0964"}, {"en": "Work hard in silence, let your success be your noise.", "hi": "\u0916\u093e\u092e\u094b\u0936\u0940 \u0938\u0947 \u0915\u0921\u093c\u0940 \u092e\u0947\u0939\u0928\u0924 \u0915\u0930\u094b, \u0905\u092a\u0928\u0940 \u0938\u092b\u0932\u0924\u093e \u0915\u094b \u0936\u094b\u0930 \u092e\u091a\u093e\u0928\u0947 \u0926\u094b\u0964"}, {"en": "A river cuts through rock, not because of its power, but because of its persistence.", "hi": "\u090f\u0915 \u0928\u0926\u0940 \u0905\u092a\u0928\u0940 \u0936\u0915\u094d\u0924\u093f \u0915\u0947 \u0915\u093e\u0930\u0923 \u0928\u0939\u0940\u0902, \u092c\u0932\u094d\u0915\u093f \u0905\u092a\u0928\u0940 \u0926\u0943\u0922\u093c\u0924\u093e \u0915\u0947 \u0915\u093e\u0930\u0923 \u091a\u091f\u094d\u091f\u093e\u0928 \u0915\u094b \u0915\u093e\u091f\u0924\u0940 \u0939\u0948\u0964"}];
+        // Array of 50 Motivational Quotes
+        const quotes = [
+            {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+            {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+            {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+            {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+            {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"},
+            {"en": "Dream big and dare to fail.", "hi": "बड़े सपने देखें और असफल होने का साहस करें।"},
+            {"en": "It always seems impossible until it's done.", "hi": "जब तक यह हो नहीं जाता, तब तक यह हमेशा असंभव लगता है।"},
+            {"en": "Don't watch the clock; do what it does. Keep going.", "hi": "घड़ी को मत देखो; वही करो जो यह करती है। चलते रहो।"},
+            {"en": "The harder you work for something, the greater you'll feel when you achieve it.", "hi": "आप किसी चीज़ के लिए जितनी कड़ी मेहनत करेंगे, उसे हासिल करने पर आपको उतनी ही अधिक खुशी होगी।"},
+            {"en": "Success doesn’t just find you. You have to go out and get it.", "hi": "सफलता सिर्फ आपको नहीं मिलती। आपको बाहर जाकर इसे हासिल करना होगा।"},
+            {"en": "The key to success is to focus on goals, not obstacles.", "hi": "सफलता की कुंजी बाधाओं पर नहीं, लक्ष्यों पर ध्यान केंद्रित करना है।"},
+            {"en": "Great things never come from comfort zones.", "hi": "महान चीजें कभी भी आराम क्षेत्र से नहीं आती हैं।"},
+            {"en": "Wake up with determination. Go to bed with satisfaction.", "hi": "दृढ़ संकल्प के साथ उठें। संतुष्टि के साथ सोने जाएं।"},
+            {"en": "Do something today that your future self will thank you for.", "hi": "आज कुछ ऐसा करें जिसके लिए आपका भविष्य का स्वरूप आपको धन्यवाद दे।"},
+            {"en": "It’s going to be hard, but hard does not mean impossible.", "hi": "यह कठिन होने वाला है, लेकिन कठिन का मतलब असंभव नहीं है।"},
+            {"en": "Don’t wait for opportunity. Create it.", "hi": "अवसर की प्रतीक्षा न करें। इसे बनाएं।"},
+            {"en": "Push yourself, because no one else is going to do it for you.", "hi": "खुद को आगे बढ़ाएं, क्योंकि कोई और आपके लिए यह नहीं करने वाला है।"},
+            {"en": "Success is walking from failure to failure with no loss of enthusiasm.", "hi": "सफलता बिना उत्साह खोए एक विफलता से दूसरी विफलता तक चलना है।"},
+            {"en": "You don't have to be great to start, but you have to start to be great.", "hi": "शुरू करने के लिए आपको महान होने की आवश्यकता नहीं है, लेकिन महान होने के लिए आपको शुरुआत करनी होगी।"},
+            {"en": "There is no substitute for hard work.", "hi": "कड़ी मेहनत का कोई विकल्प नहीं है।"},
+            {"en": "Doubt kills more dreams than failure ever will.", "hi": "संदेह विफलता से कहीं अधिक सपनों को मार देता है।"},
+            {"en": "Action is the foundational key to all success.", "hi": "कार्य सभी सफलताओं की मूलभूत कुंजी है।"},
+            {"en": "Failure is the opportunity to begin again more intelligently.", "hi": "विफलता अधिक बुद्धिमानी से फिर से शुरू करने का अवसर है।"},
+            {"en": "Don't let yesterday take up too much of today.", "hi": "बीते हुए कल को आज का बहुत अधिक समय न लेने दें।"},
+            {"en": "You learn more from failure than from success.", "hi": "आप सफलता की तुलना में विफलता से अधिक सीखते हैं।"},
+            {"en": "If you are working on something that you really care about, you don't have to be pushed.", "hi": "यदि आप किसी ऐसी चीज़ पर काम कर रहे हैं जिसकी आपको वास्तव में परवाह है, तो आपको धकेलने की ज़रूरत नहीं है।"},
+            {"en": "Experience is a hard teacher because she gives the test first, the lesson afterwards.", "hi": "अनुभव एक कठोर शिक्षक है क्योंकि वह पहले परीक्षा लेता है, बाद में पाठ पढ़ाता है।"},
+            {"en": "To know how much there is to know is the beginning of learning to live.", "hi": "यह जानना कि जानने के लिए कितना कुछ है, जीना सीखने की शुरुआत है।"},
+            {"en": "Goal setting is the secret to a compelling future.", "hi": "लक्ष्य निर्धारण एक सम्मोहक भविष्य का रहस्य है।"},
+            {"en": "Either you run the day or the day runs you.", "hi": "या तो आप दिन चलाते हैं या दिन आपको चलाता है।"},
+            {"en": "I find that the harder I work, the more luck I seem to have.", "hi": "मुझे लगता है कि मैं जितनी अधिक मेहनत करता हूं, मुझे उतना ही भाग्य मिलता है।"},
+            {"en": "Start where you are. Use what you have. Do what you can.", "hi": "आप जहां हैं वहीं से शुरू करें। आपके पास जो है उसका उपयोग करें। जो आप कर सकते हैं वह करें।"},
+            {"en": "Fall seven times and stand up eight.", "hi": "सात बार गिरें और आठवीं बार खड़े हो जाएं।"},
+            {"en": "Everything you’ve ever wanted is on the other side of fear.", "hi": "हर वो चीज़ जो आपने कभी चाही है, वो डर के दूसरी तरफ है।"},
+            {"en": "Success is getting what you want. Happiness is wanting what you get.", "hi": "सफलता वही पाना है जो आप चाहते हैं। खुशी वही चाहना है जो आपको मिलता है।"},
+            {"en": "Quality is not an act, it is a habit.", "hi": "गुणवत्ता एक कार्य नहीं है, यह एक आदत है।"},
+            {"en": "We are what we repeatedly do.", "hi": "हम वही हैं जो हम बार-बार करते हैं।"},
+            {"en": "Make each day your masterpiece.", "hi": "हर दिन को अपनी उत्कृष्ट कृति बनाएं।"},
+            {"en": "The best revenge is massive success.", "hi": "सबसे अच्छा बदला बड़ी सफलता है।"},
+            {"en": "You miss 100% of the shots you don't take.", "hi": "आप 100% उन मौकों को चूक जाते हैं जिन्हें आप नहीं लेते हैं।"},
+            {"en": "The successful warrior is the average man, with laser-like focus.", "hi": "सफल योद्धा औसत दर्जे का आदमी होता है, जिसमें लेज़र जैसा फोकस होता है।"},
+            {"en": "Nothing will work unless you do.", "hi": "जब तक आप काम नहीं करेंगे तब तक कुछ भी काम नहीं करेगा।"},
+            {"en": "Work hard in silence, let your success be your noise.", "hi": "खामोशी से कड़ी मेहनत करो, अपनी सफलता को शोर मचाने दो।"},
+            {"en": "A river cuts through rock, not because of its power, but because of its persistence.", "hi": "एक नदी अपनी शक्ति के कारण नहीं, बल्कि अपनी दृढ़ता के कारण चट्टान को काटती है।"},
+            {"en": "Discipline is the bridge between goals and accomplishment.", "hi": "अनुशासन लक्ष्यों और उपलब्धि के बीच का पुल है।"},
+            {"en": "Motivation is what gets you started. Habit is what keeps you going.", "hi": "प्रेरणा वह है जो आपको शुरू करती है। आदत वह है जो आपको चलते रहने देती है।"},
+            {"en": "The expert in anything was once a beginner.", "hi": "किसी भी चीज का विशेषज्ञ कभी शुरुआती था।"},
+            {"en": "What comes easy won't last long, and what lasts long won't come easy.", "hi": "जो आसानी से मिल जाता है वह लंबे समय तक नहीं रहता, और जो लंबे समय तक रहता है वह आसानी से नहीं मिलता।"},
+            {"en": "Education is the most powerful weapon which you can use to change the world.", "hi": "शिक्षा सबसे शक्तिशाली हथियार है जिसका उपयोग आप दुनिया को बदलने के लिए कर सकते हैं।"},
+            {"en": "Your attitude, not your aptitude, will determine your altitude.", "hi": "आपकी योग्यता नहीं, बल्कि आपका दृष्टिकोण आपकी ऊंचाई निर्धारित करेगा।"}
+        ];
         
-        let quoteIndex = 0;
-        const hindiEl = document.getElementById('shayari-hi');
-        const engEl = document.getElementById('shayari-en');
+        let quoteIndex = 1; // Start from 1 because 0 is hardcoded in HTML
+        const hindiEl = document.querySelector('.shayari-hindi');
+        const engEl = document.querySelector('.shayari-eng');
         const box = document.getElementById('shayari-box');
 
         function changeQuote() {
@@ -659,10 +728,8 @@
             }, 500);
         }
         
-        // Initial call
-        changeQuote();
         // Change every 5 seconds
-        setInterval(changeQuote, 5000);
+        setInterval(changeQuote, 5000); 
 
         // SVG Icons for Trusted By
         const svgs = {
@@ -683,10 +750,10 @@
 
         const marquee = document.getElementById('marquee-container');
         
-        // Add items twice to create seamless loop
         function buildMarquee() {
             let html = '';
-            for(let i=0; i<4; i++) { // repeat multiple times for long screens
+            // Repeated 4 times to ensure it covers all screen widths cleanly
+            for(let i=0; i<4; i++) { 
                 trustedData.forEach(item => {
                     html += `
                         <div class="trusted-item">
@@ -699,25 +766,6 @@
             marquee.innerHTML = html;
         }
         buildMarquee();
-            <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
-        </div>
-    </footer>
-
     </script>
 </body>
 </html>
-
