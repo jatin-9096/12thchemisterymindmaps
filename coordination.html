@@ -1,175 +1,210 @@
-<!DOCTYPE html>
+TYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 5: Coordination Compounds - Detailed Notes</title>
+    <title>Chapter 5: Coordination Compounds - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
-        /* Kesari (Saffron/Orange) Dark Theme */
-        body { background-color: #1a0f0a; color: #ffedd5; line-height: 1.6; padding: 1rem; }
+        /* Kesari (Saffron) Premium Theme */
+        body { background-color: #1a0f0a; color: #ffedd5; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
         
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #f97316; font-size: 2rem; }
-        .header p { color: #fdba74; font-size: 1rem; }
+        .header { text-align: center; margin: 2rem 0; }
+        .header h1 { color: #f97316; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(249, 115, 22, 0.5); text-transform: uppercase; }
+        .header p { color: #fdba74; font-size: 1.1rem; margin-top: 5px; }
+
+        /* Dynamic Motivation Section */
+        .shayari-container {
+            background: linear-gradient(135deg, rgba(194, 65, 12, 0.2), rgba(124, 45, 18, 0.4));
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: opacity 0.5s ease-in-out;
+        }
+        .shayari-hindi { font-size: 1.3rem; color: #f97316; margin-bottom: 10px; font-weight: 700; line-height: 1.4; }
+        .shayari-eng { font-size: 1rem; color: #fcd34d; font-style: italic; }
 
         .mindmap-container { max-width: 800px; margin: 0 auto; }
         
-        /* Saffron Accordion Design */
-        details {
+        /* FULLY EXPANDED CARDS DESIGN (No Click Required) */
+        .card {
             background: #2c160b;
             border: 1px solid #c2410c;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            padding: 20px;
+            transition: transform 0.3s ease;
         }
+        .card:hover { border-color: #f97316; box-shadow: 0 8px 25px rgba(249, 115, 22, 0.2); transform: translateY(-3px); }
         
-        summary {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .card-header {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: #f97316;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 2px dashed #c2410c;
+            padding-bottom: 10px;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #fb923c;
-        }
-        details[open] summary::after { content: '-'; color: #f97316; }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #fed7aa;
-            font-size: 0.95rem;
-            border-top: 1px solid #c2410c;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
+        .content { color: #fed7aa; font-size: 1rem; }
 
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #fff7ed; margin-bottom: 5px; border-left: 3px solid #f97316; padding-left: 8px;}
-        ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: #fff7ed; margin-bottom: 8px; border-left: 4px solid #f97316; padding-left: 10px; font-size: 1.15rem; background: rgba(249, 115, 22, 0.1); padding: 5px 10px; border-radius: 0 5px 5px 0;}
+        ul { margin-left: 20px; margin-bottom: 10px; list-style-type: square; color: #fb923c; }
+        ul li span { color: #fed7aa; } /* Text color inside bullet */
+        li { margin-bottom: 8px; }
         
         .formula {
             display: block;
-            background: #1a0f0a;
-            padding: 8px;
-            border-radius: 5px;
+            background: rgba(0,0,0,0.5);
+            padding: 12px;
+            border-radius: 8px;
             color: #fcd34d;
             font-family: monospace;
-            font-size: 1rem;
-            margin: 5px 0;
-            border-left: 3px solid #fcd34d;
+            font-size: 1.05rem;
+            margin: 10px 0;
+            border-left: 4px solid #fcd34d;
+            overflow-x: auto;
         }
 
-        /* Long Notes & PYQ Section Styling */
+        /* Long Notes & PYQ Section */
         .resources-section {
             max-width: 800px;
-            margin: 3rem auto 1rem auto;
+            margin: 4rem auto 2rem auto;
             background: rgba(194, 65, 12, 0.15);
             border: 2px dashed #f97316;
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             text-align: center;
         }
-        .resources-section h3 { color: #f97316; margin-bottom: 10px; font-size: 1.5rem;}
-        .resources-section p { color: #fdba74; margin-bottom: 20px; font-size: 0.95rem; }
+        .resources-section h3 { color: #f97316; margin-bottom: 10px; font-size: 1.6rem;}
+        .resources-section p { color: #fdba74; margin-bottom: 20px; font-size: 1rem; }
         .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .res-btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
+        .res-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; border: none; }
         .btn-notes { background: #fcd34d; color: #1a0f0a; }
-        .btn-notes:hover { background: #fbbf24; }
         .btn-pyq { background: #dc2626; color: #fff; }
-        .btn-pyq:hover { background: #b91c1c; }
+
+        /* TRUSTED BY SECTION - PURE CSS SCROLL (Hardcoded SVGs) */
+        .trusted-section {
+            margin: 50px 0; padding: 30px 0;
+            background: rgba(0,0,0,0.6);
+            border-top: 1px solid rgba(249, 115, 22, 0.3);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+            overflow: hidden; width: 100%;
+        }
+        .trusted-title { text-align: center; color: #fb923c; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
+        
+        .marquee-wrapper { width: 100%; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-flex; animation: scroll-left 25s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        
+        .trusted-item {
+            display: inline-flex; align-items: center; gap: 12px; padding: 12px 25px;
+            background: rgba(255,255,255,0.05); border-radius: 50px; margin: 0 10px;
+            border: 1px solid transparent;
+        }
+        .trusted-item svg { width: 28px; height: 28px; fill: #f97316; }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
         /* Navigation */
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
+        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+        .btn { padding: 12px 20px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; }
         .btn-home { background: #7c2d12; border: 1px solid #c2410c; }
         .btn-next { background: #f97316; color: #1a0f0a; }
+
+        /* Saffron Footer */
+        footer { background: #0f0805; padding: 40px 20px; text-align: center; border-top: 2px solid #ea580c; }
+        .made-by { font-size: 1.2rem; color: #fdba74; margin-bottom: 10px; }
+        .made-by span { color: #f97316; font-weight: 800; font-family: 'Orbitron', sans-serif; }
+        .founder-sign {
+            margin-top: 10px; font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+            background: linear-gradient(90deg, #f97316, #fcd34d, #fb923c, #ea580c, #f97316);
+            background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite; display: inline-block;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 300% center; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Chapter 5: Coordination Compounds</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+    <header class="header">
+        <h1>Chapter 5: Coordination</h1>
+        <p class="subtitle">Complete Master Class & Notes</p>
+    </header>
+
+    <div class="shayari-container" id="shayari-box">
+        <div class="shayari-hindi" id="shayari-hi">सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।</div>
+        <div class="shayari-eng" id="shayari-en">"Success is not final, failure is not fatal: it is the courage to continue that counts."</div>
     </div>
 
     <div class="mindmap-container">
 
-        <details>
-            <summary>Introduction & Werner's Theory</summary>
+        <div class="card">
+            <div class="card-header">1. Introduction & Werner's Theory</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Double Salts vs Coordination Compounds</h4>
                     <ul>
-                        <li><strong>Double Salts:</strong> Dissociate completely into simple ions when dissolved in water. Example: Mohr's salt [FeSO₄·(NH₄)₂SO₄·6H₂O], Potash alum.</li>
-                        <li><strong>Coordination Compounds:</strong> Do not dissociate into simple ions completely in water. They retain their identity in solution. Example: K₄[Fe(CN)₆].</li>
+                        <li><span><strong>Double Salts:</strong> Dissociate completely into simple ions when dissolved in water. Example: Mohr's salt, Potash alum.</span></li>
+                        <li><span><strong>Coordination Compounds:</strong> Do not dissociate into simple ions completely in water. They retain their identity. Example: K₄[Fe(CN)₆].</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Werner's Theory of Coordination Compounds</h4>
+                    <h4>Werner's Theory</h4>
                     <p>Metals possess two types of linkages (valencies):</p>
                     <ul>
-                        <li><strong>Primary Valency:</strong> Ionizable, satisfied by negative ions. Corresponds to the oxidation state of the central metal. Represented by dotted lines.</li>
-                        <li><strong>Secondary Valency:</strong> Non-ionizable, satisfied by neutral molecules or negative ions (ligands). Corresponds to the coordination number. Represented by solid lines. Spatial arrangement of secondary valencies gives the complex its specific geometry.</li>
+                        <li><span><strong>Primary Valency:</strong> Ionizable, satisfied by negative ions. Corresponds to oxidation state (Dotted lines).</span></li>
+                        <li><span><strong>Secondary Valency:</strong> Non-ionizable, satisfied by ligands. Corresponds to coordination number (Solid lines). Decides geometry.</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Important Terms & Types of Ligands</summary>
+        <div class="card">
+            <div class="card-header">2. Ligands & Coordination Entity</div>
             <div class="content">
-                <div class="sub-topic">
-                    <h4>Coordination Entity & Central Atom</h4>
-                    <p><strong>Coordination Entity:</strong> Constitutes a central metal atom or ion bonded to a fixed number of ions or molecules. Example: [CoCl₃(NH₃)₃].</p>
-                    <p><strong>Central Atom/Ion:</strong> The atom/ion to which a fixed number of ligands are bound in a definite geometrical arrangement.</p>
-                </div>
                 <div class="sub-topic">
                     <h4>Ligands and Their Types</h4>
-                    <p>Ions or molecules bound to the central atom/ion. They act as Lewis bases (electron pair donors).</p>
+                    <p>Ligands act as Lewis bases (electron pair donors).</p>
                     <ul>
-                        <li><strong>Unidentate:</strong> Bounds through a single donor atom. Example: Cl⁻, H₂O, NH₃.</li>
-                        <li><strong>Didentate:</strong> Bounds through two donor atoms. Example: ethane-1,2-diamine (en), oxalate (C₂O₄²⁻).</li>
-                        <li><strong>Polydentate:</strong> Bounds through several donor atoms. Example: EDTA⁴⁻ (hexadentate).</li>
-                        <li><strong>Chelating Ligand:</strong> A di- or polydentate ligand uses its two or more donor atoms to bind a single metal ion, forming a ring structure. Imparts extra stability (Chelate effect).</li>
-                        <li><strong>Ambidentate Ligand:</strong> Ligand which can ligate through two different atoms. Example: NO₂⁻ (can bind through N or O), SCN⁻ (can bind through S or N).</li>
+                        <li><span><strong>Unidentate:</strong> Bounds through a single donor atom (Cl⁻, H₂O, NH₃).</span></li>
+                        <li><span><strong>Didentate:</strong> Bounds through two donor atoms (ethane-1,2-diamine, oxalate).</span></li>
+                        <li><span><strong>Polydentate:</strong> Bounds through several donor atoms (EDTA⁴⁻ is hexadentate).</span></li>
+                        <li><span><strong>Chelating Ligand:</strong> Di/Polydentate ligand binding a single metal ion to form a ring (Chelate effect = extra stability).</span></li>
+                        <li><span><strong>Ambidentate Ligand:</strong> Can ligate through two different atoms (NO₂⁻, SCN⁻).</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>IUPAC Nomenclature Rules</summary>
+        <div class="card">
+            <div class="card-header">3. IUPAC Nomenclature</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>General Rules for Naming</h4>
+                    <h4>General Rules</h4>
                     <ul>
-                        <li>The cation is named first in both positively and negatively charged coordination entities.</li>
-                        <li>The ligands are named in alphabetical order before the name of the central metal atom/ion.</li>
-                        <li>Names of anionic ligands end in <strong>-o</strong> (e.g., chloro, cyanido, oxalato), whereas neutral and cationic ligands are the same except <em>aqua</em> (H₂O), <em>ammine</em> (NH₃), <em>carbonyl</em> (CO), and <em>nitrosyl</em> (NO).</li>
-                        <li>Prefixes mono, di, tri, etc., are used to indicate the number of individual ligands. If the ligand name includes a numerical prefix, then terms like bis, tris, tetrakis are used.</li>
-                        <li>Oxidation state of the metal is indicated by Roman numeral in parentheses.</li>
-                        <li>If the complex ion is an anion, the name of the metal ends with the suffix <strong>-ate</strong> (e.g., ferrate, cuprate, argentate).</li>
+                        <li><span>Cation is named first in both positively and negatively charged coordination entities.</span></li>
+                        <li><span>Ligands are named in alphabetical order before the metal.</span></li>
+                        <li><span>Anionic ligands end in <strong>-o</strong> (chloro, cyanido). Neutral ligands remain same except <em>aqua</em>, <em>ammine</em>, <em>carbonyl</em>, <em>nitrosyl</em>.</span></li>
+                        <li><span>If complex is an anion, metal name ends with <strong>-ate</strong> (ferrate, cuprate).</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
@@ -178,130 +213,176 @@
                     <span class="formula">[Co(NH₃)₅Cl]Cl₂ : Pentaamminechloridocobalt(III) chloride</span>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Isomerism in Coordination Compounds</summary>
+        <div class="card">
+            <div class="card-header">4. Isomerism</div>
             <div class="content">
                 <div class="sub-topic">
                     <h4>Structural Isomerism</h4>
                     <ul>
-                        <li><strong>Ionization Isomerism:</strong> Exchange of ions between coordination sphere and ionization sphere. Ex: [Co(NH₃)₅Br]SO₄ and [Co(NH₃)₅SO₄]Br.</li>
-                        <li><strong>Linkage Isomerism:</strong> Arises in complexes containing ambidentate ligands. Ex: [Co(NH₃)₅(NO₂)]²⁺ and [Co(NH₃)₅(ONO)]²⁺.</li>
-                        <li><strong>Coordination Isomerism:</strong> Interchange of ligands between cationic and anionic entities. Ex: [Co(NH₃)₆][Cr(CN)₆] and [Cr(NH₃)₆][Co(CN)₆].</li>
-                        <li><strong>Hydrate (Solvate) Isomerism:</strong> Water molecules act either as a ligand or as water of hydration. Ex: [Cr(H₂O)₆]Cl₃ (violet) and [Cr(H₂O)₅Cl]Cl₂·H₂O (grey-green).</li>
+                        <li><span><strong>Ionization:</strong> Exchange of ions between coordination and ionization sphere.</span></li>
+                        <li><span><strong>Linkage:</strong> Due to ambidentate ligands (NO₂ vs ONO).</span></li>
+                        <li><span><strong>Coordination:</strong> Interchange of ligands between cationic & anionic entities.</span></li>
+                        <li><span><strong>Hydrate:</strong> Water acts as ligand or water of hydration.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
                     <h4>Stereoisomerism</h4>
                     <ul>
-                        <li><strong>Geometrical Isomerism:</strong> Occurs in heteroleptic complexes. Includes <em>cis</em> (similar ligands adjacent) and <em>trans</em> (similar ligands opposite). Also, <em>fac</em> (facial) and <em>mer</em> (meridional) isomerism in [Ma₃b₃] type octahedral complexes.</li>
-                        <li><strong>Optical Isomerism:</strong> Chiral complexes which are non-superimposable mirror images. They rotate the plane of polarized light (dextro and laevo). Common in octahedral complexes involving didentate ligands like [Co(en)₃]³⁺.</li>
+                        <li><span><strong>Geometrical:</strong> <em>cis</em> (adjacent) and <em>trans</em> (opposite). <em>fac</em> and <em>mer</em> in [Ma₃b₃].</span></li>
+                        <li><span><strong>Optical:</strong> Chiral complexes, non-superimposable mirror images (dextro/laevo).</span></li>
                     </ul>
                 </div>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Valence Bond Theory (VBT) & Hybridization</summary>
+        <div class="card">
+            <div class="card-header">5. VBT & CFT Theories</div>
             <div class="content">
                 <div class="sub-topic">
-                    <h4>Main Postulates</h4>
-                    <p>The metal ion uses its empty (n-1)d, ns, np or ns, np, nd orbitals to undergo hybridization, giving a set of equivalent orbitals of definite geometry (tetrahedral, square planar, octahedral).</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Types of Hybridization & Geometries</h4>
+                    <h4>Valence Bond Theory (VBT)</h4>
                     <ul>
-                        <li><strong>sp³:</strong> Tetrahedral (C.N. = 4). Example: [NiCl₄]²⁻ (Paramagnetic).</li>
-                        <li><strong>dsp²:</strong> Square Planar (C.N. = 4). Example: [Ni(CN)₄]²⁻ (Diamagnetic).</li>
-                        <li><strong>sp³d²:</strong> Octahedral (Outer orbital complex, high spin). Uses outer nd orbitals. Example: [CoF₆]³⁻.</li>
-                        <li><strong>d²sp³:</strong> Octahedral (Inner orbital complex, low spin). Uses inner (n-1)d orbitals. Example: [Co(NH₃)₆]³⁺.</li>
+                        <li><span><strong>sp³:</strong> Tetrahedral (e.g., [NiCl₄]²⁻).</span></li>
+                        <li><span><strong>dsp²:</strong> Square Planar (e.g., [Ni(CN)₄]²⁻).</span></li>
+                        <li><span><strong>sp³d²:</strong> Octahedral, Outer orbital, high spin.</span></li>
+                        <li><span><strong>d²sp³:</strong> Octahedral, Inner orbital, low spin.</span></li>
                     </ul>
                 </div>
                 <div class="sub-topic">
-                    <h4>Magnetic Behavior</h4>
-                    <p>Depends on the presence of unpaired electrons (Paramagnetic) or absence (Diamagnetic). Spin-only magnetic moment μ = &radic;(n(n+2)) BM.</p>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>Crystal Field Theory (CFT) & Spectrochemical Series</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Basic Concept</h4>
-                    <p>Considers the metal-ligand bond to be purely ionic. Ligands are treated as point charges. When ligands approach the metal ion, the degeneracy of the five d-orbitals is destroyed, splitting them into different energy levels.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Splitting in Octahedral Complexes</h4>
-                    <p>The d-orbitals split into two sets:</p>
+                    <h4>Crystal Field Theory (CFT)</h4>
+                    <p>Ligands are treated as point charges. Degeneracy of d-orbitals splits into t₂g (lower) and eg (higher) sets.</p>
+                    <span class="formula">Spectrochemical Series:<br> I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NH₃ &lt; en &lt; CN⁻ &lt; CO</span>
                     <ul>
-                        <li><strong>t₂g set:</strong> Lower energy (dxy, dyz, dxz).</li>
-                        <li><strong>eg set:</strong> Higher energy (dx²-y², dz²).</li>
-                        <li>The energy difference is Crystal Field Splitting Energy (Δ₀).</li>
+                        <li><span><strong>Strong Field Ligands:</strong> Large splitting (Δ₀ > P). Electrons pair up. Low spin.</span></li>
+                        <li><span><strong>Weak Field Ligands:</strong> Small splitting (Δ₀ &lt; P). Electrons jump up. High spin.</span></li>
+                        <li><span><strong>Colour:</strong> Due to d-d transition of electrons absorbing visible light.</span></li>
                     </ul>
                 </div>
-                <div class="sub-topic">
-                    <h4>Spectrochemical Series</h4>
-                    <p>Arrangement of ligands in increasing order of crystal field splitting (Δ₀):</p>
-                    <span class="formula">I⁻ &lt; Br⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; C₂O₄²⁻ &lt; H₂O &lt; EDTA⁴⁻ &lt; NH₃ &lt; en &lt; CN⁻ &lt; CO</span>
-                    <ul>
-                        <li><strong>Strong Field Ligands:</strong> (e.g., CO, CN⁻, en) cause large splitting (Δ₀ > Pairing Energy P). Electrons pair up in t₂g. Form Low Spin complexes.</li>
-                        <li><strong>Weak Field Ligands:</strong> (e.g., Halogens, H₂O) cause small splitting (Δ₀ &lt; P). Electrons jump to eg. Form High Spin complexes.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Colour in Coordination Compounds</h4>
-                    <p>Attributed to <strong>d-d transition</strong> of electrons. An electron from a lower energy d-orbital absorbs light from the visible region and jumps to a higher energy d-orbital. The transmitted light shows the complementary colour.</p>
-                </div>
             </div>
-        </details>
-
-        <details>
-            <summary>Importance & Applications</summary>
-            <div class="content">
-                <ul>
-                    <li><strong>Metallurgy:</strong> Extraction of silver and gold involves the formation of cyanide complexes [Ag(CN)₂]⁻ and [Au(CN)₂]⁻. Purification of Nickel by Mond process forms [Ni(CO)₄].</li>
-                    <li><strong>Analytical Chemistry:</strong> Estimation of water hardness (Ca²⁺ and Mg²⁺) using EDTA.</li>
-                    <li><strong>Biological Systems:</strong> Chlorophyll is a coordination compound of Magnesium. Haemoglobin is a coordination compound of Iron. Vitamin B12 is a complex of Cobalt.</li>
-                    <li><strong>Medicine:</strong> <em>Cisplatin</em> [Pt(NH₃)₂Cl₂] is used in the treatment of cancer. EDTA is used for the treatment of lead poisoning.</li>
-                </ul>
-            </div>
-        </details>
+        </div>
 
     </div>
 
-    <div class="resources-section">
+        <div class="resources-section">
         <h3>📚 Additional Study Material</h3>
         <p>Master Coordination Compounds by practicing Previous Year Questions and reading deep-dive long notes.</p>
         <div class="resource-buttons">
-            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+            <button class="res-btn btn-notes">📖 Read Long Notes</button>
+            <button class="res-btn btn-pyq">✍️ Solve PYQs</button>
         </div>
     </div>
 
-    <div class="nav-section">
-        <a href="d-and-f-block.html" class="btn btn-home">⬅ Prev: d & f Block</a>
-        <a href="haloalkanes.html" class="btn btn-next">Next: Haloalkanes ➡</a>
-    </div>
-    <footer>
-        <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
-            MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
-        </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
-            ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
-        </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
-        <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
-            <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
-        </div>
-    </footer>
-
-</body>
+    <div class="trusted-section">
+        <h3 class="trusted-title">Trusted By Shoorveer Notes Group</h3>
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                    <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                </div>
+                
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                    <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                    <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                    <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                </div>
+                <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                  <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                  </div>
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                  <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                  </div>
+                  
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+                  <div class="trusted-text">12TH PHYSICS SHOORVEER</div>
+                  </div>
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                  <div class="trusted-text">12TH MATHS SHOORVEER</div>
+                  </div>
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a1.003 1.003 0 0 0-1.42 0L12 9.24 9.05 6.29a1.003 1.003 0 0 0-1.42 0L6.29 7.63a1.003 1.003 0 0 0 0 1.42l9.04 9.04c.39.39 1.02.39 1.41 0l3.96-3.96c.4-.39.4-1.03.01-1.42zM12.71 16L9.88 13.17l2.12-2.12 2.83 2.83L12.71 16z"/></svg>
+                  <div class="trusted-text">12TH CHEMISTRY SHOORVEER</div>
+                  </div>
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+                  <div class="trusted-text">12TH ENGLISH SHOORVEER</div>
+                  </div>
+                  <div class="trusted-item">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+                  <div class="trusted-text">12TH BIOLOGY SHOORVEER</div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  
+                  <div class="nav-section">
+                  <a href="d-and-f-block.html" class="btn btn-home">⬅ Prev: d & f Block</a>
+                  <a href="haloalkanes.html" class="btn btn-next">Next: Haloalkanes ➡</a>
+                  </div>
+                  
+                  <footer>
+                  <div class="made-by">MADE WITH ❤️ BY <span>SHOORVEER NOTES</span></div>
+                  <div class="founder-sign">~ Jatin Sharma ( Founder of Shoorveer Notes Group )</div>
+                  <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(249, 115, 22, 0.2);">
+                  <a href="privacy-policy.html" style="color: #fdba74; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">Privacy Policy</a>
+                  <span style="color: #7c2d12;">|</span>
+                  <a href="about.html" style="color: #fdba74; text-decoration: none; font-size: 0.9rem; margin: 0 15px;">About Us</a>
+                  </div>
+                  </footer>
+                  
+                  <script>
+                  const quotes = [
+                  {"en": "Success is not final, failure is not fatal: it is the courage to continue that counts.", "hi": "सफलता अंतिम नहीं है, असफलता घातक नहीं है: यह जारी रखने का साहस है जो मायने रखता है।"},
+                  {"en": "Believe you can and you're halfway there.", "hi": "विश्वास करें कि आप कर सकते हैं और आप आधी मंजिल तक पहुँच गए हैं।"},
+                  {"en": "The only way to do great work is to love what you do.", "hi": "महान कार्य करने का एकमात्र तरीका यह है कि आप जो करते हैं उससे प्यार करें।"},
+                  {"en": "Your time is limited, don't waste it living someone else's life.", "hi": "आपका समय सीमित है, इसे किसी और का जीवन जीने में बर्बाद न करें।"},
+                  {"en": "The future belongs to those who believe in the beauty of their dreams.", "hi": "भविष्य उनका है जो अपने सपनों की सुंदरता में विश्वास करते हैं।"}
+                  ];
+                  
+                  let quoteIndex = 1; 
+                  const hindiEl = document.getElementById('shayari-hi');
+                  const engEl = document.getElementById('shayari-en');
+                  const box = document.getElementById('shayari-box');
+                  
+                  if (hindiEl && engEl && box) {
+                  setInterval(function() {
+                  box.style.opacity = 0;
+                  setTimeout(function() {
+                  hindiEl.textContent = quotes[quoteIndex].hi;
+                  engEl.textContent = '"' + quotes[quoteIndex].en + '"';
+                  box.style.opacity = 1;
+                  quoteIndex = (quoteIndex + 1) % quotes.length;
+                  }, 500);
+                  }, 5000);
+                  }
+                  </script>
+                  </body>
 </html>
-
