@@ -4,366 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 7: Alcohols, Phenols & Ethers - Shoorveer Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
+        :root {
+            --bg-color: #0b0f19;
+            --primary: #d946ef;
+            --secondary: #a855f7;
+            --text-light: #f3e8ff;
+            --text-muted: #e9d5ff;
+            --glass-bg: rgba(20, 27, 45, 0.6);
+            --glass-border: rgba(217, 70, 239, 0.2);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
-        /* Royal Purple & Neon Pink Theme */
-        body { background-color: #0f0a1a; color: #f3e8ff; line-height: 1.6; padding: 1rem; overflow-x: hidden; }
-        
-        .header { text-align: center; margin-bottom: 2rem; }
-        .header h1 { color: #d946ef; font-size: 2.2rem; text-shadow: 0 0 10px rgba(217, 70, 239, 0.4); }
-        .header p { color: #e9d5ff; font-size: 1rem; }
+        body { background-color: var(--bg-color); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
 
-        /* Motivation Shayari */
+        /* Navbar */
+        nav {
+            width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; font-family: 'Orbitron', sans-serif;}
+        .nav-logo span { color: var(--primary); }
+        .back-btn { padding: 8px 20px; border: 1px solid var(--primary); color: var(--text-light); border-radius: 50px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .back-btn:hover { background: var(--primary); color: #fff; }
+
+        /* Headers & Shayari */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .header { text-align: center; margin-bottom: 2.5rem; }
+        .header h1 { color: var(--primary); font-size: 2.5rem; font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(217, 70, 239, 0.4); margin-bottom: 10px; }
+        .header p { color: var(--text-muted); font-size: 1.1rem; }
+
         .shayari-box {
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            background: linear-gradient(45deg, #4c1d95, #701a75);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #d946ef;
-            box-shadow: 0 5px 15px rgba(217, 70, 239, 0.2);
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.1), rgba(168, 85, 247, 0.05));
+            padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 3rem; backdrop-filter: blur(10px);
         }
-        .shayari-box p { font-size: 1.1rem; font-style: italic; font-weight: 600; color: #fff; }
-        .shayari-box span { display: block; margin-top: 5px; font-size: 0.9rem; color: #fbcfe8; }
+        .shayari-box p { font-size: 1.2rem; font-weight: 600; color: #fff; }
+        .shayari-box span { display: block; margin-top: 8px; font-size: 0.95rem; color: var(--primary); font-style: italic; }
 
-        .mindmap-container { max-width: 800px; margin: 0 auto; }
-        
-        /* Accordion Design */
+        /* Accordion Design (Glassmorphism) */
         details {
-            background: #2e1065;
-            border: 1px solid #7c3aed;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px;
+            margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); backdrop-filter: blur(10px); transition: 0.3s;
         }
-        
+        details:hover { border-color: var(--secondary); transform: translateY(-2px); }
         summary {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #d8b4fe;
-            padding: 15px;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
+            font-size: 1.2rem; font-weight: 600; color: #fff; padding: 18px; cursor: pointer; list-style: none; position: relative;
         }
         summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #a855f7;
-        }
-        details[open] summary::after { content: '-'; color: #d8b4fe; }
+        summary::after { content: '+'; position: absolute; right: 20px; font-size: 1.5rem; color: var(--primary); }
+        details[open] summary::after { content: '-'; color: var(--secondary); }
         
-        .content {
-            padding: 0 15px 15px 15px;
-            color: #f3e8ff;
-            font-size: 0.95rem;
-            border-top: 1px solid #7c3aed;
-            margin-top: 5px;
-            padding-top: 10px;
-        }
-
-        .sub-topic { margin-bottom: 15px; }
-        .sub-topic h4 { color: #fdf4ff; margin-bottom: 5px; border-left: 3px solid #d946ef; padding-left: 8px;}
+        .content { padding: 0 18px 18px 18px; color: var(--text-muted); font-size: 1rem; border-top: 1px dashed var(--glass-border); margin-top: 5px; padding-top: 15px; }
+        .sub-topic { margin-bottom: 20px; }
+        .sub-topic h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.1rem; border-left: 3px solid var(--secondary); padding-left: 10px; }
         ul { margin-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
+        li { margin-bottom: 8px; }
         
         .formula {
-            display: block;
-            background: #1e1b4b;
-            padding: 10px;
-            border-radius: 5px;
-            color: #f472b6; 
-            font-family: monospace;
-            font-size: 1.05rem;
-            margin: 5px 0;
-            border-left: 3px solid #f472b6;
-            overflow-x: auto;
+            display: block; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 8px;
+            color: #fbcfe8; font-family: monospace; font-size: 1.1rem; margin: 10px 0; border-left: 4px solid var(--primary); overflow-x: auto;
         }
 
-        /* Long Notes & PYQ Section */
+        /* Resources */
         .resources-section {
-            max-width: 800px;
-            margin: 3rem auto 1rem auto;
-            background: rgba(124, 58, 237, 0.1);
-            border: 2px dashed #a855f7;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
+            background: rgba(217, 70, 239, 0.05); border: 1px dashed var(--secondary); border-radius: 15px;
+            padding: 2.5rem; text-align: center; margin: 3rem 0;
         }
-        .resources-section h3 { color: #d946ef; margin-bottom: 10px; font-size: 1.5rem;}
-        .resources-section p { color: #e9d5ff; margin-bottom: 20px; }
-        .resource-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .res-btn {
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        .btn-notes { background: #d946ef; color: #fff; }
-        .btn-notes:hover { background: #c026d3; }
-        .btn-pyq { background: #7c3aed; color: #fff; }
-        .btn-pyq:hover { background: #6d28d9; }
+        .resources-section h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;}
+        .resource-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .res-btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; border: 1px solid transparent; }
+        .btn-notes { background: var(--primary); color: #fff; }
+        .btn-notes:hover { background: transparent; border-color: var(--primary); color: var(--primary); }
+        .btn-pyq { background: var(--secondary); color: #fff; }
+        .btn-pyq:hover { background: transparent; border-color: var(--secondary); color: var(--secondary); }
 
-        /* Trusted By Infinite Marquee Animation */
-        .trusted-section {
-            margin: 4rem 0;
-            text-align: center;
-            overflow: hidden;
-            background: #1e1b4b;
-            padding: 2rem 0;
-            border-top: 1px solid #4c1d95;
-            border-bottom: 1px solid #4c1d95;
-        }
-        .trusted-section h3 {
-            color: #a855f7;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .marquee-container {
-            display: flex;
-            width: 200%; /* Important for infinite loop */
-            animation: scroll 15s linear infinite;
-        }
+        /* Trusted Section (SVG Marquee) */
+        .trusted-section { padding: 40px 0; background: rgba(0,0,0,0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); overflow: hidden; margin: 40px 0; }
+        .trusted-title { text-align: center; color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; letter-spacing: 3px; text-transform: uppercase; }
+        .marquee-container { display: flex; width: 200%; animation: marquee 20s linear infinite; }
         .marquee-container:hover { animation-play-state: paused; }
-        .brand-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex: 1;
-            justify-content: center;
-            padding: 0 20px;
-            white-space: nowrap;
-            color: #d8b4fe;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .brand-item span { font-size: 1.5rem; } /* Fake Icon */
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        .trusted-item { display: flex; align-items: center; gap: 12px; padding: 10px 30px; background: rgba(255,255,255,0.03); border-radius: 50px; margin: 0 15px; white-space: nowrap; }
+        .trusted-item svg { width: 24px; height: 24px; fill: var(--primary); }
+        .trusted-text { font-weight: 600; font-size: 1rem; color: #fff; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: #0f0a1a;
-            color: #a855f7;
-            font-size: 0.95rem;
-        }
-        footer p { margin-bottom: 5px; }
-        footer a { color: #d946ef; text-decoration: none; font-weight: bold; }
+        /* Bottom Nav */
+        .nav-section { display: flex; justify-content: space-between; margin: 2rem 0; }
+        .btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; color: white; font-weight: 600; transition: 0.3s; }
+        .btn-home { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .btn-home:hover { background: rgba(255,255,255,0.2); }
+        .btn-next { background: var(--primary); }
+        .btn-next:hover { box-shadow: 0 0 15px var(--primary); }
 
-        /* Navigation */
-        .nav-section { display: flex; justify-content: space-between; max-width: 800px; margin: 2rem auto; }
-        .btn { padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-home { background: #4c1d95; border: 1px solid #7c3aed; }
-        .btn-next { background: #d946ef; color: #fff; }
+        @media (max-width: 768px) { nav { padding: 15px 20px; } .header h1 { font-size: 2rem; } .nav-section { flex-direction: column; gap: 15px; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <div class="shayari-box">
-        <p>"मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!"</p>
-        <span>"Success is the sum of small efforts, repeated day in and day out. Keep fighting, Shoorveer!"</span>
-    </div>
+    <nav>
+        <a href="index.html" class="nav-logo">Shoorveer <span>Notes</span></a>
+        <a href="index.html" class="back-btn">Back to Dashboard</a>
+    </nav>
 
-    <div class="header">
-        <h1>Chapter 7: Alcohols, Phenols & Ethers</h1>
-        <p>Complete Detailed Mind Map (Click on topics to expand)</p>
-    </div>
+    <div class="container">
+        <div class="shayari-box">
+            <p>"मंज़िलें क्या हैं, रास्ता क्या है? हौसला हो तो फासला क्या है!"</p>
+            <span>"Success is the sum of small efforts, repeated day in and day out. Keep fighting, Shoorveer!"</span>
+        </div>
 
-    <div class="mindmap-container">
+        <div class="header">
+            <h1>Chapter 7: Alcohols, Phenols & Ethers</h1>
+            <p>Complete Detailed Mind Map (Click on topics to expand)</p>
+        </div>
 
-        <details>
-            <summary>Preparation of Alcohols (Important Reactions)</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>From Alkenes</h4>
-                    <ul>
-                        <li><strong>Acid Catalyzed Hydration:</strong> Follows Markovnikov's rule. Alkenes react with water in presence of acid to form alcohols.<br><span class="formula">CH₃-CH=CH₂ + H₂O (H⁺) &rarr; CH₃-CH(OH)-CH₃</span></li>
-                        <li><strong>Hydroboration-Oxidation:</strong> Follows <em>Anti-Markovnikov's</em> addition of water. Alkene reacts with diborane (B₂H₆) followed by oxidation with H₂O₂/OH⁻.<br><span class="formula">CH₃-CH=CH₂ &rarr; (B₂H₆, then H₂O₂/OH⁻) &rarr; CH₃-CH₂-CH₂-OH</span> (Primary alcohol formed).</li>
-                    </ul>
+        <div class="mindmap-container">
+            <details>
+                <summary>Preparation of Alcohols (Important Reactions)</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>From Alkenes</h4>
+                        <ul>
+                            <li><strong>Acid Catalyzed Hydration:</strong> Follows Markovnikov's rule. Alkenes react with water in presence of acid to form alcohols.<br><span class="formula">CH₃-CH=CH₂ + H₂O (H⁺) &rarr; CH₃-CH(OH)-CH₃</span></li>
+                            <li><strong>Hydroboration-Oxidation:</strong> Follows <em>Anti-Markovnikov's</em> addition of water. Alkene reacts with diborane (B₂H₆) followed by oxidation with H₂O₂/OH⁻.<br><span class="formula">CH₃-CH=CH₂ &rarr; (B₂H₆, then H₂O₂/OH⁻) &rarr; CH₃-CH₂-CH₂-OH</span> (Primary alcohol formed).</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>From Carbonyl Compounds</h4>
+                        <ul>
+                            <li><strong>Reduction:</strong> Aldehydes yield 1° alcohols, Ketones yield 2° alcohols. Reagents used: NaBH₄, LiAlH₄, or H₂/Pd.<br><span class="formula">R-CHO + H₂ (Pd) &rarr; R-CH₂OH</span></li>
+                            <li><strong>Using Grignard Reagent (R-MgX):</strong> Formaldehyde (HCHO) gives 1° alcohol. Other aldehydes give 2° alcohol. Ketones give 3° alcohol.<br><span class="formula">HCHO + RMgX &rarr; R-CH₂-OMgX (H₂O/H⁺) &rarr; R-CH₂OH + Mg(OH)X</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="sub-topic">
-                    <h4>From Carbonyl Compounds</h4>
-                    <ul>
-                        <li><strong>Reduction:</strong> Aldehydes yield 1° alcohols, Ketones yield 2° alcohols. Reagents used: NaBH₄, LiAlH₄, or H₂/Pd.<br><span class="formula">R-CHO + H₂ (Pd) &rarr; R-CH₂OH</span></li>
-                        <li><strong>Using Grignard Reagent (R-MgX):</strong> Formaldehyde (HCHO) gives 1° alcohol. Other aldehydes give 2° alcohol. Ketones give 3° alcohol.<br><span class="formula">HCHO + RMgX &rarr; R-CH₂-OMgX (H₂O/H⁺) &rarr; R-CH₂OH + Mg(OH)X</span></li>
-                    </ul>
+            </details>
+
+            <details>
+                <summary>Preparation of Phenols</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>From Haloarenes (Dow's Process)</h4>
+                        <p>Chlorobenzene is fused with NaOH at very high temp (623K) and pressure (300 atm) to form sodium phenoxide, followed by acidification.</p>
+                        <span class="formula">C₆H₅Cl + NaOH (623K, 300atm) &rarr; C₆H₅ONa (H⁺) &rarr; C₆H₅OH</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>From Cumene (Commercial Method - VERY IMPORTANT)</h4>
+                        <p>Isopropylbenzene (Cumene) is oxidized in air to Cumene hydroperoxide. It is then treated with dilute acid to form Phenol and Acetone (a valuable byproduct).</p>
+                        <span class="formula">Cumene + O₂ &rarr; Cumene Hydroperoxide (H⁺/H₂O) &rarr; Phenol + Acetone (CH₃COCH₃)</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>From Benzene Sulphonic Acid & Diazonium Salts</h4>
+                        <ul>
+                            <li>Benzene &rarr; Benzene sulphonic acid (Oleum) &rarr; Sodium phenoxide (NaOH melt) &rarr; Phenol (H⁺).</li>
+                            <li>Aniline &rarr; Benzene Diazonium Chloride (NaNO₂/HCl, 0-5°C) &rarr; Warm with Water &rarr; Phenol + N₂ + HCl.</li>
+                        </ul>
+                    </div>
                 </div>
+            </details>
+
+            <details>
+                <summary>Chemical Properties of Alcohols</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Acidity & Esterification</h4>
+                        <ul>
+                            <li>Alcohols are weaker acids than water. Acidity order: 1° > 2° > 3° (Due to +I effect of alkyl groups destabilizing the alkoxide ion).</li>
+                            <li><strong>Esterification:</strong> Alcohol + Carboxylic acid (in presence of conc. H₂SO₄) &rarr; Ester + Water.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Distinction Test (Lucas Test)</h4>
+                        <p>Reagent: Conc. HCl + Anhydrous ZnCl₂.</p>
+                        <ul>
+                            <li><strong>3° Alcohol:</strong> Turbidity appears immediately.</li>
+                            <li><strong>2° Alcohol:</strong> Turbidity appears in 5 minutes.</li>
+                            <li><strong>1° Alcohol:</strong> No turbidity at room temperature.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Dehydration (Zaitsev's Rule)</h4>
+                        <p>Heating with conc. H₂SO₄ at 443 K yields alkenes. Ease of dehydration: 3° > 2° > 1°.</p>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Oxidation</h4>
+                        <ul>
+                            <li><strong>1° Alcohol:</strong> Mild oxidizing agent (PCC/CrO₃) gives Aldehyde. Strong (KMnO₄) gives Carboxylic Acid.</li>
+                            <li><strong>2° Alcohol:</strong> Oxidized to Ketones.</li>
+                            <li><strong>3° Alcohol:</strong> Do not undergo oxidation easily. (With heated Cu at 573K, they undergo dehydration to form alkenes).</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Chemical Properties of Phenols (Name Reactions)</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Acidity of Phenols</h4>
+                        <p>Phenols are much more acidic than alcohols because the phenoxide ion is resonance stabilized. Electron withdrawing groups (like -NO₂) increase acidity, electron donating groups (like -CH₃) decrease acidity.</p>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Electrophilic Aromatic Substitution</h4>
+                        <ul>
+                            <li><strong>Nitration:</strong> Dilute HNO₃ gives ortho & para nitrophenols (separated by steam distillation). Conc. HNO₃ gives 2,4,6-trinitrophenol (Picric Acid).</li>
+                            <li><strong>Halogenation:</strong> Bromine water gives white ppt of 2,4,6-tribromophenol. Br₂ in CS₂ (low polarity solvent) gives mono-substituted o- and p-bromophenol.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Kolbe's Reaction</h4>
+                        <p>Sodium phenoxide is heated with CO₂ under pressure, followed by acidification to yield Salicylic acid (2-Hydroxybenzoic acid).</p>
+                        <span class="formula">Phenol &rarr; (NaOH, then CO₂, H⁺) &rarr; Salicylic Acid</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Reimer-Tiemann Reaction</h4>
+                        <p>Treatment of phenol with chloroform (CHCl₃) in presence of aqueous NaOH introduces an aldehyde group (-CHO) at the ortho position.</p>
+                        <span class="formula">Phenol + CHCl₃ + aq. NaOH &rarr; Salicylaldehyde</span>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Oxidation</h4>
+                        <p>Phenol oxidized by Na₂Cr₂O₇/H₂SO₄ produces a conjugated diketone known as <strong>benzoquinone</strong>.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Ethers: Preparation & Properties</summary>
+                <div class="content">
+                    <div class="sub-topic">
+                        <h4>Preparation (Williamson Synthesis)</h4>
+                        <p>Important laboratory method for symmetrical and unsymmetrical ethers. Follows SN2 mechanism.</p>
+                        <span class="formula">R-X + R'-O⁻Na⁺ &rarr; R-O-R' + NaX</span>
+                        <p><em>Crucial Rule:</em> The alkyl halide (R-X) must be Primary (1°). If 3° alkyl halide is used, elimination dominates and an alkene is formed instead of ether.</p>
+                    </div>
+                    <div class="sub-topic">
+                        <h4>Cleavage by HX (Chemical Property)</h4>
+                        <p>Ethers are cleaved by concentrated HI or HBr at high temperatures.</p>
+                        <span class="formula">R-O-R' + HI &rarr; R-I + R'-OH</span>
+                        <ul>
+                            <li>If alkyl groups are primary/secondary, the Halide (I⁻) goes to the <strong>smaller alkyl group</strong> (SN2 steric reasons).</li>
+                            <li>If one group is Tertiary (3°), the Halide (I⁻) goes to the <strong>tertiary group</strong> (SN1 carbocation stability).</li>
+                            <li>In Alkyl Aryl ethers (Anisole), cleavage always produces Phenol and Alkyl Halide (because Aryl-Oxygen bond has double bond character).</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <div class="resources-section">
+            <h3>📂 Advance Study Materials</h3>
+            <p>Master reactions like Kolbe, Reimer-Tiemann, and Williamson Synthesis by practicing PYQs and reading in-depth Long Notes.</p>
+            <div class="resource-buttons">
+                <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
+                <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
             </div>
-        </details>
+        </div>
 
-        <details>
-            <summary>Preparation of Phenols</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>From Haloarenes (Dow's Process)</h4>
-                    <p>Chlorobenzene is fused with NaOH at very high temp (623K) and pressure (300 atm) to form sodium phenoxide, followed by acidification.</p>
-                    <span class="formula">C₆H₅Cl + NaOH (623K, 300atm) &rarr; C₆H₅ONa (H⁺) &rarr; C₆H₅OH</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>From Cumene (Commercial Method - VERY IMPORTANT)</h4>
-                    <p>Isopropylbenzene (Cumene) is oxidized in air to Cumene hydroperoxide. It is then treated with dilute acid to form Phenol and Acetone (a valuable byproduct).</p>
-                    <span class="formula">Cumene + O₂ &rarr; Cumene Hydroperoxide (H⁺/H₂O) &rarr; Phenol + Acetone (CH₃COCH₃)</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>From Benzene Sulphonic Acid & Diazonium Salts</h4>
-                    <ul>
-                        <li>Benzene &rarr; Benzene sulphonic acid (Oleum) &rarr; Sodium phenoxide (NaOH melt) &rarr; Phenol (H⁺).</li>
-                        <li>Aniline &rarr; Benzene Diazonium Chloride (NaNO₂/HCl, 0-5°C) &rarr; Warm with Water &rarr; Phenol + N₂ + HCl.</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>Chemical Properties of Alcohols</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Acidity & Esterification</h4>
-                    <ul>
-                        <li>Alcohols are weaker acids than water. Acidity order: 1° > 2° > 3° (Due to +I effect of alkyl groups destabilizing the alkoxide ion).</li>
-                        <li><strong>Esterification:</strong> Alcohol + Carboxylic acid (in presence of conc. H₂SO₄) &rarr; Ester + Water.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Distinction Test (Lucas Test)</h4>
-                    <p>Reagent: Conc. HCl + Anhydrous ZnCl₂.</p>
-                    <ul>
-                        <li><strong>3° Alcohol:</strong> Turbidity appears immediately.</li>
-                        <li><strong>2° Alcohol:</strong> Turbidity appears in 5 minutes.</li>
-                        <li><strong>1° Alcohol:</strong> No turbidity at room temperature.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Dehydration (Zaitsev's Rule)</h4>
-                    <p>Heating with conc. H₂SO₄ at 443 K yields alkenes. Ease of dehydration: 3° > 2° > 1°.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Oxidation</h4>
-                    <ul>
-                        <li><strong>1° Alcohol:</strong> Mild oxidizing agent (PCC/CrO₃) gives Aldehyde. Strong (KMnO₄) gives Carboxylic Acid.</li>
-                        <li><strong>2° Alcohol:</strong> Oxidized to Ketones.</li>
-                        <li><strong>3° Alcohol:</strong> Do not undergo oxidation easily. (With heated Cu at 573K, they undergo dehydration to form alkenes).</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>Chemical Properties of Phenols (Name Reactions)</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Acidity of Phenols</h4>
-                    <p>Phenols are much more acidic than alcohols because the phenoxide ion is resonance stabilized. Electron withdrawing groups (like -NO₂) increase acidity, electron donating groups (like -CH₃) decrease acidity.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Electrophilic Aromatic Substitution</h4>
-                    <ul>
-                        <li><strong>Nitration:</strong> Dilute HNO₃ gives ortho & para nitrophenols (separated by steam distillation). Conc. HNO₃ gives 2,4,6-trinitrophenol (Picric Acid).</li>
-                        <li><strong>Halogenation:</strong> Bromine water gives white ppt of 2,4,6-tribromophenol. Br₂ in CS₂ (low polarity solvent) gives mono-substituted o- and p-bromophenol.</li>
-                    </ul>
-                </div>
-                <div class="sub-topic">
-                    <h4>Kolbe's Reaction</h4>
-                    <p>Sodium phenoxide is heated with CO₂ under pressure, followed by acidification to yield Salicylic acid (2-Hydroxybenzoic acid).</p>
-                    <span class="formula">Phenol &rarr; (NaOH, then CO₂, H⁺) &rarr; Salicylic Acid</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Reimer-Tiemann Reaction</h4>
-                    <p>Treatment of phenol with chloroform (CHCl₃) in presence of aqueous NaOH introduces an aldehyde group (-CHO) at the ortho position.</p>
-                    <span class="formula">Phenol + CHCl₃ + aq. NaOH &rarr; Salicylaldehyde</span>
-                </div>
-                <div class="sub-topic">
-                    <h4>Oxidation</h4>
-                    <p>Phenol oxidized by Na₂Cr₂O₇/H₂SO₄ produces a conjugated diketone known as <strong>benzoquinone</strong>.</p>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>Ethers: Preparation & Properties</summary>
-            <div class="content">
-                <div class="sub-topic">
-                    <h4>Preparation (Williamson Synthesis)</h4>
-                    <p>Important laboratory method for symmetrical and unsymmetrical ethers. Follows SN2 mechanism.</p>
-                    <span class="formula">R-X + R'-O⁻Na⁺ &rarr; R-O-R' + NaX</span>
-                    <p><em>Crucial Rule:</em> The alkyl halide (R-X) must be Primary (1°). If 3° alkyl halide is used, elimination dominates and an alkene is formed instead of ether.</p>
-                </div>
-                <div class="sub-topic">
-                    <h4>Cleavage by HX (Chemical Property)</h4>
-                    <p>Ethers are cleaved by concentrated HI or HBr at high temperatures.</p>
-                    <span class="formula">R-O-R' + HI &rarr; R-I + R'-OH</span>
-                    <ul>
-                        <li>If alkyl groups are primary/secondary, the Halide (I⁻) goes to the <strong>smaller alkyl group</strong> (SN2 steric reasons).</li>
-                        <li>If one group is Tertiary (3°), the Halide (I⁻) goes to the <strong>tertiary group</strong> (SN1 carbocation stability).</li>
-                        <li>In Alkyl Aryl ethers (Anisole), cleavage always produces Phenol and Alkyl Halide (because Aryl-Oxygen bond has double bond character).</li>
-                    </ul>
-                </div>
-            </div>
-        </details>
-
-    </div>
-
-    <div class="resources-section">
-        <h3>📂 Advance Study Materials</h3>
-        <p>Master reactions like Kolbe, Reimer-Tiemann, and Williamson Synthesis by practicing PYQs and reading in-depth Long Notes.</p>
-        <div class="resource-buttons">
-            <a href="#" class="res-btn btn-notes">📖 Read Long Notes</a>
-            <a href="#" class="res-btn btn-pyq">✍️ Solve PYQs</a>
+        <div class="nav-section">
+            <a href="haloalkanes.html" class="btn btn-home">⬅ Prev: Haloalkanes</a>
+            <a href="aldehydes.html" class="btn btn-next">Next: Aldehydes ➡</a>
         </div>
     </div>
 
+    <!-- Trusted Section -->
     <div class="trusted-section">
-        <h3>TRUSTED BY SHOORVEER NOTES GROUP</h3>
-        <div class="marquee-container">
-            <div class="brand-item"><span>⚛️</span> 12TH PHYSICS SHOORVEER NOTES</div>
-            <div class="brand-item"><span>➗</span> 12TH MATHS SHOORVEER NOTES</div>
-            <div class="brand-item"><span>🧬</span> 12TH BIOLOGY SHOORVEER NOTES</div>
-            <div class="brand-item"><span>📝</span> 12TH ENGLISH SHOORVEER NOTES</div>
-            
-            <div class="brand-item"><span>⚛️</span> 12TH PHYSICS SHOORVEER NOTES</div>
-            <div class="brand-item"><span>➗</span> 12TH MATHS SHOORVEER NOTES</div>
-            <div class="brand-item"><span>🧬</span> 12TH BIOLOGY SHOORVEER NOTES</div>
-            <div class="brand-item"><span>📝</span> 12TH ENGLISH SHOORVEER NOTES</div>
+        <h3 class="trusted-title">Trusted By Shoorveer Notes</h3>
+        <div class="marquee-container" id="marquee-container">
+            <!-- SVGs injected via script -->
         </div>
     </div>
 
-    <div class="nav-section">
-        <a href="haloalkanes.html" class="btn btn-home">⬅ Prev: Haloalkanes</a>
-        <a href="aldehydes.html" class="btn btn-next">Next: Aldehydes ➡</a>
-    </div>
-
-        <footer>
+    <!-- Universal Footer -->
+    <footer style="background: rgba(0, 0, 0, 0.6); padding: 40px 20px; text-align: center; backdrop-filter: blur(10px);">
         <div class="made-by" style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 10px;">
             MADE WITH ❤️ BY <span style="color: #00f2fe; font-weight: 800; font-family: 'Orbitron', sans-serif;">SHOORVEER NOTES</span>
         </div>
-        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; display: inline-block;">
+        <div class="founder-sign" style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase; background: linear-gradient(90deg, #ff0844, #ffb199, #00f2fe, #4facfe, #ff0844); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
             ~ Jatin Sharma ( Founder of Shoorveer Notes Group )
         </div>
-        
-        <!-- Footer Links (Privacy Policy & About Us) -->
         <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">Privacy Policy</a>
-            
+            <a href="privacy-policy.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">Privacy Policy</a>
             <span style="color: #3f3f46;">|</span>
-            
-            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;" onmouseover="this.style.color='#00f2fe'" onmouseout="this.style.color='#a1a1aa'">About Us</a>
+            <a href="about.html" style="color: #a1a1aa; text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s ease;">About Us</a>
         </div>
     </footer>
 
+    <!-- Script for SVG Marquee -->
+    <script>
+        const svgs = {
+            physics: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>',
+            maths: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>',
+            english: '<svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>',
+            biology: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 7h2v6h-2zm0 8h2v2h-2z"/></svg>'
+        };
+
+        const trustedData = [
+            { text: "12TH PHYSICS SHOORVEER NOTES", icon: svgs.physics },
+            { text: "12TH MATHS SHOORVEER NOTES", icon: svgs.maths },
+            { text: "12TH ENGLISH SHOORVEER NOTES", icon: svgs.english },
+            { text: "12TH BIOLOGY SHOORVEER NOTES", icon: svgs.biology }
+        ];
+
+        const marquee = document.getElementById('marquee-container');
+        function buildMarquee() {
+            let html = '';
+            for(let i=0; i<4; i++) {
+                trustedData.forEach(item => {
+                    html += `<div class="trusted-item">${item.icon}<div class="trusted-text">${item.text}</div></div>`;
+                });
+            }
+            marquee.innerHTML = html;
+        }
+        buildMarquee();
+    </script>
 </body>
 </html>
